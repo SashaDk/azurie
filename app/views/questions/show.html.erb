@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @question.title %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @question.answer %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @question.category %>
+</p>
+
+<p>
+  <b>Question author:</b>
+  <%= @question.question_author_id %>
+</p>
+
+<p>
+  <b>Answer author:</b>
+  <%= @question.answer_author_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
