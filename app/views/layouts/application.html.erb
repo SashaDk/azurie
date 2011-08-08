@@ -7,6 +7,16 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<% if user_signed_in? %>
+  <div>
+    Hello, <%= current_user.email%>&nbsp;
+    <span><%= link_to "Sign Out", destroy_session_path(:user)%></span>
+  </div>
+<% else %>
+  <%= link_to "Sign In", new_session_path(:user) %>
+<% end %>
+
+<div><%= link_to "Questions", questions_path%></div>
 
 <%= yield %>
 
