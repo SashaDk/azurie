@@ -183,8 +183,7 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
 
-  require 'openid/store/filesystem'
-
   config.omniauth :google_apps, nil, :domain => 'gmail.com'
-
+  config.omniauth :facebook, "152692304811046", "5633aacac10cad303f95fdd159e55886",
+      {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
 end
