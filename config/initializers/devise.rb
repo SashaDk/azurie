@@ -185,6 +185,6 @@ Devise.setup do |config|
 
   require 'openid/store/filesystem'
 
-  config.omniauth :google_apps, OpenID::Store::Filesystem.new('./tmp'), :domain => 'gmail.com'
+  config.omniauth :google_apps, nil, :domain => 'gmail.com'
 
 end
