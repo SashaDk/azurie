@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "please-change-me@config-initializers-devise.com"
+  config.mailer_sender = "noreply@azurie.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -185,6 +185,6 @@ Devise.setup do |config|
 
   require 'openid/store/filesystem'
 
-  config.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
+  config.omniauth :google_apps, OpenID::Store::Filesystem.new('./tmp'), :domain => 'gmail.com'
 
 end
