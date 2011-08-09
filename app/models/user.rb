@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :services  
 
-  def self.find_facebook_omniauth(access_token, signed_in_resource=nil)
+  def self.find_for_facebook_omniauth(access_token, signed_in_resource=nil)
     data = access_token['user_info']
 
     if user = User.find_by_email(data['email'])
