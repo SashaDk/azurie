@@ -30,8 +30,8 @@
 <!-- nav -->
 					<ul id="nav">
 						<li><a href="#">BRIEFINGS</a></li>
-						<li><a href="#">ALL Q&amp;As</a></li>
-						<li class="active"><a href="#">PEOPLE</a></li>
+						<li <%if current_page?(:controller => :questions)%>class="active"<%end%> ><%= link_to "ALL Q&amp;As".html_safe, questions_path %></li>
+						<li <%if current_page?(:controller => :users)%>class="active"<%end%> ><%= link_to "PEOPLE", users_path %></li>
 						<li><a href="#">ABOUT</a></li>
 					</ul>
 				</div>
