@@ -1,4 +1,8 @@
 Azurie::Application.routes.draw do
+  get "pages/index", :as => :root
+
+  get "pages/about", :as => :about
+
   resources :questions
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
@@ -7,5 +11,5 @@ Azurie::Application.routes.draw do
 
   resources :users
 
-  root :to => "users#index"
+  root :to => "pages#index"
 end
