@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'oa-openid', :require => 'omniauth/openid'
 gem "omniauth"
 gem 'rails3_acts_as_paranoid', :git => 'git://github.com/goncalossilva/rails3_acts_as_paranoid.git'
-
+gem 'sprockets'
 
 # Use unicorn as the web server
 gem 'unicorn'
