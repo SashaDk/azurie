@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  #before_filter :authenticate_user!  
+  before_filter :authenticate_user!  
 
   # GET /questions
   # GET /questions.xml
@@ -43,7 +43,8 @@ class QuestionsController < ApplicationController
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
-
+    @question.user = current_user 
+    
     respond_to do |format|
       if @question.save
         format.html { redirect_to(@question, :notice => 'Question was successfully created.') }

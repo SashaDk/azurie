@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <b>Answer:</b>
-  <%= @question.answer %>
+  <b>Description:</b>
+  <%= @question.description %>
 </p>
 
 <p>
@@ -16,13 +16,8 @@
 </p>
 
 <p>
-  <b>Question author:</b>
-  <%= @question.question_author_id %>
-</p>
-
-<p>
-  <b>Answer author:</b>
-  <%= @question.answer_author_id %>
+  <b>Author:</b>
+  <%= @question.user.display_name %>
 </p>
 
 

@@ -1,13 +1,16 @@
 class User < ActiveRecord::Base
   acts_as_paranoid
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :confirmable, :token_authenticatable
-
   attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :remember_me
 
-  has_many :services  
+  has_many :questions
+  
+  
+  def display_name
+    self.first_name ? self.first_name : self.email
+  end
 
   def self.find_for_facebook_omniauth(access_token, signed_in_resource=nil)
     data = access_token['user_info']
@@ -38,6 +41,4 @@ class User < ActiveRecord::Base
       user
     end
   end
-
-
 end
