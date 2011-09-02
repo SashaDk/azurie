@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
       user.skip_confirmation!
       user.save
       user.confirm!
-      user
     end
+    return user
   end
 
   def self.find_for_google_apps_open_id(access_token, signed_in_resource=nil)
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
       user.skip_confirmation!
       user.save
       user.confirm!
-      user
     end
+    return user
   end
 end
