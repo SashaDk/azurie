@@ -16,10 +16,16 @@
 </p>
 
 <p>
+  <b>Tags:</b>
+  <%= @question.tag_list %>
+</p>
+
+<p>
   <b>Author:</b>
   <%= @question.user.display_name %>
 </p>
 
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Answers', question_answers_path(@question) %> |
 <%= link_to 'Back', questions_path %>

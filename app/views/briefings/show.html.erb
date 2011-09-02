@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @briefing.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @briefing.description %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @briefing.category %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @briefing.source %>
+</p>
+
+<p>
+  <b>Is quote:</b>
+  <%= @briefing.is_quote %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @briefing.user.display_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_briefing_path(@briefing) %> |
+<%= link_to 'Back', briefings_path %>

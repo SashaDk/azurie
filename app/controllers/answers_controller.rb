@@ -1,8 +1,11 @@
 class AnswersController < ApplicationController
-  # GET /answers
-  # GET /answers.xml
+  before_filter :authenticate_user!
+  before_filter :find_question
+
+  # GET /questions/1/answers
+  # GET /questions/1/answers.xml
   def index
-    @answers = Answer.all
+    @answers = @question.answers.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +13,10 @@ class AnswersController < ApplicationController
     end
   end
 
-  # GET /answers/1
-  # GET /answers/1.xml
+  # GET /questions/1/answers/1
+  # GET /questions/1/answers/1.xml
   def show
-    @answer = Answer.find(params[:id])
+    @answer = @question.answers.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,10 +24,10 @@ class AnswersController < ApplicationController
     end
   end
 
-  # GET /answers/new
-  # GET /answers/new.xml
+  # GET /questions/1/answers/new
+  # GET /questions/1/answers/new.xml
   def new
-    @answer = Answer.new
+    @answer = @question.answers.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,19 +35,20 @@ class AnswersController < ApplicationController
     end
   end
 
-  # GET /answers/1/edit
+  # GET /questions/1/answers/1/edit
   def edit
-    @answer = Answer.find(params[:id])
+    @answer = @question.answers.find(params[:id])
   end
 
-  # POST /answers
-  # POST /answers.xml
+  # POST /questions/1/answers
+  # POST /questions/1/answers.xml
   def create
-    @answer = Answer.new(params[:answer])
+    @answer = @question.answers.build(params[:answer])
+    @answer.user = current_user
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to(@answer, :notice => 'Answer was successfully created.') }
+        format.html { redirect_to([@question,@answer], :notice => 'Answer was successfully created.') }
         format.xml  { render :xml => @answer, :status => :created, :location => @answer }
       else
         format.html { render :action => "new" }
@@ -53,14 +57,14 @@ class AnswersController < ApplicationController
     end
   end
 
-  # PUT /answers/1
-  # PUT /answers/1.xml
+  # PUT /questions/1/answers/1
+  # PUT /questions/1/answers/1.xml
   def update
-    @answer = Answer.find(params[:id])
+    @answer = @question.answers.find(params[:id])
 
     respond_to do |format|
       if @answer.update_attributes(params[:answer])
-        format.html { redirect_to(@answer, :notice => 'Answer was successfully updated.') }
+        format.html { redirect_to([@question,@answer], :notice => 'Answer was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -69,15 +73,21 @@ class AnswersController < ApplicationController
     end
   end
 
-  # DELETE /answers/1
-  # DELETE /answers/1.xml
+  # DELETE /questions/1/answers/1
+  # DELETE /questions/1/answers/1.xml
   def destroy
-    @answer = Answer.find(params[:id])
+    @answer = @question.answers.find(params[:id])
     @answer.destroy
 
     respond_to do |format|
-      format.html { redirect_to(answers_url) }
+      format.html { redirect_to(question_answers_url(@question)) }
       format.xml  { head :ok }
     end
+  end
+
+  protected
+
+  def find_question
+    @question = Question.find params[:question_id]
   end
 end

@@ -29,8 +29,8 @@
 					</div>
 <!-- nav -->
 					<ul id="nav">
-						<li  <% if current_page?('/') %> class="active" <% end %> >
-						  <a href="/">BRIEFINGS</a>
+						<li  <% if params[:controller] == 'briefings' %> class="active" <% end %> >
+						  <%= link_to "BRIEFINGS", briefings_path %>
 						</li>
 						<li <% if params[:controller] == 'questions' %> class="active" <% end %> >
 						  <%= link_to "ALL Q&amp;As".html_safe, questions_path %>
