@@ -11,4 +11,8 @@ class Question < ActiveRecord::Base
   attr_accessible :title, :description, :category, :tag_list
   validates :title, :presence => true
   validates :description, :presence => true
+  
+  def has_answers?
+    self.answers.exists?
+  end
 end
