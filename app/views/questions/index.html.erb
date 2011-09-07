@@ -7,7 +7,7 @@
 				<li><a href="#"><%= question.category.capitalize %></a></li>
 			</ul>
 		</div>
-		<h3><%= question.title %></h3>
+		<h3><%= link_to question.title, question %></h3>
 		<% if question.has_answers? %>
 		<% answer = question.answers.first %>
 		<div class="line">

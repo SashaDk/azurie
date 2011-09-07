@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :authenticate_user!  
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   # GET /questions
   # GET /questions.xml
