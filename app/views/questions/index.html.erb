@@ -1,39 +1,7 @@
 <h1>Listing questions</h1>
 <div class="sections">
   <% @questions.each do |question| %>
-	<div class="section">
-		<div class="heading">
-			<ul>
-				<li><a href="#"><%= question.category.capitalize %></a></li>
-			</ul>
-		</div>
-		<h3><%= link_to question.title, question %></h3>
-		<% if question.has_answers? %>
-		<% answer = question.answers.first %>
-		<div class="line">
-  		<a class="open" href="#"><%= answer.user.display_name.upcase %>,</a>
-			<ul>
-				<li><a href="#">6 comments</a></li>
-				<li>posted <%= distance_of_time_in_words_to_now(answer.created_at) %> ago</li>
-			</ul>
-		</div>
-		<p><%= answer.text %> <%= link_to "(learn more)", [question,answer] %></a></p>		
-		<div class="section-holder">
-			<ul>
-			  <% if question.answers.count > 1 %>
-				<li><a href="<%= question_answers_path(question) %>"><span><%= question.answers.count %></span></a>MORE ANSWERS</li>
-				<% end %>
-				<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></li>
-			</ul>
-		</div>
-		<% else %>
-		<div class="section-holder">
-			<ul>
-				<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
-			</ul>
-		</div>
-		<% end %>
-	</div>
+	  <%= render question %>
 	<% end %>
 </div>
 

@@ -104,39 +104,15 @@
 		</ul>
 		<strong class="decor"><span>WHAT’S  POPULAR  NOW</span></strong>
 		<div class="links">
-			<a href="#">What is the secret to Apple's marketing genius?</a>
-			<ul>
-				<li><a href="#">3 comments </a></li>
-				<li><a href="#">25 appreciated</a></li>
-			</ul>
-			<a href="#">What are the key items of a great investor presentation?</a>
-			<ul>
-				<li><a href="#">3 comments </a></li>
-				<li><a href="#">25 appreciated</a></li>
-			</ul>
-			<a href="#">What are the best ways to know early on whether an idea has potential to become a meaningful, currency-generating project?</a>
-			<ul>
-				<li><a href="#">3 comments </a></li>
-				<li><a href="#">25 appreciated</a></li>
-			</ul>
+			<% @popular_questions.each do |question| %>
+	      <%= render :partial => 'questions/question_small', :object => question %>
+	    <% end %>
 		</div>
 		<strong class="decor"><span> MOST  RECENT</span></strong>
 		<div class="links">
-			<a href="#">What is the secret to Apple's marketing genius?</a>
-			<ul>
-				<li><a href="#">3 comments </a></li>
-				<li><a href="#">25 appreciated</a></li>
-			</ul>
-			<a href="#">What are the key items of a great investor presentation?</a>
-			<ul>
-				<li><a href="#">3 comments </a></li>
-				<li><a href="#">25 appreciated</a></li>
-			</ul>
-			<a href="#">What are the best ways to know early on whether an idea has potential to become a meaningful, currency-generating project?</a>
-			<ul>
-				<li><a href="#">3 comments </a></li>
-				<li><a href="#">25 appreciated</a></li>
-			</ul>
+			<% @recent_questions.each do |question| %>
+	      <%= render :partial => 'questions/question_small', :object => question %>
+	    <% end %>
 		</div>
 	</div>
 <% end %>
@@ -155,167 +131,9 @@
 <strong class="decor"><span>DAILY TOP Q&amp;As</span></strong>
 <!-- sections -->
 <div class="sections">
-	<div class="section">
-		<div class="heading">
-			<ul>
-				<li><a href="#">Business</a></li>
-				<li><a href="#">Negotiations</a></li>
-			</ul>
-		</div>
-		<h3>Why should you declare war on friction?</h3>
-		<div class="line">
-			<div class="popup-hover">
-				<a class="open" href="#">KEITH HARING,</a>
-				<div class="popup">
-					<div class="flexbox">
-						<div class="flexbox-holder">
-							<div class="flexbox-area">
-								<img src="images/img-5.jpg" height="70" width="82" alt="" />
-								<div class="flexbox-box">
-									<div class="flexbox-block">
-										<a href="#">Follow</a>
-										<strong>ANTTHONY VAN GEBEUREN</strong>
-									</div>
-									<div class="flexbox-line">
-										<span><a href="#">Profile</a> <br /><a href="#">Interview</a></span>
-										<address>Tommorrow Capital Partners <br />Amsterdam, The Netheralnds</address>
-									</div>
-								</div>
-							</div>
-							<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<ul>
-				<li><a href="#"><span>Investment Professional, (New York, USA)</span></a></li>
-				<li><a href="#">6 comments</a></li>
-				<li><a href="#">posted one week ago</a></li>
-			</ul>
-		</div>
-		<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. <a href="#">(learn more)</a></p>
-		<div class="section-holder">
-			<ul class="add-naving">
-				<li><em>15</em><img src="images/ico-ok.jpg" height="14" width="11" alt="ico" /></li>
-				<li><a href="#"> APPRECIATE  THIS</a></li>
-			</ul>
-			<ul>
-				<li><a href="#"><span>8</span></a>MORE ANSWERS</li>
-				<li><a href="#">ADD YOUR ANSWER</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="section">
-		<div class="heading">
-			<ul>
-				<li><a href="#">Design</a></li>
-				<li><a href="#">Negotiations</a></li>
-			</ul>
-		</div>
-		<h3>You get ideas when you ask yourself simple questions. The most important of the questions is just, What if...?</h3>
-		<div class="line">
-			<div class="popup-hover">
-				<a class="open" href="#">KEITH HARING,</a>
-				<div class="popup">
-					<div class="flexbox">
-						<div class="flexbox-holder">
-							<div class="flexbox-area">
-								<img src="images/img-5.jpg" height="70" width="82" alt="" />
-								<div class="flexbox-box">
-									<div class="flexbox-block">
-										<a href="#">Follow</a>
-										<strong>ANTTHONY VAN GEBEUREN</strong>
-									</div>
-									<div class="flexbox-line">
-										<span><a href="#">Profile</a> <br /><a href="#">Interview</a></span>
-										<address>Tommorrow Capital Partners <br />Amsterdam, The Netheralnds</address>
-									</div>
-								</div>
-							</div>
-							<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<ul>
-				<li><span><a href="#">Investment Professional, (New York, USA)</a></span></li>
-				<li>
-					<a href="#">
-						<span>source</span>
-						<img src="images/ico-1.jpg" height="10" width="10" alt="ico" />
-					</a>
-				</li>
-				<li><a href="#">6 comments</a></li>
-				<li><a href="#">posted one week ago</a></li>
-			</ul>
-		</div>
-		<div class="decoration">
-			<div class="decoration-holder">
-				<div class="decoration-frame">
-					<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market...</p>
-				</div>
-			</div>
-		</div>
-		<div class="section-holder">
-			<ul class="add-naving">
-				<li><em>15</em> <img src="images/ico-ok.jpg" height="14" width="11" alt="ico" /></li>
-				<li><a href="#">THANK YOU !</a></li>
-			</ul>
-			<ul>
-				<li><a href="#"><span>8</span></a>MORE ANSWERS</li>
-				<li><a href="#">ADD YOUR ANSWER</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="section">
-		<div class="heading">
-			<ul>
-				<li><a href="#">Design</a></li>
-				<li><a href="#">Branding</a></li>
-			</ul>
-		</div>
-		<div class="decoration">
-			<div class="decoration-holder">
-				<div class="decoration-frame">
-					<strong>If you think good design is expensive, you should look at the costs of bad design</strong>
-				</div>
-			</div>
-		</div>
-		<div class="section-holder">
-			<ul class="add-naving">
-				<li><em>15</em> <img src="images/ico-ok.jpg" height="14" width="11" alt="ico" /></li>
-				<li><a href="#">APPRECIATE  THIS</a></li>
-			</ul>
-			<div class="popup-hover">
-				<a class="open" href="#">KEITH HARING,</a>
-				<div class="popup">
-					<div class="flexbox">
-						<div class="flexbox-holder">
-							<div class="flexbox-area">
-								<img src="images/img-5.jpg" height="70" width="82" alt="" />
-								<div class="flexbox-box">
-									<div class="flexbox-block">
-										<a href="#">Follow</a>
-										<strong>ANTTHONY VAN GEBEUREN</strong>
-									</div>
-									<div class="flexbox-line">
-										<span><a href="#">Profile</a> <br /><a href="#">Interview</a></span>
-										<address>Tommorrow Capital Partners <br />Amsterdam, The Netheralnds</address>
-									</div>
-								</div>
-							</div>
-							<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="line">
-				<ul>
-					<li><a href="#"><span>Investment Professional, (New York, USA)</span></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	<% @top_questions.each do |question| %>
+	  <%= render question %>
+	<% end %>
 </div>
 <div class="section-area">
 	<a href="#" class="load">LOAD MORE Q&amp;As</a>

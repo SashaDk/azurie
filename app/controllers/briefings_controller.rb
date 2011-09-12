@@ -1,5 +1,5 @@
 class BriefingsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   # GET /briefings
   # GET /briefings.xml

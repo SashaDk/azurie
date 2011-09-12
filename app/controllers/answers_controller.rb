@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show, :index]
   before_filter :find_question
 
   # GET /questions/1/answers

@@ -15,4 +15,16 @@ class Question < ActiveRecord::Base
   def has_answers?
     self.answers.exists?
   end
+  
+  def self.top
+    Question.all
+  end
+  
+  def self.popular
+    Question.limit(5)
+  end
+  
+  def self.recent
+    Question.limit(5)
+  end
 end
