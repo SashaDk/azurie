@@ -1,10 +1,34 @@
-<h1>Listing questions</h1>
+<% content_for :sidebar do %>
+  <div id="sidebar">
+		<%= render 'shared/nav_sidebar' %>
+	</div>
+<% end %>
+
+<h2>ALL QUESTIONS</h2>
+<form class="search" action="#">
+	<fieldset>
+		<div class="row">
+			<span>
+				<input type="text" value="SEARCH QUERY HERE" />
+				<input type="submit" value="" class="btn-search" />
+			</span>
+		</div>
+	</fieldset>
+</form>
+<ul class="nav-add">
+	<li><span><%= Question.count %></span> QUESTIONS</li>
+	<li><span><%= Answer.count %></span> ANSWERS</li>
+	<li><a href="#"><span>456</span> FOLLOWING</a></li>
+	<li class="bul-slash"><a href="#">RATING</a></li>
+	<li><a href="#"><span>POPULARITY</span></a></li>
+	<li><a href="#">DATE</a></li>
+</ul>
 <div class="sections">
   <% @questions.each do |question| %>
 	  <%= render question %>
 	<% end %>
 </div>
-
-<br />
-
-<%= link_to 'New Question', new_question_path %>
+<div class="section-area">
+	<h4>CAN'T FIND AN ANSWER? <%= link_to 'POST YOURR QUESTION HERE', new_question_path %></h4>
+	<a href="#" class="load">LOAD MORE Q&amp;As</a>
+</div>

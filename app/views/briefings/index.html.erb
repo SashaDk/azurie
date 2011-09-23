@@ -1,33 +1,36 @@
-<h1>Listing briefings</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Category</th>
-    <th>Source</th>
-    <th>Is quote</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @briefings.each do |briefing| %>
-  <tr>
-    <td><%= briefing.title %></td>
-    <td><%= briefing.description %></td>
-    <td><%= briefing.category %></td>
-    <td><%= briefing.source %></td>
-    <td><%= briefing.is_quote %></td>
-    <td><%= briefing.user.display_name %></td>
-    <td><%= link_to 'Show', briefing %></td>
-    <td><%= link_to 'Edit', edit_briefing_path(briefing) %></td>
-    <td><%= link_to 'Destroy', briefing, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :sidebar do %>
+  <div id="sidebar">
+		<%= render 'shared/nav_sidebar' %>
+	</div>
 <% end %>
-</table>
 
-<br />
+<h2>FEATURED BRIEFINGS</h2>
+<form class="search" action="#">
+	<fieldset>
+		<div class="row">
+			<span>
+				<input type="text" value="SEARCH QUERY HERE" />
+				<input type="submit" value="" class="btn-search" />
+			</span>
 
-<%= link_to 'New Briefing', new_briefing_path %>
+		</div>
+	</fieldset>
+</form>
+<ul class="nav-add">
+	<li><a href="#"><span><%= @briefings.count %></span> FEATURED BRIEFINGS</a></li>
+	<li><a href="#"><span>?</span> COMMENTS</a></li>
+
+	<li class="bul-slash"><a href="#">RATING</a></li>
+	<li><a href="#"><span>POPULARITY</span></a></li>
+	<li><a href="#">DATE</a></li>
+</ul>
+<!-- sections -->
+<div class="sections">
+  <% @briefings.each do |briefing| %>
+	  <%= render briefing %>
+	<% end %>
+</div>
+<div class="section-area">
+	<h4>ARE YOU A PASSIONATE VENTURE REPORTER?  <a href="#">PLEASE CONTACT US ></a></h4>
+	<a href="#" class="load">LOAD MORE Q&amp;As</a>
+</div>
