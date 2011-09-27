@@ -18,7 +18,7 @@ gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano'
-
+gem 'heroku'
 
 group :test do
   gem 'rspec'
