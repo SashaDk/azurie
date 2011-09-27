@@ -3,8 +3,6 @@ class UserMailer < ActionMailer::Base
   
   def fakereg_email(params)
     @params = params
-    mail(:to => APP_CONFIG[:default_to_email], :subject => "Yet Another Fake Reg From Azurie") do |format|
-      format.html
-    end
+    mail(:to => APP_CONFIG[:default_to_email], :subject => "Yet Another Fake Reg From Azurie")
   end
 end
