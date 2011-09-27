@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_omniauth(access_token, signed_in_resource=nil)
     data = access_token['user_info']
     user = User.find_by_email(data['email'])
+=begin
     unless user # Create a user with a stub password. 
       user = User.new(:email => data['email'], :first_name => data['first_name'],
         :last_name => data['last_name'], :password => Devise.friendly_token[0,20])
@@ -23,12 +24,14 @@ class User < ActiveRecord::Base
       user.save
       user.confirm!
     end
+=end
     return user
   end
 
   def self.find_for_google_apps_open_id(access_token, signed_in_resource=nil)
     data = access_token['user_info']
     user = User.find_by_email(data['email'])
+=begin
     unless user # Create a user with a stub password. 
       user = User.new(:email => data['email'], :first_name => data['first_name'], 
         :last_name => data['last_name'], :password => Devise.friendly_token[0,20]) 
@@ -36,6 +39,7 @@ class User < ActiveRecord::Base
       user.save
       user.confirm!
     end
+=end
     return user
   end
 end

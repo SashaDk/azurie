@@ -13,7 +13,11 @@ Azurie::Application.routes.draw do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
 
-  resources :users
+  resources :users do
+    collection do
+      post :fakereg
+    end
+  end
 
   root :to => "pages#index"
 end
