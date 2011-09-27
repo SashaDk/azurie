@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :fakereg]
   
   # GET /users
   # GET /users.xml
@@ -10,6 +10,11 @@ class UsersController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @users }
     end
+  end
+
+  # POST /users/fakereg
+  def fakereg
+    UserMailer.fakereg_email(params).deliver
   end
 
   # GET /users/1

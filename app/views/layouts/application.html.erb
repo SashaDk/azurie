@@ -29,7 +29,7 @@
 					</div>
 <!-- nav -->
 					<ul id="nav">
-						<li  <% if params[:controller] == 'briefings' %> class="active" <% end %> >
+						<li  <% if params[:controller] == 'briefings' || current_page?('/') %> class="active" <% end %> >
 						  <%= link_to "BRIEFINGS", briefings_path %>
 						</li>
 						<li <% if params[:controller] == 'questions' %> class="active" <% end %> >

@@ -1,9 +1,4 @@
 class Question < ActiveRecord::Base
-  CATEGORIES = {
-    :business => "Business & Cycles",
-    :design => "Design & Creativity",
-    :trends => "Trends & Progress"
-  }
   acts_as_paranoid
   acts_as_taggable
   belongs_to :user

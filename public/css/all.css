@@ -202,7 +202,7 @@ fieldset{
 	text-indent:-9999px;
 	overflow:hidden;
 }
-.textbox{
+.textbox, .gallery .textbox p{
 	padding:1px 0 0;
 	font-size:12px;
 	line-height:18px;
@@ -344,7 +344,7 @@ fieldset{
 	text-decoration:none;
 	color:#020308;
 }
-.nav-add a span{color:#cc1885;}
+.nav-add span{color:#cc1885;}
 .nav-add a:hover{text-decoration:underline;}
 .naving{
 	margin:0 0 22px -12px;
@@ -449,7 +449,7 @@ fieldset{
 	height:1%;
 	overflow:hidden;
 }
-.heading2 ul{float:left;}
+.heading2 ul, .heading ul{float:left;}
 .heading ul li, 
 .heading2 ul li{
 	float:left;
@@ -464,14 +464,14 @@ fieldset{
 	color:#cb1784;
 }
 .heading ul a:hover, 
-.heading2 ul a:hover{text-decoration:underline;}
-.heading2 ul.nav-list3{margin:0;}
-.heading2 ul.nav-list3 li{
+.heading2 ul a:hover, .heading ul.nav-list3 a:hover{text-decoration:underline;}
+.heading2 ul.nav-list3, .heading ul.nav-list3{margin:0;}
+.heading2 ul.nav-list3 li, .heading ul.nav-list3 li{
 	font:11px Arial, Helvetica, sans-serif;
 	background:url(../images/separator-3.jpg) no-repeat 0 3px;
 }
 .heading2 ul.nav-list3 li:first-child{background:none;}
-.heading2 ul.nav-list3 a{color:#787879;}
+.heading2 ul.nav-list3 a, .heading ul.nav-list3 a{color:#787879;}
 .social{
 	float:right;
 	margin:5px 0 5px 15px;
@@ -564,6 +564,9 @@ fieldset{
 	width:457px;
 	min-height:180px;
 	overflow:hidden;
+}
+.popup-hover a:hover{
+  text-decoration:underline;
 }
 .popup-hover{position:relative;}
 .popup-hover .popup{
@@ -1186,6 +1189,9 @@ a.notifications .notifications-counter {
 	color:#989898;
 	width:auto;
 }
+.links ul span{
+    color:#989898;
+}
 #footer{
 	height:1%;
 	padding:32px 0 0 74px;
@@ -1568,7 +1574,7 @@ a.notifications .notifications-counter {
 	height:1%;
 	overflow:hidden;
 }
-.section2-holder span{
+.section2-holder span, .section6-holder span{
 	display:block;
 	margin:0 0 -4px;
 	font-size:30px;
@@ -1762,7 +1768,6 @@ a.notifications .notifications-counter {
 	margin:0 0 7px;
 	font-size:26px;
 	line-height:28px;
-	color:#ededed;
 	font-family:'AlternateGothic2BTRegular';
 	height:55px;
 	min-height:55px !important;
