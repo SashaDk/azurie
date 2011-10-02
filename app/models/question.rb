@@ -1,6 +1,7 @@
 class Question < ActiveRecord::Base
-  acts_as_paranoid
+  has_paper_trail
   acts_as_taggable
+  state_machine :state, :initial => :new
   belongs_to :user
   has_many :answers
   attr_accessible :title, :description, :category, :tag_list

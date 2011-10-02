@@ -4,7 +4,7 @@ class Briefing < ActiveRecord::Base
     :design => "Design & Creativity",
     :trends => "Trends & Progress"
   }
-  acts_as_paranoid
+  has_paper_trail
   belongs_to :user
   attr_accessible :title, :description, :category, :source, :is_quote
   validates :title, :presence => true

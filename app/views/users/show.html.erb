@@ -4,6 +4,7 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
+<p><%= image_tag @user.avatar.url %></p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

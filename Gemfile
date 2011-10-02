@@ -7,12 +7,15 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3'
 gem 'devise'
+gem 'devise_invitable'
 gem 'jquery-rails'
 gem 'oa-openid', :require => 'omniauth/openid'
 gem 'omniauth'
-gem 'rails3_acts_as_paranoid', :git => 'git://github.com/goncalossilva/rails3_acts_as_paranoid.git'
+gem 'paper_trail'
+gem 'paperclip'
 gem 'acts-as-taggable-on'
 gem 'cancan'
+gem 'state_machine'
 
 # Use unicorn as the web server
 #gem 'unicorn'
@@ -27,6 +30,7 @@ group :test do
 end
 
 group :development do
+  gem 'wirble'
 #  gem 'ruby-debug'
 #  gem 'ruby-debug19', :require => 'ruby-debug'  
 end
