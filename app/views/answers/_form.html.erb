@@ -1,3 +1,6 @@
+<ul class="naving">
+<li><a href="#">ADD ANSWER</a></li>
+							</ul>
 <%= form_for([@question,@answer]) do |f| %>
   <% if @answer.errors.any? %>
     <div id="error_explanation">
@@ -10,12 +13,71 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+							<div class="section2">
+								<div class="section2-holder">
+									<span>Q</span>
+									<div class="section2-frame">
+										<strong><%= @question.title %></strong>
+										<p><%= @question.description %></p>
+									</div>
+								</div>
+							</div>
+							<div class="section3">
+								<div class="section3-content">
+									<div class="section3-holder">
+										<div class="panel">
+											<!--div class="panel-holder">
+												<ul>
+													<li><a href="#"><img src="images/ico-26.jpg" height="18" width="19" alt="" /></a></li>
+												</ul>
+												<ul>
+													<li><a href="#"><img src="images/ico-25.jpg" height="18" width="19" alt="" /></a></li>
+													<li><a href="#"><img src="images/ico-24.jpg" height="18" width="19" alt="" /></a></li>
+													<li><a href="#"><img src="images/ico-23.jpg" height="18" width="19" alt="" /></a></li>
+												</ul>
+												<ul>
+													<li><a href="#"><img src="images/ico-22.jpg" height="18" width="19" alt="" /></a></li>
+													<li><a href="#"><img src="images/ico-21.jpg" height="18" width="19" alt="" /></a></li>
+													<li><a href="#"><img src="images/ico-20.jpg" height="18" width="19" alt="" /></a></li>
+												</ul>
+											</div-->
+											<strong>ANSWER IN BRIEF - THE ESSENCE</strong>
+										</div>
+											<fieldset>
+												<%= f.text_area :text %>
+											</fieldset>
+									</div>
+									<span>A</span>
+								</div>
+								<div class="section3-holder">
+									<div class="panel">
+										<!--div class="panel-holder">
+											<ul>
+												<li><a href="#"><img src="images/ico-26.jpg" height="18" width="19" alt="" /></a></li>
+											</ul>
+											<ul>
+												<li><a href="#"><img src="images/ico-25.jpg" height="18" width="19" alt="" /></a></li>
+												<li><a href="#"><img src="images/ico-24.jpg" height="18" width="19" alt="" /></a></li>
+												<li><a href="#"><img src="images/ico-23.jpg" height="18" width="19" alt="" /></a></li>
+											</ul>
+											<ul>
+												<li><a href="#"><img src="images/ico-22.jpg" height="18" width="19" alt="" /></a></li>
+												<li><a href="#"><img src="images/ico-21.jpg" height="18" width="19" alt="" /></a></li>
+												<li><a href="#"><img src="images/ico-20.jpg" height="18" width="19" alt="" /></a></li>
+											</ul>
+										</div-->
+										<strong>ELLABORATE IN MORE DETAIL (OPTIONAL)</strong>
+									</div>
+										<fieldset>
+											<textarea class="size" cols="5" rows="5"></textarea>
+										</fieldset>
+								</div>
+							</div>
+							<div class="section4">
+									<fieldset>
+										<div class="row">
+											<%= f.submit %>
+										</div>
+									</fieldset>
+							</div>
+              <% end %>
