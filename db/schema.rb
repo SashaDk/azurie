@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20111002195304) do
     t.text     "description"
     t.integer  "user_id"
     t.datetime "deleted_at"
-    t.string   "state"
+    t.string   "state",       :default => "new"
   end
 
   create_table "taggings", :force => true do |t|
