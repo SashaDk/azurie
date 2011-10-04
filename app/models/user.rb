@@ -1,16 +1,33 @@
 class User < ActiveRecord::Base
-  acts_as_paranoid
-  devise :database_authenticatable, :registerable,
+  ROLES = [ :guest, :expert, :admin ]
+
+  has_paper_trail
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  devise :invitable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
-    :omniauthable, :confirmable, :token_authenticatable
+    :omniauthable, :confirmable, :token_authenticatable, :invitable
   attr_accessible :email, :first_name, :last_name, 
-    :password, :password_confirmation, :remember_me
+    :occupation, :location, :company, :contact_email,
+    :facebook, :twitter, :google_plus, :linkedin,
+    :password, :password_confirmation, :remember_me, :avatar
   has_many :questions
   has_many :answers
   has_many :briefings
   
   def display_name
     self.first_name ? "#{self.first_name} #{self.last_name}" : self.email
+  end
+  
+  def admin?
+    self.role == 'admin'
+  end
+
+  def guest?
+    self.role == 'guest'
+  end
+  
+  def expert?
+    self.role == 'expert'
   end
 
   def self.find_for_facebook_omniauth(access_token, signed_in_resource=nil)

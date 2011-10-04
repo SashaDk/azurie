@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110916200657) do
+ActiveRecord::Schema.define(:version => 20111002195304) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110916200657) do
     t.text     "description"
     t.integer  "user_id"
     t.datetime "deleted_at"
+    t.string   "state"
   end
 
   create_table "taggings", :force => true do |t|
@@ -63,8 +64,8 @@ ActiveRecord::Schema.define(:version => 20110916200657) do
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                               :default => "",      :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => ""
     t.string   "reset_password_token"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",                       :default => 0
@@ -79,9 +80,40 @@ ActiveRecord::Schema.define(:version => 20110916200657) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role",                                :default => "guest"
+    t.string   "invitation_token",     :limit => 60
+    t.datetime "invitation_sent_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "occupation"
+    t.string   "company"
+    t.string   "location"
+    t.string   "contact_email"
+    t.string   "google_plus"
+    t.string   "facebook"
+    t.string   "linkedin"
+    t.string   "twitter"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
+  add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "versions", :force => true do |t|
+    t.string   "item_type",  :null => false
+    t.integer  "item_id",    :null => false
+    t.string   "event",      :null => false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
 
 end
