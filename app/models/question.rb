@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
   state_machine :state, :initial => :new
   belongs_to :user
   has_many :answers
+  has_many :assignments
   attr_accessible :title, :description, :category, :tag_list
   validates :title, :presence => true
   validates :description, :presence => true

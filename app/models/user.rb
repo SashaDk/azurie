@@ -12,10 +12,21 @@ class User < ActiveRecord::Base
     :password, :password_confirmation, :remember_me, :avatar
   has_many :questions
   has_many :answers
+  has_many :assignments
   has_many :briefings
   
   def display_name
     self.first_name ? "#{self.first_name} #{self.last_name}" : self.email
+  end
+  
+  def make_admin!
+    self.role = :admin
+    self.save
+  end
+  
+  def make_expert!
+    self.role = :expert
+    self.save
   end
   
   def admin?
@@ -58,5 +69,9 @@ class User < ActiveRecord::Base
     end
 =end
     return user
+  end
+  
+  def self.experts
+    User.where(:role => :expert)
   end
 end

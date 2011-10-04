@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @assignment.user.display_name %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @assignment.question.title %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_assignment_path(@question, @assignment) %> |
+<%= link_to 'Back', question_assignments_path(@question) %>

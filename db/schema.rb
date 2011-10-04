@@ -10,13 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111002195304) do
+ActiveRecord::Schema.define(:version => 20111004180943) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
     t.integer  "user_id"
     t.integer  "question_id"
     t.datetime "deleted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "fulltext"
+  end
+
+  create_table "assigments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
