@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   # POST /users/fakereg
   def fakereg
-    UserMailer.fakereg_email(params).deliver
+    UserMailer.fakereg(params).deliver
   end
 
   # GET /users/1
@@ -26,6 +26,22 @@ class UsersController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @user }
     end
+  end
+  
+  # GET /users/1/make_expert
+  def make_expert
+    @user = User.find(params[:id])
+    @user.make_expert!
+    
+    redirect_to users_path, :notice => 'User was successfully promoted to experts.'
+  end
+  
+  # GET /users/1/make_admin
+  def make_admin
+    @user = User.find(params[:id])
+    @user.make_admin!
+    
+    redirect_to users_path, :notice => 'User was successfully promoted to admins.'
   end
   
   # GET /users/1/edit

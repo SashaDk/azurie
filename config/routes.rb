@@ -7,6 +7,7 @@ Azurie::Application.routes.draw do
 
   resources :questions do
     resources :answers
+    resources :assignments
   end
 
   devise_for :users, :controllers => { :invitations => 'users/invitations', :omniauth_callbacks => "users/omniauth_callbacks" } do
@@ -14,6 +15,10 @@ Azurie::Application.routes.draw do
   end
 
   resources :users do
+    member do
+      get :make_expert
+      get :make_admin
+    end
     collection do
       post :fakereg
     end
