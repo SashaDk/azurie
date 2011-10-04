@@ -40,9 +40,9 @@
 						<li <% if params[:controller] == 'questions' %> class="active" <% end %> >
 						  <%= link_to "ALL Q&amp;As".html_safe, questions_path %>
 						</li>
-						<li <% if params[:controller] =~ /(^devise\/*)|(^users$)/ %> class="active" <% end %> >
+						<!--li <% if params[:controller] =~ /(^devise\/*)|(^users$)/ %> class="active" <% end %> >
 						  <%= link_to "PEOPLE", users_path %>
-						</li>
+						</li-->
 						<li <% if current_page?(about_path) %> class="active" <% end %> >
 						  <%= link_to "ABOUT", about_path %>
 					  </li>
