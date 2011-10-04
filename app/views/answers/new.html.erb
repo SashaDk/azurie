@@ -1,42 +1,11 @@
 <h1>New answer</h1>
 
 <%= render 'form' %>
-
+<% content_for :sidebar do %>
 						<div id="sidebar">
-							<strong class="decor"><span>WHAT MAKES A GOOD QUESTION ?</span></strong>
-							<div class="textbox">
-								<p>Don't see any answers to the question you have? Go ahead and pose your query. The goal for each question page is that it becomes the best source for anyone looking for the answer to that question.</p>
-								<strong>What makes a good question?</strong>
-								<ul>
-									<li>
-										<span>1.</span>
-										<p>Good questions always ask "why?" and request narrative answer. A good question on Azurie seeks to understand the underlying rationale for answers, not just the answer itself.</p>
-									</li>
-									<li>
-										<span>2.</span>
-										<p>Good questions are sufficiently open-ended. For example, "Are there any iPhone calendar apps?" should be phrased "What are the calendar apps for the iPhone?"</p>
-									</li>
-									<li>
-										<span>3.</span>
-										<p>Avoid using the second person (questions generally should not include the word "you”).  Those words suggest that the question is soliciting the opinion of a single user. Example: "Do you think that the Winter Olympics should include curling?" should be written as "Should the Winter Olympics include curling?" because the latter form usually ends up generating better, more useful, answers.</p>
-									</li>
-									<li>
-										<span>4.</span>
-										<p>Give your question enough context so that anyone can understand what you’re asking, regardless of when or where they answer your question.</p>
-									</li>
-									<li>
-										<span>5.</span>
-										<p>Polling (yes-or-no) or survey types of questions that seek a one word answer are not allowed on Azurie</p>
-									</li>
-									<li>
-										<span>6.</span>
-										<p>Use proper spelling, capitalization, and grammar.</p>
-									</li>
-								</ul>
-							</div>
 							<strong class="decor"><span>WHAT MAKES A GOOD ANSWER ?</span></strong>
 							<div class="textbox">
-								<p>Entrepreneurs have lots of diffirent questions. They probably have questions about the subjects that you know best. That’s an opportunity for you and your organization. The advantage of Azurie is the quality of the experts answering questions and the answers being provided.</p>
+								<p>Entrepreneurs have lots of diffirent questions. They probably have questions about the subjects that you know best. Thatâ€™s an opportunity for you and your organization. The advantage of Azurie is the quality of the experts answering questions and the answers being provided.</p>
 								<strong>What makes a good answer?</strong>
 								<ul>
 									<li>
@@ -53,9 +22,10 @@
 									</li>
 									<li>
 										<span>4.</span>
-										<p>Be a connector. Sometimes you don’t have the answer, but you know just the person who does. Rather than making something up, make the referral. Provide a link to reach the other expert.</p>
+										<p>Be a connector. Sometimes you donâ€™t have the answer, but you know just the person who does. Rather than making something up, make the referral. Provide a link to reach the other expert.</p>
 									</li>
 								</ul>
-								<p>The bottom line is that being helpful is a great way to gain trust. And when people trust you, they’re more comfortable doing business with you.</p>
+								<p>The bottom line is that being helpful is a great way to gain trust. And when people trust you, theyâ€™re more comfortable doing business with you.</p>
 							</div>
 						</div>
+<% end %>
