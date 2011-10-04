@@ -1,0 +1,30 @@
+						<div id="sidebar">
+              <div id="profile-block">
+                  <div class="profile-picture">
+                      <img src="images/profile-image.jpg" alt="GEORGE LOIS" />
+                  </div>
+                  <div class="profile-socmedia">
+                      <a href="#"><img src="images/icon-mail.png" alt="Send e-mail" /></a>
+                      <a href="#"><img src="images/icon-google-plus.png" alt="Google plus" /></a>
+                      <a href="#"><img src="images/icon-facebook.png" alt="Facebook" /></a>
+                      <a href="#"><img src="images/icon-twitter.png" alt="Twitter" /></a>
+                      <a href="#"><img src="images/icon-linkedin.png" alt="LinkedIn" /></a>
+                  </div>
+                  <div class="profile-bio">
+                      <div class="bio-section">
+                          <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+                          <h5><%= @user.occupation %></h5>
+                      </div>
+                      <div class="bio-section">
+                          <p><%= @user.company %></p>
+                          <p><%= @user.location %></p>
+                      </div>
+                      <div class="bio-section">
+                          <p>Following topics: <a href="#">Venture capital</a>, <a href="#">Design</a>, <a href="#">Green Energy</a></p>
+                      </div>
+                  </div>
+                  <!--div class="profile-brief">
+                      In Brief: One of the keys to building a successful company and creating a product that peopled ...
+                  </div-->
+              </div>
+						</div>

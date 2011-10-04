@@ -19,9 +19,9 @@
 						
 						<% if user_signed_in? %>
 						  <ul class="tools tools-logged-in">
-                <li><%= link_to 'Home', current_user %></li>
-                <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
-                <li><%= link_to "Sign out", destroy_session_path(:user) %></li>
+                <li><%= link_to 'HOME', current_user %></li>
+                <li><%= link_to 'SETTINGS', edit_user_path(current_user) %></li>
+                <li><%= link_to "SIGN OUT", destroy_session_path(:user) %></li>
 						  </ul>
 						<% else %>
 						  <ul class="tools">
