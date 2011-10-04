@@ -1,34 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @question.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @question.description %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= "#{category1_name(@question.category)} | #{category2_name(@question.category)}" %>
-</p>
-
-<p>
-  <b>Tags:</b>
-  <%= @question.tag_list %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%= @question.user.display_name %>
-</p>
-
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Answers', question_answers_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+							<div class="sections">
+                  <p id="notice"><%= notice %></p>
+									<div class="section" style="border-bottom:none;padding:0;">
+                    <div class="heading2">
+                      <ul>
+                        <li><a href="#"><%= @question.category.capitalize %></a></li>
+                      </ul>
+                      <ul class="nav-list3">
+                        <li><a href="#">Motivation</a></li>
+                        <li><a href="#">Friction</a></li>
+                        <li><a href="#">Gap</a></li>
+                        <li><a href="#">Products</a></li>
+                      </ul>
+                    </div>
+                    <h3><%= @question.title %></h3>
+                  </div>
+              </div>
+<% @question.answers.each do |answer| %>
+<div class="section">
+  <%= render answer %>
+</div>
+<% end %>
 
 <% content_for :sidebar do %>
 <!-- sidebar -->

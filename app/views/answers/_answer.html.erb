@@ -7,11 +7,3 @@
 		</ul>
 	</div>
 	<p><%= answer.text %> <%= link_to "(learn more)", [answer.question,answer] %></a></p>		
-	<div class="section-holder">
-		<ul>
-		  <% if answer.question.answers.count > 1 %>
-			<li><a href="<%= question_answers_path(question) %>"><span><%= answer.question.answers.count %></span></a>MORE ANSWERS</li>
-			<% end %>
-			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(answer.question) %></li>
-		</ul>
-	</div>
