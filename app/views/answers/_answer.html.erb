@@ -1,0 +1,17 @@
+  <div class="line">
+    <%= link_to answer.user.display_name.upcase, user_path(answer.user), :class => 'open' %>
+		<ul>
+      <li><span><%= answer.user.occupation %><% if answer.user.company %> at <%= answer.user.company %><% end %></span></li>
+			<li><%= link_to '0 Comments', question_answer_path(answer.question, answer) + '#disqus_thread' %></li>
+			<li>posted <%= distance_of_time_in_words_to_now(answer.created_at) %> ago</li>
+		</ul>
+	</div>
+	<p><%= answer.text %> <%= link_to "(learn more)", [answer.question,answer] %></a></p>		
+	<div class="section-holder">
+		<ul>
+		  <% if answer.question.answers.count > 1 %>
+			<li><a href="<%= question_answers_path(question) %>"><span><%= answer.question.answers.count %></span></a>MORE ANSWERS</li>
+			<% end %>
+			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(answer.question) %></li>
+		</ul>
+	</div>
