@@ -1,11 +1,17 @@
-<h2>Sign up</h2>
+<ul class="naving">
+  <li><span>SIGN UP</span></li>
+</ul>
 
 <%= form_tag fakereg_users_path do %>
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
+<fieldset>
+  <div class="form-section">
+    <%= label_tag :email %>
+    <%= email_field_tag :email, :class => 'size2' %>
+    </div>
   <%= label_tag :email %>
   <%= text_area_tag :about %>
-  <%= submit_tag %> 
+  <%= submit_tag %>
+</fieldset>
 <% end %>
 
 <!--
