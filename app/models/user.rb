@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, 
     :occupation, :location, :company, :contact_email,
     :facebook, :twitter, :google_plus, :linkedin,
-    :password, :password_confirmation, :remember_me, :avatar
+    :password, :password_confirmation, :remember_me, :avatar,
+    :in_brief
   has_many :questions
   has_many :answers
   has_many :assignments
