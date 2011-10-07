@@ -1,10 +1,18 @@
 <div class="section">
 	<div class="heading">
 		<ul>
-			<li><a href="#"><%= question.category.capitalize %></a></li>
+			<li><a href="#"><%= category1_name question.category %></a></li>
+			<li><a href="#"><%= category2_name question.category %></a></li>
 		</ul>
+		<% if !question.tags.blank? %>
+		  <ul class="nav-list3">
+		    <%= question.tags.each do |tag| %>
+			    <li><a href="#">tag.name.capialize</a></li>
+			  <% end %>
+		  </ul>
+		<% end %>
 	</div>
-	<h3><%= link_to question.title, question %></h3>
+	<h3><%= link_to question.title, question %></h3>   
 	<% if question.has_answers? %>
 	<% answer = question.answers.first %>
 	<%= render answer %>
