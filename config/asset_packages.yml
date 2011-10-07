@@ -2,7 +2,6 @@
 javascripts:
 - base:
   - application
-  - input
   - jquery.min
   - jquery_ujs
   - popup

@@ -407,7 +407,7 @@ fieldset{
 	width:594px;
 }
 .sections{
-	margin:0 0 -28px;
+	/*margin:0 0 -28px;*/
 	width:100%;
 }
 .sections:after{
@@ -694,7 +694,7 @@ fieldset{
 }
 .line ul a:hover, 
 .section-holder .line ul a:hover{text-decoration:underline;}
-.line ul li:first-child{background:none;}
+.line ul li:first-child{background:none;!important}
 .line ul li span, 
 .section-holder .line ul li span{font-style:normal;}
 .line ul li img{margin:0 0 0 4px;}

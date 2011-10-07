@@ -16,11 +16,12 @@
 
   <% if devise_mapping.rememberable? -%>
 
-    <div class="form-section"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div class="form-section"><label><%= f.check_box :remember_me %> Remember me</label></div>
   <% end -%>
 
     <div class="form-section-submit"><%= f.submit "Sign in" %></div>
   </fieldset>
 <% end %>
-
+<div style="margin-top:20px">
 <%= render :partial => "devise/shared/links" %>
+</div>

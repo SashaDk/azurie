@@ -1,11 +1,16 @@
 <p id="notice"><%= notice %></p>
-
+							<ul class="naving">
+								<li><%= link_to @user.display_name.upcase, user_path(@user) %></li>
+								<li>Conversations</li>
+							</ul>
+              <strong class="decor">
+                  <span>PERSONAL</span>
+              </strong>
 <p>
   <b>Email:</b>
   <%= @user.email %>
 </p>
-<p><%= image_tag @user.avatar.url %></p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% content_for :sidebar do %>
+  <%= render 'users/usercolumn' %>
+<% end %>

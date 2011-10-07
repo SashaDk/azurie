@@ -11,55 +11,89 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :occupation %><br />
-    <%= f.text_field :occupation %>
-  </div>
-  <div class="field">
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar %><br />
-    <%= f.file_field :avatar %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_email %><br />
-    <%= f.text_field :contact_email %>
-  </div>
-  <div class="field">
-    <%= f.label :google_plus %><br />
-    <%= f.text_field :google_plus %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook %><br />
-    <%= f.text_field :facebook %>
-  </div>
-  <div class="field">
-    <%= f.label :linkedin %><br />
-    <%= f.text_field :linkedin %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :in_brief %><br />
-    <%= f.text_area :in_brief %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+							<div class="sections">
+                <strong class="decor">
+                  <span>PERSONAL</span>
+              </strong>
+								<fieldset>
+										<div class="form-section">
+												<%= f.label :first_name %>
+												<%= f.text_field :first_name, :class => 'size2' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :last_name %>
+												<%= f.text_field :last_name, :class => 'size2' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :occupation %>
+												<%= f.text_field :occupation, :class => 'size1' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :company %>
+												<%= f.text_field :company, :class => 'size1' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :location %>
+												<%= f.text_field :location, :class => 'size1' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :avatar %>
+												<%= f.file_field :avatar %>
+										</div>
+								</fieldset>
+							  
+								<strong class="decor">
+							  	<span>CONTACTS</span>
+						    </strong>
+								
+								<fieldset>
+										<div class="form-section">
+												<%= f.label :contact_email %>
+												<%= f.text_field :contact_email, :class => 'size1' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :google_plus %>
+												<%= f.text_field :google_plus, :class => 'size1' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :facebook %>
+												<%= f.text_field :facebook, :class => 'size1' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :linkedin %>
+												<%= f.text_field :linkedin, :class => 'size1' %>
+										</div>
+										<div class="form-section">
+												<%= f.label :twitter %>
+												<%= f.text_field :twitter, :class => 'size1' %>
+										</div>
+                    <div class="form-section-save">
+												<%= f.submit %>
+										</div>
+								</fieldset>
+								
+								<!--strong class="decor">
+							  	<span>ACCOUNT</span>
+						    </strong>
+								
+								<fieldset>
+										<div class="form-section">
+												<label>E-mail</label>
+												<input type="text" class="size1" value="" name="company"/>
+										</div>
+										<div class="form-section">
+												<label>New password</label>
+												<input type="password" class="size1" value="" name="company"/>
+										</div>
+										<div class="form-section">
+												<label>Confirm password</label>
+												<input type="password" class="size1" value="" name="company"/>
+										</div>
+										<div class="form-section-save">
+												<%= f.submit %>
+										</div>
+								</fieldset-->
+							</div>
 <% end %>

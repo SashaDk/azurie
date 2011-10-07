@@ -1,5 +1,11 @@
-<h1>Profile Information</h1>
+<ul class="naving">
+  <li><span>Profile Information</span></li>
+</ul>
 
 <%= render 'form' %>
 
 <%= link_to 'Security settings', edit_user_registration_path %>
+
+<% content_for :sidebar do %>
+  <%= render 'users/usercolumn' %>
+<% end %>

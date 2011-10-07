@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(:version => 20111007212539) do
     t.text     "fulltext"
   end
 
-  create_table "assigments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
     t.integer  "question_id"
