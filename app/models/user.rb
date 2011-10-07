@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   ROLES = [ :guest, :expert, :admin ]
 
   has_paper_trail
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :avatar, :styles => { :medium => "290x290^" }
   devise :invitable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, :confirmable, :token_authenticatable, :invitable
