@@ -4,6 +4,8 @@ Azurie::Application.routes.draw do
   get "pages/index", :as => :root
 
   get "pages/about", :as => :about
+  
+  get "pages/thanks", :as => :thanks
 
   resources :questions do
     resources :answers
