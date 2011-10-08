@@ -1,183 +1,125 @@
 <!-- sections -->
-							<div class="sections">
-								<div class="section">
-                  
-                  <p id="notice"><%= notice %></p>
-									
-                  <div class="heading2">
-										<ul>
-											<li><a href="#"><%= @answer.question.category.capitalize %></a></li>
-										</ul>
-										<ul class="nav-list3">
-											<li><a href="#">Motivation</a></li>
-											<li><a href="#">Friction</a></li>
-											<li><a href="#">Gap</a></li>
-											<li><a href="#">Products</a></li>
-										</ul>
-									</div>
-									<h3><%= @answer.question.title %></h3>
-									<!--ul class="nav-add">
-								<li><span>15</span> APPRECIATED</li>
-								<li><span>456</span> COMMENTS</li>
-								<li><span>300</span> VIEWS</li>
-							</ul-->
-									<div class="line">
-                    <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
-                    <ul>
-                      <li><span><%= @answer.user.occupation %><% if @answer.user.company %> at <%= @answer.user.company %><% end %></span></li>
-                      <li><%= link_to '0 Comments', question_answer_path(@answer.question, @answer) + '#disqus_thread' %></li>
-                      <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li>
-                    </ul>
-                  </div>
-									<div class="section-row">
-										<p><%= @answer.text %></p>
-									</div>
-								</div>
-								<div class="section">
-									<p><strong>ANSWER CONT’D</strong>  <%= @answer.fulltext %></p>
-									<div class="section-holder">
-										<ul>
-                      <% if @answer.question.answers.count > 1 %>
-                      <li><a href="<%= question_answers_path(@answer.question) %>"><span><%= @answer.question.answers.count %></span></a>MORE ANSWERS</li>
-                      <% end %>
-											<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(@answer.question) %></li>
-										</ul>
-									</div>
-								</div>
-                
-								<!--div class="box-comments">
-									<div class="comments-top">
-										<div class="comments-top-line">
-											<strong>COMMENT ON THIS POST</strong>
-											<span>23 total comments</span>
-										</div>
-										<div class="comments-block">
-											<strong>WHAT DO YOU THINK? WHAT IS YOUR EXPERIENCE?</strong>
-											<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
-											<form>
-												<fieldset>
-													<label>Sort by:</label>
-													<select>
-														<option>Threads recently updated</option>
-													</select>
-												</fieldset>
-											</form>
-										</div>
-										<ul class="com-post">
-											<li>
-												<div class="com-line">
-													<img src="images/img-7.jpg" alt="" />
-													<strong>KEITH HARING</strong>
-													<a href="#" class="bul-rate">0</a>
-													<a href="#">Reply</a>
-												</div>
-												<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-												<a href="#" class="flag">flag</a>
-											</li>
-											<li class="rep-post">
-												<div class="com-line">
-													<img src="images/img-7.jpg" alt="" />
-													<strong>KEITH HARING</strong>
-													<a href="#" class="bul-rate">0</a>
-													<a href="#">Reply</a>
-												</div>
-												<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-												<div class="underpost">
-													<a href="#">www.azurie.com</a>
-													<a href="#" class="flag">flag</a>
-												</div>
-											</li>
-											<li>
-												<div class="com-line">
-													<img src="images/img-7.jpg" alt="" />
-													<strong>KEITH HARING</strong>
-													<a href="#" class="bul-rate">0</a>
-													<a href="#">Reply</a>
-												</div>
-												<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-												<a href="#" class="flag">flag</a>
-											</li>
-										</ul>
-									</div>
-									<form class="com-form" action="">
-										<fieldset>
-											<strong>LOAD MORE COMMENTS</strong>
-											<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
-											<textarea rows="3" cols="3">Write comment here....</textarea>
-										</fieldset>
-									</form>
-									<div class="com-bot">
-										<a href="#" class="com-info">POSTING GUIDELINES</a>
-										<a href="#" class="com-add">ADD COMMENT</a>
-									</div>
-									<div class="com-end"></div>
-								</div-->
-                
-                
-                
-                
-								<!--div class="section">
-									<strong class="rel-head">RELATED Q&amp;As</strong>
-									<div class="heading">
-										<ul>
-											<li><a href="#">Business</a></li>
-											<li><a href="#">Negotiations</a></li>
-										</ul>
-									</div>
-									<h3>Why should you declare war on friction?</h3>
-									<div class="line">
-										<div class="popup-hover">
-											<a class="open" href="#"><span>15</span> KEITH HARING,</a>
-										</div>
-										<ul>
-											<li><a href="#"><span>Investment Professional, (New York, USA)</span></a></li>
-											<li><a href="#">6 comments</a></li>
-											<li><a href="#">posted one week ago</a></li>
-										</ul>
-									</div>
-									<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. <a href="#">(learn more)</a></p>
-								</div>
-								<div class="section">
-									<div class="heading">
-										<ul>
-											<li><a href="#">Business</a></li>
-											<li><a href="#">Negotiations</a></li>
-										</ul>
-									</div>
-									<h3>Why should you declare war on friction?</h3>
-									<div class="line">
-										<div class="popup-hover">
-											<a class="open" href="#"><span>15</span> KEITH HARING,</a>
-										</div>
-										<ul>
-											<li><a href="#"><span>Investment Professional, (New York, USA)</span></a></li>
-											<li><a href="#">6 comments</a></li>
-											<li><a href="#">posted one week ago</a></li>
-										</ul>
-									</div>
-									<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. <a href="#">(learn more)</a></p>
-								</div>
-								<div class="section">
-									<div class="heading">
-										<ul>
-											<li><a href="#">Business</a></li>
-											<li><a href="#">Negotiations</a></li>
-										</ul>
-									</div>
-									<h3>Why should you declare war on friction?</h3>
-									<div class="line">
-										<div class="popup-hover">
-											<a class="open" href="#"><span>15</span> KEITH HARING,</a>
-										</div>
-										<ul>
-											<li><a href="#"><span>Investment Professional, (New York, USA)</span></a></li>
-											<li><a href="#">6 comments</a></li>
-											<li><a href="#">posted one week ago</a></li>
-										</ul>
-									</div>
-									<p>One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. <a href="#">(learn more)</a></p>
-								</div-->
-							</div>
+<div class="sections">
+	<div class="section">
+    
+    <p id="notice"><%= notice %></p>
+		
+    <div class="heading2">
+			<ul>
+				<li><a href="#"><%= category1_name @answer.question.category %></a></li>
+  			<li><a href="#"><%= category2_name @answer.question.category %></a></li>
+			</ul>
+			<ul class="nav-list3">
+          <% @answer.question.tags.each do |tag| %>
+			      <li><a href="#"><%= tag.name.capitalize %></a></li>
+			    <% end %>
+			</ul>
+		</div>
+		<h3><%= @answer.question.title %></h3>
+		<!--ul class="nav-add">
+	<li><span>15</span> APPRECIATED</li>
+	<li><span>456</span> COMMENTS</li>
+	<li><span>300</span> VIEWS</li>
+</ul-->
+		<div class="line">
+      <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
+      <ul>
+        <li><span><%= @answer.user.occupation %><% if @answer.user.company %> at <%= @answer.user.company %><% end %></span></li>
+        <li><%= link_to '0 Comments', question_answer_path(@answer.question, @answer) + '#disqus_thread' %></li>
+        <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li>
+      </ul>
+    </div>
+		<div class="section-row">
+			<p><%= @answer.text %></p>
+		</div>
+	</div>
+	<div class="section">
+		<p><strong>ANSWER CONT’D</strong>  <%= @answer.fulltext %></p>
+		<div class="section-holder">
+			<ul>
+        <% if @answer.question.answers.count > 1 %>
+        <li><a href="<%= question_answers_path(@answer.question) %>"><span><%= @answer.question.answers.count %></span></a>MORE ANSWERS</li>
+        <% end %>
+				<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(@answer.question) %></li>
+			</ul>
+		</div>
+	</div>
+  
+	<!--div class="box-comments">
+		<div class="comments-top">
+			<div class="comments-top-line">
+				<strong>COMMENT ON THIS POST</strong>
+				<span>23 total comments</span>
+			</div>
+			<div class="comments-block">
+				<strong>WHAT DO YOU THINK? WHAT IS YOUR EXPERIENCE?</strong>
+				<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
+				<form>
+					<fieldset>
+						<label>Sort by:</label>
+						<select>
+							<option>Threads recently updated</option>
+						</select>
+					</fieldset>
+				</form>
+			</div>
+			<ul class="com-post">
+				<li>
+					<div class="com-line">
+						<img src="images/img-7.jpg" alt="" />
+						<strong>KEITH HARING</strong>
+						<a href="#" class="bul-rate">0</a>
+						<a href="#">Reply</a>
+					</div>
+					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
+					<a href="#" class="flag">flag</a>
+				</li>
+				<li class="rep-post">
+					<div class="com-line">
+						<img src="images/img-7.jpg" alt="" />
+						<strong>KEITH HARING</strong>
+						<a href="#" class="bul-rate">0</a>
+						<a href="#">Reply</a>
+					</div>
+					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
+					<div class="underpost">
+						<a href="#">www.azurie.com</a>
+						<a href="#" class="flag">flag</a>
+					</div>
+				</li>
+				<li>
+					<div class="com-line">
+						<img src="images/img-7.jpg" alt="" />
+						<strong>KEITH HARING</strong>
+						<a href="#" class="bul-rate">0</a>
+						<a href="#">Reply</a>
+					</div>
+					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
+					<a href="#" class="flag">flag</a>
+				</li>
+			</ul>
+		</div>
+		<form class="com-form" action="">
+			<fieldset>
+				<strong>LOAD MORE COMMENTS</strong>
+				<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
+				<textarea rows="3" cols="3">Write comment here....</textarea>
+			</fieldset>
+		</form>
+		<div class="com-bot">
+			<a href="#" class="com-info">POSTING GUIDELINES</a>
+			<a href="#" class="com-add">ADD COMMENT</a>
+		</div>
+		<div class="com-end"></div>
+	</div-->
+  
+	<div class="section">
+		<strong class="rel-head">RELATED Q&amp;As</strong>
+		<% @answer.question.similar_questions.each do |question| %>
+      <%= render question %>
+    <% end %>
+	</div>
+</div>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">

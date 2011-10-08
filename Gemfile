@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'acts-as-taggable-on'
 gem 'cancan'
 gem 'state_machine'
+gem 'meta_where'
 
 # Use unicorn as the web server
 #gem 'unicorn'

@@ -14,6 +14,13 @@ class Question < ActiveRecord::Base
     self.answers.exists?
   end
   
+  def similar_questions
+    Question.joins(:answers)
+      .where(:category => self.category, :id.not_eq => self.id)
+      .order(:answers => :created_at.desc)
+      .limit(5)
+  end
+  
   def self.top
     Question.all
   end
