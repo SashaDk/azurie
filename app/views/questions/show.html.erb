@@ -1,20 +1,20 @@
-							<div class="sections">
-                  <p id="notice"><%= notice %></p>
-									<div class="section" style="border-bottom:none;padding:0;">
-                    <div class="heading2">
-                      <ul>
-                        <li><a href="#"><%= @question.category.capitalize %></a></li>
-                      </ul>
-                      <ul class="nav-list3">
-                        <li><a href="#">Motivation</a></li>
-                        <li><a href="#">Friction</a></li>
-                        <li><a href="#">Gap</a></li>
-                        <li><a href="#">Products</a></li>
-                      </ul>
-                    </div>
-                    <h3><%= @question.title %></h3>
-                  </div>
-              </div>
+<div class="sections">
+    <p id="notice"><%= notice %></p>
+		<div class="section" style="border-bottom:none;padding:0;">
+      <div class="heading2">
+        <ul>
+          <li><a href="#"><%= category1_name @question.category %></a></li>
+    			<li><a href="#"><%= category2_name @question.category %></a></li>
+        </ul>
+        <ul class="nav-list3">
+          <% @question.tags.each do |tag| %>
+			      <li><a href="#"><%= tag.name.capitalize %></a></li>
+			    <% end %>
+        </ul>
+      </div>
+      <h3><%= @question.title %></h3>
+    </div>
+</div>
 <% @question.answers.each do |answer| %>
 <div class="section">
   <%= render answer %>

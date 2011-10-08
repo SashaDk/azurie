@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     self.first_name ? "#{self.first_name} #{self.last_name}" : self.email
   end
   
+  def answered_questions
+    Question.includes(:answers).where(:answers => { :user_id => self.id })
+  end
+  
   def make_admin!
     self.role = :admin
     self.save

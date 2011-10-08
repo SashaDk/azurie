@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 							<ul class="naving">
-								<li><%= link_to @user.display_name.upcase, user_path(@user) %></li>
+								<li><%= link_to @user.display_name.upcase, @user %></li>
 								<li>Conversations</li>
 							</ul>
               <strong class="decor">
@@ -10,6 +10,13 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
+
+<div>
+  <p>Questions answered</p>
+  <% @user.answered_questions.each do |question| %>
+    <%= render question %>
+  <% end %>
+</div>
 
 <% content_for :sidebar do %>
   <%= render 'users/usercolumn' %>
