@@ -39,12 +39,14 @@
 <% content_for :sidebar do %>
   <!-- sidebar -->
 	<div id="sidebar">
+    <% if !user_signed_in? %>
 		<div class="find">
 			<strong>FIND KNOWLEDGE <br />&amp; INSPIRATION</strong>
 			<span>On realizing global business ideas</span>
       <p>A cross-disciplinary collaborative of leading professionals worlwide <a href="#">(read more)</a></p>
 			<a href="#" class="btn-find"><span>JOIN OUR COMMUNITY</span></a>
 		</div>
+    <% end %>
 		<%= render 'shared/nav_sidebar' %>
 	</div>
 <% end %>
