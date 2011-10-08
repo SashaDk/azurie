@@ -1,27 +1,31 @@
 module ApplicationHelper
   CATEGORIES = {
-    "Business & Cycles" => [
-      ["Idea Validation", :business_idea],
-      ["Business Models", :business_models],
-      ["Sales & Marketing", :business_sales],
-      ["Negotiation", :business_negotiation],
-      ["Ownership & Capital Rising", :business_ownership],
-      ["People Management", :business_people],
-      ["Money Management", :business_money],
-      ["Day To Day Operations", :business_day],
+    "Enterprising" => [
+      ["Idea Validation", :enterprising_idea],
+      ["Team", :enterprising_team],
+      ["Distribution", :enterprising_distribution],
+      ["Marketing and Sales", :enterprising_marketing],
+      ["Capital Raising", :enterprising_capital],
+      ["Corporate Matters", :enterprising_corporate],
+      ["Soft Skills", :enterprising_soft],
     ],
-    "Design & Creativity" => [
-      ["Dummy", :design_dummy]
+    "Creative" => [
+      ["Branding and Storytelling", :creative_branding],
+      ["Communication and Presentation", :creative_communication],
+      ["Design Matters", :creative_design],
+      ["Web design and UX", :creative_web_design]
     ],
-    "Trends & Progress" => [
-      ["Dummy", :trends_dummy]
+    "Progressive" => [
+      ["Technology", :progressive_technology],
+      ["Market", :progressive_market],
+      ["Society and Culture", :progressive_society]
     ]
   }
   
   CATEGORY_GROUPS = {
-    :business => "Business & Cycles",
-    :design => "Design & Creativity",
-    :trends => "Trends & Progress"
+    :enterprising => "Enterprising",
+    :creative => "Creative",
+    :progressive => "Progressive"
   }
 
   def category_values    
@@ -29,7 +33,7 @@ module ApplicationHelper
   end
   
   def category2_name(category)
-    Hash[CATEGORIES[category1_name(category)]].invert[category.to_sym] #rescue "<unknown>"
+    Hash[CATEGORIES[category1_name(category)]].invert[category.to_sym] rescue "<unknown>"
   end
   
   def category1_name(category)
