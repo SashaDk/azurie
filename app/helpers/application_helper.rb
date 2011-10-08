@@ -27,9 +27,21 @@ module ApplicationHelper
     :creative => "Creative",
     :progressive => "Progressive"
   }
+  
+  def categories
+    CATEGORIES
+  end
+  
+  def category_groups
+    CATEGORY_GROUPS
+  end
 
   def category_values    
     grouped_options_for_select(CATEGORIES)
+  end
+  
+  def category_name(category)
+    category2_name(category).blank? ? category1_name(category) : category2_name(category)
   end
   
   def category2_name(category)

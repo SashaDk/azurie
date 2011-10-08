@@ -21,6 +21,10 @@ class Question < ActiveRecord::Base
       .limit(5)
   end
   
+  def self.category(category)
+    Question.where(:category.like => "#{category}%")
+  end
+  
   def self.top
     Question.all
   end

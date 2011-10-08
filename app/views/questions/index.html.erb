@@ -4,7 +4,7 @@
 	</div>
 <% end %>
 
-<h2>ALL QUESTIONS</h2>
+<h2>ALL QUESTIONS<% if !params[:category].blank? %> IN CATEGORY <%= category_name(params[:category]).upcase %> <% end %></h2>
 <form class="search" action="#">
 	<fieldset>
 		<div class="row">

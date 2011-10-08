@@ -1,20 +1,14 @@
 <strong class="decor" id="nav-bar-decor"><span>CHOOSE  YOUR  Q&amp;A  THEME</span></strong>
 	<ul class="nav-bar">
-		<li><a href="#">Business &amp; Cycles</a>
-			<ul class="dropdown">
-				<li><a href="#">IDEA VALIDATION</a></li>
-				<li><a href="#">BUSINESS MODELS</a></li>
-				<li><a href="#">SALES &amp; MARKETING</a></li>
-				<li><a href="#">NEGOTIATION</a></li>
-				<li><a href="#">OWNERSHIP &amp; CAPITAL RAISING</a></li>
-				<li><a href="#">PEOPLE MANAGEMENT</a></li>
-				<li><a href="#">MONEY MANAGEMENT</a></li>
-				<li><a href="#">DAY TO DAY OPERATIONS</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Design &amp; Creativity</a></li>
-		<li><a href="#">Trends &amp; Progress</a></li>
-		<li><a href="#"><span>Quotes to venture by</span></a></li>
+	  <% category_groups.each do |group, group_name| %>
+	    <li><%= link_to group_name, questions_path(:category => group) %>
+	      <ul class="dropdown">
+	        <% categories[group_name].each do |category_name, category| %>
+	          <li><%= link_to category_name, questions_path(:category => category) %></li>
+	        <% end %>
+	      </ul>
+	    </li>  
+	  <% end %>
 	</ul>
 	<!--strong class="decor"><span>FOLLOW  GREAT  EXPERTS</span></strong>
 	<ul class="nav-list">

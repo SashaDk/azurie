@@ -4,8 +4,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = Question.all
-
+    @questions = params[:category].blank? ? Question.all : Question.category(params[:category])
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }
