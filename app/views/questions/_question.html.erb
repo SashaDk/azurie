@@ -6,8 +6,8 @@
 		</ul>
 		<% if !question.tags.blank? %>
 		  <ul class="nav-list3">
-		    <%= question.tags.each do |tag| %>
-			    <li><a href="#">tag.name.capialize</a></li>
+		    <% question.tags.each do |tag| %>
+			    <li><a href="#"><%= tag.name.capitalize %></a></li>
 			  <% end %>
 		  </ul>
 		<% end %>
@@ -21,13 +21,17 @@
 		  <% if answer.question.answers.count > 1 %>
 			<li><a href="<%= question_answers_path(question) %>"><span><%= answer.question.answers.count %></span></a>MORE ANSWERS</li>
 			<% end %>
-			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(answer.question) %></li>
+			<% if can? :create, Answer %>
+  			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
+  	  <% end %>
 		</ul>
 	</div>
 	<% else %>
 	<div class="section-holder">
 		<ul>
-			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
+		  <% if can? :create, Answer %>
+  			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
+  	  <% end %>
 		</ul>
 	</div>
 	<% end %>
