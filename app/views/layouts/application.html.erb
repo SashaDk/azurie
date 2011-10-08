@@ -25,7 +25,7 @@
 						  </ul>
 						<% else %>
 						  <ul class="tools">
-  						  <li><%= link_to "Sign in", new_session_path(:user) %></li>
+  						  <li><%= link_to "SIGN IN", new_session_path(:user) %></li>
 							  <!--li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="Sign in with Facebook"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
 							  <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="Sign in with Google+"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li-->
 						  </ul>
@@ -69,22 +69,22 @@
 						<div class="column-2">
 							<strong>LEARN FROM MOGULS AND LEADING PROFESSIONALS</strong>
 							<p>Our vision is to record most relevant knowledge and insight from entrepreneurial thought leaders and make it universally accessible and useful</p>
-							<ul>
+							<!--ul>
 								<li>
 									<ul>
 										<li><a href="#">About</a></li>
-										<!--li><a href="#">Press</a></li>
-										<li><a href="#">Careers</a></li-->
+										<li><a href="#">Press</a></li>
+										<li><a href="#">Careers</a></li>
 									</ul>
 								</li>
 								<li>
 									<ul>
-										<!--li><a href="#">Editors and Contributors</a></li-->
+										<li><a href="#">Editors and Contributors</a></li>
 										<li><a href="#">Special Thanks</a></li>
-										<!--li><a href="#"></a></li-->
+										<li><a href="#"></a></li>
 									</ul>
 								</li>
-							</ul>
+							</ul-->
 						</div>
 						<div class="column-3">
 							<strong>CONNECT WITH US</strong>
@@ -119,9 +119,9 @@
 					<div class="footer-holder">
 						<span class="copy">&copy; 2011 Azurie  </span>
 						<ul class="navigation">
-							<!--li><a href="#">Terms of Use </a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Community Guidelines</a></li>
+							<li><%= link_to 'About', :controller => :pages, :action => :about %></li>
+							<li><%= link_to 'Special thanks', :controller => :pages, :action => :thanks %></li>
+							<!--li><a href="#">Community Guidelines</a></li>
 							<li><a href="#">Feedback</a></li-->
 						</ul>
 					</div>

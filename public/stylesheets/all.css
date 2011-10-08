@@ -202,7 +202,8 @@ fieldset{
 	text-indent:-9999px;
 	overflow:hidden;
 }
-.textbox, .gallery .textbox p{
+
+#gallery .textbox, #gallery .textbox p{
 	padding:1px 0 0;
 	font-size:12px;
 	line-height:18px;
@@ -296,7 +297,7 @@ fieldset{
 #content{
 	float:right;
 	margin:0 0 0 -4px;
-	padding:11px 0 0;
+	/*padding:11px 0 0;*/
 	width:598px;
 }
 .inner #content{padding:0;}
@@ -919,7 +920,7 @@ fieldset{
 	border:solid #f9f8f9;
 	border-width:1px 0 1px 1px;
 	background:#f1eef0;
-	margin:0 0 37px;
+	margin:0 12px 37px 24px;
 	padding:9px 20px 19px 21px;
 	font-size:13px;
 	color:#010101;
@@ -947,7 +948,7 @@ fieldset{
 }
 .btn-find{
 	display:block;
-	margin:0 0 13px;
+	margin:0;
 	padding:0 8px 2px 27px;
 	border:1px solid #dfddd9;
 	width:219px;
@@ -966,7 +967,7 @@ fieldset{
 	text-transform:uppercase;
 }
 .btn-find:hover{background:#d7cad6;}
-.find p{margin:0;}
+.find p{margin:0 0 15px 0;}
 .find p a{text-decoration:none;}
 .find p a:hover{text-decoration:underline;}
 .decor{
