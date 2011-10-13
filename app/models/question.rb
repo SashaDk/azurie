@@ -25,6 +25,20 @@ class Question < ActiveRecord::Base
     Question.where(:category.like => "#{category}%")
   end
   
+  def verified?
+    self.state == :verified
+  end
+  
+  def verify!
+    self.state = :verified
+    self.save
+  end
+  
+  def unverify!
+    self.state = :new
+    self.save
+  end
+  
   def self.top
     Question.all
   end

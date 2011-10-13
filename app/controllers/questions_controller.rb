@@ -4,8 +4,10 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = params[:category].blank? ? Question.all : Question.category(params[:category])
-    
+    @questions = params[:category].blank? ? Question.includes(:answers, :tags) : 
+      Question.category(params[:category]).includes(:answers, :tags)
+    @questions = @questions.order(:created_at.desc) if params[:order] == 'date'
+    @questions = @questions.order(:answers_count.desc) if params[:order] == 'popular'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }
@@ -37,6 +39,12 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
+  end
+
+  # GET /questions/1/verify
+  def verify
+    @question = Question.find(params[:id])
+    
   end
 
   # POST /questions

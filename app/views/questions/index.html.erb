@@ -19,9 +19,9 @@
 	<li><span><%= Question.count %></span> QUESTIONS</li>
 	<li><span><%= Answer.count %></span> ANSWERS</li>
 	<li><a href="#"><span>456</span> FOLLOWING</a></li>
-	<li class="bul-slash"><a href="#">RATING</a></li>
-	<li><a href="#"><span>POPULARITY</span></a></li>
-	<li><a href="#">DATE</a></li>
+	<!--li class="bul-slash"><a href="#">RATING</a></li-->
+	<li><a href="<%= url_for(params.merge(:order => 'popular')) %>"><% if params[:order] == 'popular' %><span>POPULARITY</span><% else %>POPULARITY<% end %></a></li>
+	<li><a href="<%= url_for(params.merge(:order => 'date')) %>"><% if params[:order] == 'date' || params[:order].blank? %><span>DATE</span><% else %>DATE<% end %></a></li>
 </ul>
 <div class="sections">
   <% @questions.each do |question| %>
