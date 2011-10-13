@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource
 
   # GET /questions
   # GET /questions.xml
@@ -44,7 +45,15 @@ class QuestionsController < ApplicationController
   # GET /questions/1/verify
   def verify
     @question = Question.find(params[:id])
-    
+    @question.verify!
+    redirect_to(@question, :notice => 'Question was successfully verified.')
+  end
+
+  # GET /questions/1/unverify
+  def unverify
+    @question = Question.find(params[:id])
+    @question.unverify!
+    redirect_to(@question, :notice => 'Question was successfully unverified.')
   end
 
   # POST /questions

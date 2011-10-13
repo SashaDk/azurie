@@ -10,6 +10,10 @@ Azurie::Application.routes.draw do
   resources :questions do
     resources :answers
     resources :assignments
+    member do
+      get :verify
+      get :unverify
+    end
   end
 
   devise_for :users, :controllers => { :invitations => 'users/invitations', :omniauth_callbacks => "users/omniauth_callbacks" } do

@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   before_filter :find_question
+  load_and_authorize_resource
 
   # GET /questions/1/answers
   # GET /questions/1/answers.xml
