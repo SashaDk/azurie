@@ -2,7 +2,12 @@ class User < ActiveRecord::Base
   ROLES = [ :guest, :expert, :admin ]
 
   has_paper_trail
-  has_attached_file :avatar, :styles => { :medium => "290x290^" }
+  has_attached_file :avatar, :styles => { :medium => "290x290^" },
+    :storage => :s3, :bucket => 'mybucket',
+    :s3_credentials => {
+      :access_key_id => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET']
+    }
   devise :invitable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, :confirmable, :token_authenticatable, :invitable
