@@ -17,6 +17,7 @@ gem 'acts-as-taggable-on'
 gem 'cancan'
 gem 'state_machine'
 gem 'meta_where'
+gem 'aws-s3'
 
 # Use unicorn as the web server
 #gem 'unicorn'
