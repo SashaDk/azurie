@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_paper_trail
   has_attached_file :avatar, :styles => { :medium => "290x290^" },
-    :storage => :s3, :bucket => 'mybucket',
+    :storage => :s3, :bucket => 'azurie-avatars',
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
