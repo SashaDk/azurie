@@ -10,28 +10,28 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_area :title %>
+<fieldset>
+  <div class="form-section">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => 'size1' %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
+  <div class="form-section">
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br />
+  <div class="form-section">
+    <%= f.label :category %>
     <%= f.select :category, question_category_values %>
   </div>
-  <div class="field">
-    <%= f.label :source %><br />
-    <%= f.text_area :source %>
+  <div class="form-section">
+    <%= f.label :source %>
+    <%= f.text_field :source %>
   </div>
-  <div class="field">
-    <%= f.label :is_quote %><br />
-    <%= f.check_box :is_quote %>
+  <div class="form-section">
+    <label><%= f.check_box :is_quote %> Is quote</label>
   </div>
-  <div class="actions">
+  <div class="form-section-save">
     <%= f.submit %>
   </div>
+</fieldset>
 <% end %>
