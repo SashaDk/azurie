@@ -21,6 +21,15 @@ class User < ActiveRecord::Base
   has_many :assignments
   has_many :briefings
   
+  validates :facebook, :format => { :with => /^http(s)?:\/\/(www\.)?facebook\.com\/(.*)/, 
+    :message => "Facebook account should starts with 'http://facebook.com/'" }, :allow_blank => true
+  validates :twitter, :format => { :with => /^http(s)?:\/\/?(www\.)?twitter\.com\/(.*)/, 
+    :message => "Twitter account should starts with 'http://twitter.com/'" }, :allow_blank => true
+  validates :google_plus, :format => { :with => /^http(s)?:\/\/?plus\.google\.com\/(.*)/, 
+    :message => "Google+ account should starts with 'http://plus.google.com/'" }, :allow_blank => true
+  validates :linkedin, :format => { :with => /^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/pub\/(.*)/, 
+    :message => "LinkedIn account should starts with 'http://linkedin.com/pub/'" }, :allow_blank => true
+    
   def display_name
     self.first_name ? "#{self.first_name} #{self.last_name}" : self.email
   end
