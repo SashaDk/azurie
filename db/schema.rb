@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013180759) do
+ActiveRecord::Schema.define(:version => 20111018180836) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(:version => 20111013180759) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "fulltext"
+  end
+
+  create_table "assigments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "assignments", :force => true do |t|
@@ -39,6 +46,10 @@ ActiveRecord::Schema.define(:version => 20111013180759) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "questions", :force => true do |t|
@@ -49,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20111013180759) do
     t.text     "description"
     t.integer  "user_id"
     t.datetime "deleted_at"
-    t.string   "state",         :default => "new"
+    t.string   "state"
     t.integer  "answers_count"
   end
 

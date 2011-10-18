@@ -28,6 +28,10 @@
     <%= f.text_field :source %>
   </div>
   <div class="form-section">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="form-section">
     <label><%= f.check_box :is_quote %> Is quote</label>
   </div>
   <div class="form-section-save">
