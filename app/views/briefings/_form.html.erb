@@ -1,6 +1,6 @@
 <%= form_for(@briefing) do |f| %>
   <% if @briefing.errors.any? %>
-    <div id="error_explanation">
+    <div class="error">
       <h2><%= pluralize(@briefing.errors.count, "error") %> prohibited this briefing from being saved:</h2>
 
       <ul>
