@@ -1,4 +1,4 @@
-<%= form_for(@briefing) do |f| %>
+<%= form_for(@briefing, :html => { :multipart => true }) do |f| %>
   <% if @briefing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@briefing.errors.count, "error") %> prohibited this briefing from being saved:</h2>
