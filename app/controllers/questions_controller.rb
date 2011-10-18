@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
       Question.category(params[:category]).includes(:answers, :tags)
     @questions = @questions.order(:created_at.desc) if params[:order] == 'date'
     @questions = @questions.order(:answers_count.desc) if params[:order] == 'popular'
+    @answers = Answer.where(:question_id => @questions)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }
