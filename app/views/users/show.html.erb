@@ -6,13 +6,8 @@
               <strong class="decor">
                   <span>PERSONAL</span>
               </strong>
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
 
 <div>
-  <p>Questions answered</p>
   <% @user.answered_questions.each do |question| %>
     <%= render question %>
   <% end %>

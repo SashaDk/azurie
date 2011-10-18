@@ -4,11 +4,11 @@
                       <%= image_tag @user.avatar.url :medium %>
                   </div>
                   <div class="profile-socmedia">
-                      <a href="#"><%= image_tag 'icon-mail.png', :alt => 'E-mail' %></a>
-                      <a href="#"><%= image_tag 'icon-google-plus.png', :alt => 'Google plus' %></a>
-                      <a href="#"><%= image_tag 'icon-facebook.png', :alt => 'Facebook' %></a>
-                      <a href="#"><%= image_tag 'icon-twitter.png', :alt => 'Twitter' %></a>
-                      <a href="#"><%= image_tag 'icon-linkedin.png', :alt => 'LinkedIn' %></a>
+                      <% if !@user.contact_email.blank? %><a href="mailto:<%= @user.contact_email %>"><%= image_tag 'icon-mail.png', :alt => 'E-mail' %></a><% end %>
+                      <% if !@user.google_plus.blank? %><a href="<%= @user.google_plus %>"><%= image_tag 'icon-google-plus.png', :alt => 'Google plus' %></a><% end %>
+                      <% if !@user.facebook.blank? %><a href="<%= @user.facebook %>"><%= image_tag 'icon-facebook.png', :alt => 'Facebook' %></a><% end %>
+                      <% if !@user.twitter.blank? %><a href="<%= @user.twitter %>"><%= image_tag 'icon-twitter.png', :alt => 'Twitter' %></a><% end %>
+                      <% if !@user.linkedin.blank? %><a href="<%= @user.linkedin %>"><%= image_tag 'icon-linkedin.png', :alt => 'LinkedIn' %></a><% end %>
                   </div>
                   <div class="profile-bio">
                       <div class="bio-section">

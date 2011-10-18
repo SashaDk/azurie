@@ -543,7 +543,6 @@ fieldset{
 	color:#787879;
 }
 .open{
-	float:left;
 	font-size:11px;
 	line-height:12px;
 	font-weight:bold;
@@ -669,10 +668,11 @@ fieldset{
 	list-style:none;
 	height:1%;
 	overflow:hidden;
+  display:inline;
 }
 .line ul li, 
 .section-holder .line ul li{
-	float:left;
+  display:inline;
 	margin:0 5px 0 0;
 	padding:0 0 0 6px;
 	background:url(../images/separator-3.jpg) no-repeat 0 3px;
@@ -681,7 +681,7 @@ fieldset{
 }
 .line ul a, 
 .section-holder .line ul a{
-	float:left;
+  display:inline;
 	text-decoration:none;
 	color:#787879;
 	font-family:Arial, Helvetica, sans-serif;
