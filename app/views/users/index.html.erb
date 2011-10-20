@@ -1,19 +1,37 @@
+<%= flash_helper %>
 <h1>Listing users</h1>
 
 <table>
   <tr>
     <th>Email</th>
+    <th>Role</th>
     <th></th>
     <th></th>
     <th></th>
+    <% if can? :manage, User %>
+      <th></th>
+      <th></th>
+    <% end %>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%= user.email %></td>
+    <td><%= user.role %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if !current_user?(user) && can?(:manage, User) %>
+      <% if user.role != 'admin' %>
+        <td><%= link_to 'Make admin', make_admin_user_path(user), :confirm => 'Are you sure?' %></td>
+      <% end %>
+      <% if user.role != 'expert' %>
+        <td><%= link_to 'Make expert', make_expert_user_path(user), :confirm => 'Are you sure?' %></td>
+      <% end %>
+      <% if user.role != 'guest' %>
+        <td><%= link_to 'Make guest', make_guest_user_path(user), :confirm => 'Are you sure?' %></td>
+      <% end %>
+    <% end %>
   </tr>
 <% end %>
 </table>

@@ -24,6 +24,7 @@ Azurie::Application.routes.draw do
     member do
       get :make_expert
       get :make_admin
+      get :make_guest
     end
     collection do
       post :fakereg
