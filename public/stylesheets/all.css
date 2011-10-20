@@ -2184,3 +2184,11 @@ a.notifications .notifications-counter {
 .notice a {color:#514721;}
 .success a {color:#264409;}
 .info a {color:#205791;}
+
+.picture-video {
+    text-align:center;
+    margin:0 0 15px 0;
+    border-top:1px solid #CBCBC1;
+    border-bottom:1px solid #CBCBC1;
+    padding: 15px 0;
+}
