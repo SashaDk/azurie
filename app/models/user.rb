@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     Question.includes(:answers).where(:answers => { :user_id => self.id })
   end
   
+  def pending_questions
+    Question.includes(:assingnments).where(:assignments => { :user_id => self.id }, :answers_count => 0)
+  end
+  
   def make_admin!
     self.role = :admin
     self.save
