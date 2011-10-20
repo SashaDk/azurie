@@ -51,4 +51,8 @@ module ApplicationHelper
   def category1_name(category)
     CATEGORY_GROUPS[category.split("_").first.to_sym]
   end
+  
+  def pluralize_without_number(number, string)
+    pluralize(number, string)[/(\d)+ (.*)/, 2]
+  end
 end

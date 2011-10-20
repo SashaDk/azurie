@@ -16,8 +16,8 @@
 	</fieldset>
 </form>
 <ul class="nav-add">
-	<li><span><%= @questions.count %></span> QUESTIONS</li>
-	<li><span><%= @answers.count %></span> ANSWERS</li>
+	<li><span><%= @questions.count %></span> <%= pluralize_without_number @questions.count, 'QUESTIONS' %></li>
+	<li><span><%= @answers.count %></span> <%= pluralize_without_number @answers.count, 'ANSWERS' %></li>
 	<li><a href="#"><span>456</span> FOLLOWING</a></li>
 	<!--li class="bul-slash"><a href="#">RATING</a></li-->
 	<li class="bul-slash"><a href="<%= url_for(params.merge(:order => 'popular')) %>"><% if params[:order] == 'popular' %><span>POPULARITY</span><% else %>POPULARITY<% end %></a></li>
