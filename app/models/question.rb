@@ -35,6 +35,14 @@ class Question < ActiveRecord::Base
       .limit(5)
   end
   
+  def category1
+    category.split("_").first
+  end
+  
+  def category2
+    category
+  end
+  
   def self.category(category)
     Question.where(:category.like => "#{category}%")
   end
