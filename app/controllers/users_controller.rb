@@ -45,6 +45,14 @@ class UsersController < ApplicationController
     redirect_to users_path, :notice => 'User was successfully promoted to admins.'
   end
   
+  # GET /users/1/make_guest
+  def make_guest
+    @user = User.find(params[:id])
+    @user.make_guest!
+    
+    redirect_to users_path, :notice => 'User was successfully made guest.'
+  end
+  
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])

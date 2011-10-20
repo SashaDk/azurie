@@ -55,4 +55,20 @@ module ApplicationHelper
   def pluralize_without_number(number, string)
     pluralize(number, string)[/(\d)+ (.*)/, 2]
   end
+  
+  def current_user?(user)
+    user_signed_in? && current_user == user
+  end
+  
+  def flash_helper
+    f_names = [:notice, :warning, :message]
+    fl = ''
+    for name in f_names
+      if flash[name]
+        fl = fl + "<div class=\"notice\">#{flash[name]}</div>"
+      end
+      flash[name] = nil;
+    end
+    fl.html_safe
+  end
 end

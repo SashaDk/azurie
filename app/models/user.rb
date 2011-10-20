@@ -48,6 +48,11 @@ class User < ActiveRecord::Base
     self.save
   end
   
+  def make_guest!
+    self.role = :guest
+    self.save
+  end
+  
   def admin?
     self.role == 'admin'
   end
