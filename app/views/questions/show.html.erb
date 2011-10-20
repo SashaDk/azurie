@@ -1,5 +1,5 @@
 <div class="sections">
-    <p id="notice"><%= notice %></p>
+    <p class="notice"><%= notice %></p>
 		<div class="section" style="border-bottom:none;padding:0;">
       <div class="heading2">
         <ul>
@@ -15,12 +15,15 @@
       <h3><%= @question.title %></h3>
     </div>
 </div>
+<% if @question.answers == 0 %>
+  <p>No one answered this question yet. <% if current_user.admin? || current_user.expert? %><%= link_to 'Post an answer', new_question_answer_path(@question) %><% end %></p>
+<% else %>
 <% @question.answers.each do |answer| %>
 <div class="section">
   <%= render answer %>
 </div>
 <% end %>
-
+<% end %>
 <% content_for :sidebar do %>
 <!-- sidebar -->
 	<div id="sidebar">
