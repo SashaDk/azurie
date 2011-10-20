@@ -5,13 +5,34 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = params[:category].blank? ? Question.includes(:answers, :tags) : 
-      Question.category(params[:category]).includes(:answers, :tags)
+    @questions = params[:category].blank? ? Question.top : Question.category(params[:category])
+    @questions = @questions.includes(:answers, :tags).paginate(:page => params[:page])
     @questions = @questions.order(:created_at.desc) if params[:order] == 'date'
     @questions = @questions.order(:answers_count.desc) if params[:order] == 'popular'
-    @answers = Answer.where(:question_id => @questions)
+    @questions_count = @questions.count
+    @answers_count = Answer.where(:question_id => @questions).count
     respond_to do |format|
       format.html # index.html.erb
+      format.xml  { render :xml => @questions }
+    end
+  end
+  
+  # GET /questions/pending
+  # GET /questions/pending.xml
+  def pending
+    @questions = Question.pending
+    respond_to do |format|
+      format.html # pending.html.erb
+      format.xml  { render :xml => @questions }
+    end
+  end
+
+  # GET /questions/unanswered
+  # GET /questions/unanswered.xml
+  def unanswered
+    @questions = Question.unanswered
+    respond_to do |format|
+      format.html # unanswered.html.erb
       format.xml  { render :xml => @questions }
     end
   end
@@ -46,15 +67,15 @@ class QuestionsController < ApplicationController
   # GET /questions/1/verify
   def verify
     @question = Question.find(params[:id])
-    @question.verify!
-    redirect_to(@question, :notice => 'Question was successfully verified.')
+    @question.verify
+    redirect_to(pending_questions_path, :notice => 'Question was successfully verified.')
   end
 
   # GET /questions/1/unverify
   def unverify
     @question = Question.find(params[:id])
-    @question.unverify!
-    redirect_to(@question, :notice => 'Question was successfully unverified.')
+    @question.unverify
+    redirect_to(pending_questions_path, :notice => 'Question was successfully unverified.')
   end
 
   # POST /questions
@@ -77,7 +98,7 @@ class QuestionsController < ApplicationController
   # PUT /questions/1
   # PUT /questions/1.xml
   def update
-    @question = Question.find(params[:id])
+    @question = Question.unscoped.find(params[:id])
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
@@ -93,7 +114,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.xml
   def destroy
-    @question = Question.find(params[:id])
+    @question = Question.unscoped.find(params[:id])
     @question.destroy
 
     respond_to do |format|

@@ -1,7 +1,15 @@
 class Question < ActiveRecord::Base
   has_paper_trail
   acts_as_taggable
-  state_machine :state, :initial => :new
+  state_machine :state, :initial => :new do
+    event :verify do
+      transition :new => :verified
+    end
+    
+    event :unverify do
+      transition :verified => :new
+    end
+  end
   belongs_to :user
   has_many :answers
   has_many :assignments
@@ -9,6 +17,12 @@ class Question < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
   validates :user_id, :presence => true
+  
+  scope :top, :conditions => { :answers_count.gt => 0, :state => :verified }
+  scope :recent, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :created_at.desc
+  scope :popular, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :answers_count.desc
+  scope :pending, :conditions => { :state => :new }
+  scope :unanswered, :conditions => { :answers_count => 0, :state => :verified }
   
   def has_answers?
     self.answers.exists?
@@ -23,31 +37,5 @@ class Question < ActiveRecord::Base
   
   def self.category(category)
     Question.where(:category.like => "#{category}%")
-  end
-  
-  def verified?
-    self.state == :verified
-  end
-  
-  def verify!
-    self.state = :verified
-    self.save
-  end
-  
-  def unverify!
-    self.state = :new
-    self.save
-  end
-  
-  def self.top
-    Question.all
-  end
-  
-  def self.popular
-    Question.limit(5)
-  end
-  
-  def self.recent
-    Question.limit(5)
   end
 end

@@ -10,6 +10,11 @@ Azurie::Application.routes.draw do
   resources :questions do
     resources :answers
     resources :assignments
+    collection do
+      get :pending
+      get :unanswered
+      get :deleted
+    end
     member do
       get :verify
       get :unverify

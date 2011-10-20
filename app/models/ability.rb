@@ -13,7 +13,7 @@ class Ability
           can :create, Answer
           can :manage, Answer, :user_id => user.id
         end
-        can :create, Question
+        can [:create, :new], Question
         can :show, User
         can :manage, User, :id => user.id
         cannot :index, User

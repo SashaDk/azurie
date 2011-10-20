@@ -18,6 +18,7 @@ gem 'cancan'
 gem 'state_machine'
 gem 'meta_where'
 gem 'aws-s3'
+gem 'will_paginate'
 
 # Use unicorn as the web server
 #gem 'unicorn'

@@ -46,7 +46,7 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to([@question, @assignment], :notice => 'Assignent was successfully created.') }
+        format.html { redirect_to(unanswered_questions_path, :notice => 'Assignent was successfully created.') }
         format.xml  { render :xml => @assignment, :status => :created, :location => @assignment }
       else
         format.html { render :action => "new" }
