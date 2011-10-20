@@ -5,29 +5,24 @@
 				<ul>
 					<li>
 						<div class="visual">
-							<img src="images/img-20.jpg" height="315" width="534" alt="image" />
-							<a href="#" class="play">play</a>
-							<a href="#">Courtesy: Harpers</a>
+							<% if !Briefing.last.video.blank? %>
+                <%= Briefing.last.video.html_safe %>
+              <% else %>
+                <%= image_tag(Briefing.last.picture.url(:medium)) %>
+              <% end %>
+              <!--a href="#" class="play">play</a>
+							<a href="#">Courtesy: Harpers</a-->
 						</div>
 						<div class="textbox">
 							<span>FEATURED BRIEFINGS</span>
-							<strong>How To Negotiate Like Batman</strong>
-							<div class="heading">
+							<strong><%= link_to Briefing.last.title, briefing_path(Briefing.last) %></strong>
+							<!--div class="heading">
 								<ul>
 									<li><a href="#">Human Capital</a></li>
 									<li><a href="#">Negotiations</a></li>
 								</ul>
-							</div>
-							<p>Reframing the other side's position to shift his perceived negotiation leverage is an extremely powerful negotiation tactic and a key ingredient to a successful negotiation (friendly or hostile). Matt Cohen takes a scene from Batman the movie as an example: “Coleman Reese (played by Joshua Harto) is an M&A lawyer working for Wayne Enterprises. <a href="#">(learn more)</a></p>
-							<ul class="switcher">
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">6</a></li>
-								<li class="no-line"><a href="#" class="btn-next">&gt;</a></li>
-							</ul>
+							</div-->
+							<p><%= Briefing.last.description %> <%= link_to '(learn more)', briefing_path(Briefing.last) %></a></p>
 						</div>
 					</li>
 				</ul>
