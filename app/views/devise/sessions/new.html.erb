@@ -1,3 +1,4 @@
+<div id="content">
 <ul class="naving">
   <li><span>SIGN IN</span></li>
 </ul>
@@ -5,7 +6,8 @@
 
   <% if flash.any? %>
     <div class="error">
-      <% flash.each do |msg, name| %><%= name %><br/>
+      <% flash.each do |msg, name| %>
+        <%= name %><br/>
       <% end %>
     </div>
   <% end %>
@@ -31,4 +33,5 @@
 <% end %>
 <div style="margin-top:20px">
 <%= render :partial => "devise/shared/links" %>
+</div>
 </div>

@@ -3,14 +3,10 @@
 							</ul>
 <%= form_for([@question,@answer]) do |f| %>
   <% if @answer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
-
-      <ul>
+    <div class="error">
       <% @answer.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <%= msg %><br/>
       <% end %>
-      </ul>
     </div>
   <% end %>
 							<div class="section2">

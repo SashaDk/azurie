@@ -152,11 +152,11 @@ fieldset{
 #gallery{
 	margin:2px 0 0 -20px;
 	height:315px;
-	width:870px;
+	width:982px;
 }
 .slide{
 	height:315px;
-	width:870px;
+	width:982px;
 	position:relative;
 	overflow:hidden;
 }
@@ -169,13 +169,13 @@ fieldset{
 }
 .slide ul li{
 	float:left;
-	width:870px;
+	width:982px;
 	overflow:hidden;
 }
 .visual{
 	float:left;
 	width:480px;
-	margin:0 71px 0 0;
+	margin:0 40px 0 0;
 	position:relative;
 }
 .visual img{
@@ -211,6 +211,15 @@ fieldset{
 	overflow:hidden;
 	letter-spacing:0.2px;
 }
+
+#gallery .textbox a {
+    color:#fff;
+}
+
+#gallery .textbox a:hover {
+    color:#CC1885;
+}
+
 .textbox span{
 	display:block;
 	margin:0 0 4px;
@@ -1202,6 +1211,7 @@ a.notifications .notifications-counter {
 	height:1%;
 	padding:32px 0 0 74px;
 	overflow:hidden;
+  clear:both;
 }
 .columns{
 	margin:0 0 25px;
@@ -2184,6 +2194,12 @@ a.notifications .notifications-counter {
 .notice a {color:#514721;}
 .success a {color:#264409;}
 .info a {color:#205791;}
+table {margin-bottom:1.4em;width:100%;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tbody tr:nth-child(even) td, tbody tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
 
 .picture-video {
     text-align:center;

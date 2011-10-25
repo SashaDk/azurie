@@ -11,7 +11,9 @@
 			<li>posted <%= distance_of_time_in_words_to_now(briefing.created_at) %> ago</li>
 		</ul>
 		<div class="section-row">
-			<img src="images/img-6.jpg" height="133" width="196" alt="animal" />
+      <% if !briefing.picture.blank? %>
+      	<%= image_tag(briefing.picture.url(:small)) %>
+      <% end %>
 			<p><%= briefing.description %> <%= link_to "(learn more)", [briefing] %></p>
 		</div>
 	</div>

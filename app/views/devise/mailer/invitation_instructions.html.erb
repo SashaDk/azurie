@@ -1,8 +1,7 @@
-<p>Hello <%= @resource.email %>!</p>
-
-<p>Someone has invited you to <%= root_url %>, you can accept it through the link below.</p>
-
+<h1>You were invited to join Azurie!</h1>
+<p><a href="http://azurie.com">Azurie</a> is an international Q&A hub for startup entrepreneurs who seek knowledge and insights from foremost professionals and thought leaders in business, academic and creative disciplines.</p>
+<p>The team at Azurie believes your thoughts and ideas on questions that arise during the implementation and growth stage of start up ventures is invalueble for a community of global and entrepreneurial minds.</p>
+<p>On Azurie, people can read and follow experts and easily share the most insightful information throughout their social media. Besides answering existing questions you can start adding your own Frequently Asked Questions list to raise awareness and know-how on matters you think are important to startup entrepreneurs.</p>
+<p>It would be an honor to welcome and feature you on this young platform. You can read more about Azurie at www.azurie.com/about. If you have any questions please don't hesitate to contact me.</p>
 <p><%= link_to 'Accept invitation', accept_invitation_url(@resource, :invitation_token => @resource.invitation_token) %></p>
-
-<p>If you don't want to accept the invitation, please ignore this email.<br />
-Your account won't be created until you access the link above and set your password.</p>
+<p style="padding-top:10px;margin-top:10px;border-top:1px solid #ebebeb;">Sincerely, Azurie Team</p>
