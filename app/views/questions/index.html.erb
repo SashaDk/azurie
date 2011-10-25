@@ -19,8 +19,6 @@
 <ul class="nav-add">
 	<li><span><%= @questions_count %></span> <%= pluralize_without_number @questions_count, 'QUESTIONS' %></li>
 	<li><span><%= @answers_count %></span> <%= pluralize_without_number @answers_count, 'ANSWERS' %></li>
-	<li><a href="#"><span>456</span> FOLLOWING</a></li>
-	<!--li class="bul-slash"><a href="#">RATING</a></li-->
 	<li class="bul-slash"><a href="<%= url_for(params.merge(:order => 'popular')) %>"><% if params[:order] == 'popular' %><span>POPULARITY</span><% else %>POPULARITY<% end %></a></li>
 	<li><a href="<%= url_for(params.merge(:order => 'date')) %>"><% if params[:order] == 'date' || params[:order].blank? %><span>DATE</span><% else %>DATE<% end %></a></li>
 </ul>
