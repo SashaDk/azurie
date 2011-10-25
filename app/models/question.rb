@@ -33,6 +33,7 @@ class Question < ActiveRecord::Base
       .where(:category => self.category, :id.not_eq => self.id)
       .order(:answers => :created_at.desc)
       .limit(5)
+      .select('distinct questions.*')
   end
   
   def category1
