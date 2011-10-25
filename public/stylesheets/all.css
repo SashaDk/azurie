@@ -152,11 +152,11 @@ fieldset{
 #gallery{
 	margin:2px 0 0 -20px;
 	height:315px;
-	width:870px;
+	width:982px;
 }
 .slide{
 	height:315px;
-	width:870px;
+	width:982px;
 	position:relative;
 	overflow:hidden;
 }
@@ -169,13 +169,13 @@ fieldset{
 }
 .slide ul li{
 	float:left;
-	width:870px;
+	width:982px;
 	overflow:hidden;
 }
 .visual{
 	float:left;
 	width:480px;
-	margin:0 71px 0 0;
+	margin:0 40px 0 0;
 	position:relative;
 }
 .visual img{
@@ -211,6 +211,15 @@ fieldset{
 	overflow:hidden;
 	letter-spacing:0.2px;
 }
+
+#gallery .textbox a {
+    color:#fff;
+}
+
+#gallery .textbox a:hover {
+    color:#CC1885;
+}
+
 .textbox span{
 	display:block;
 	margin:0 0 4px;

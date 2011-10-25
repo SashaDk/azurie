@@ -11,18 +11,10 @@
               <% else %>
                 <%= image_tag(Briefing.last.picture.url(:medium)) %>
               <% end %>
-              <!--a href="#" class="play">play</a>
-							<a href="#">Courtesy: Harpers</a-->
 						</div>
 						<div class="textbox">
 							<span>FEATURED BRIEFINGS</span>
 							<strong><%= link_to Briefing.last.title, briefing_path(Briefing.last) %></strong>
-							<!--div class="heading">
-								<ul>
-									<li><a href="#">Human Capital</a></li>
-									<li><a href="#">Negotiations</a></li>
-								</ul>
-							</div-->
 							<p><%= Briefing.last.description %> <%= link_to '(learn more)', briefing_path(Briefing.last) %></a></p>
 						</div>
 					</li>
