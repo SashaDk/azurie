@@ -4,10 +4,9 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>The question was assigned to you on Azurie</h1>
-    <p>
-      The question titled "<%= @assignment.question.title %>" was assigned
-      to you on <a href='http://azurie.com/'>Azurie</a>
-    </p>
+    <p>Question "<%= link_to @assignment.question.title, @assignment.question %>" has been selected for you on Azurie.</p>
+    <p>To share your opinion or insights please click <%= link_to "here",  new_question_answer_path(@assignment.question) %>.</p>
+    <p>Thank you!</p>
+    <p style="padding-top:10px;margin-top:10px;border-top:1px solid #ebebeb;">Azurie Team</p>
   </body>
 </html>

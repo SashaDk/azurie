@@ -3,11 +3,11 @@ class UserMailer < ActionMailer::Base
   
   def fakereg(params)
     @params = params
-    mail(:to => APP_CONFIG[:default_to_email], :subject => "Yet Another Fake Reg From Azurie")
+    mail(:to => APP_CONFIG[:default_to_email], :subject => "Yet Another Reg From Azurie")
   end
   
   def assignment(assignment)
     @assignment = assignment
-    mail(:to => @assignment.user.email, :subject => "The question was assigned to you on Azurie")
+    mail(:to => @assignment.user.email, :subject => "New question on Azurie")
   end
 end
