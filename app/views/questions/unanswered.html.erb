@@ -2,6 +2,7 @@
 <h1>Listing unanswered questions</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Title</th>
     <th>Author</th>
@@ -15,6 +16,8 @@
       <th></th>
     <% end %>
   </tr>
+  </thead>
+  <tbody>
 
 <% @questions.each do |question| %>
   <tr>
@@ -29,6 +32,7 @@
     <td><%= link_to 'Assign', new_question_assignment_path(question)%></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />

@@ -2,12 +2,12 @@
 <h1>Listing pending questions</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Title</th>
     <th>Author</th>
     <th>Category</th>
     <th>Tags</th>
-    <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,20 +15,21 @@
       <th></th>
     <% end %>
   </tr>
-
+  </thead>
+  <tbody>
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.title %></td>
     <td><%= link_to question.user.display_name, question.user %></td>
     <td><%= question.category %></td>
     <td><%= question.tag_list %></td>
-    <td><%= question.description %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
     <td><%= link_to 'Verify', verify_question_path(question), :confirm => 'Are you sure?' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
