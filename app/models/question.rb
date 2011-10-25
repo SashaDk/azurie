@@ -18,7 +18,8 @@ class Question < ActiveRecord::Base
     indexes tags.name, as => :tags
     indexes user.first_name, as => :user_firstname
     indexes user.last_name, as => :user_lastname
-    has category, answers_count
+    has :category, :type => :string 
+    has answers_count
     where "questions.state = 'verified' and questions.answers_count > 0"
     set_property :delta => false
   end
