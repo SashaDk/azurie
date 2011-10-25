@@ -6,7 +6,8 @@
 
   <% if flash.any? %>
     <div class="error">
-      <% flash.each do |msg, name| %><%= name %><br/>
+      <% flash.each do |msg, name| %>
+        <%= name %><br/>
       <% end %>
     </div>
   <% end %>
