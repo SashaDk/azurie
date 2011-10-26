@@ -1,1 +1,6 @@
-<pre><%= @questions.to_yaml %></pre>
+<div>
+  <div>Total found: <%= @questions_count %></div>
+  <% @questions.each do |question| %>
+    <div><%= question.title %></div>
+  <% end %>
+</div>
