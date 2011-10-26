@@ -13,7 +13,7 @@
               <% end %>
 						</div>
 						<div class="textbox">
-							<span>FEATURED BRIEFINGS</span>
+							<span><%= link_to "BRIEFINGS", briefings_path %></span>
 							<strong><%= link_to Briefing.last.title, briefing_path(Briefing.last) %></strong>
 							<p><%= Briefing.last.description %> <%= link_to '(learn more)', briefing_path(Briefing.last) %></a></p>
 						</div>

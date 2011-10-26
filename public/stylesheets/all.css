@@ -216,6 +216,11 @@ fieldset{
     color:#fff;
 }
 
+#gallery .textbox span a {
+    color:#CC1885;
+    text-decoration:none;
+}
+
 #gallery .textbox a:hover {
     color:#CC1885;
 }
