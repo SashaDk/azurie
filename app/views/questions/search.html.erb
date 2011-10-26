@@ -1,7 +1,28 @@
-<div>
-  <div>Total found: <%= @questions_count %></div>
-  <% @questions.each do |question| %>
-    <h3><%= question.title %></h3>
-    <div><%= question.description %></div>
-  <% end %>
+<% content_for :sidebar do %>
+  <div id="sidebar">
+		<%= render 'shared/nav_sidebar' %>
+	</div>
+<% end %>
+
+<div id="content">
+  <h2>SEARCH RESULTS</h2>
+  <form class="search" action="<%= search_questions_path %>">
+	  <fieldset>
+		  <div class="row">
+			  <span>
+				  <input name="q" type="text" value="SEARCH QUERY HERE" />
+				  <input type="submit" value="" class="btn-search" />
+			  </span>
+		  </div>
+	  </fieldset>
+  </form>
+  <div class="sections">
+    <% @questions.each do |question| %>
+	    <%= render question %>
+	  <% end %>
+  </div>
+  <div class="section-area">
+	  <h4>CAN'T FIND AN ANSWER? <%= link_to 'POST YOUR QUESTION HERE', new_question_path %></h4>
+	  <!--a href="#" class="load">LOAD MORE Q&amp;As</a-->
+  </div>
 </div>
