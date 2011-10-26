@@ -2,6 +2,16 @@ class QuestionsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   load_and_authorize_resource
 
+  # GET /records/search
+  def search
+    @page = params[:page].to_i + 1 if params[:page]
+    @questions = Question.search params[:q], :match_mode => :boolean, :page => @page, :per_page => params[:pagelimit]
+    @questions_count = @questions.total_entries
+    respond_to do |format|
+      format.html # search.html.erb
+    end
+  end
+
   # GET /questions
   # GET /questions.xml
   def index

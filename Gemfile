@@ -19,6 +19,8 @@ gem 'state_machine'
 gem 'meta_where'
 gem 'aws-s3'
 gem 'will_paginate'
+gem 'thinking-sphinx'
+gem 'flying-sphinx'
 
 # Use unicorn as the web server
 #gem 'unicorn'

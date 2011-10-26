@@ -10,6 +10,19 @@ class Question < ActiveRecord::Base
       transition :verified => :new
     end
   end
+  define_index do
+    indexes title, :sortable => true
+    indexes description
+    indexes answers.text, as => :answers_text
+    indexes answers.fulltext, as => :answers_fulltext
+    indexes tags.name, as => :tags
+    indexes user.first_name, as => :user_firstname
+    indexes user.last_name, as => :user_lastname
+    has :category, :type => :string 
+    has answers_count
+    where "questions.state = 'verified' and questions.answers_count > 0"
+    set_property :delta => false
+  end
   belongs_to :user
   has_many :answers
   has_many :assignments
