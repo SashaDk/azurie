@@ -1,6 +1,7 @@
 <div>
   <div>Total found: <%= @questions_count %></div>
   <% @questions.each do |question| %>
-    <div><%= question.title %></div>
+    <h3><%= question.title %></h3>
+    <div><%= question.description %></div>
   <% end %>
 </div>
