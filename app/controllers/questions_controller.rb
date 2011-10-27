@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :search]
   load_and_authorize_resource
 
   # GET /records/search
@@ -62,7 +62,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
   def new
     @question = Question.new
-
+    @question.answers.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @question }
@@ -93,6 +93,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     @question.user = current_user 
+    @question.answers.first.user = current_user if @question.answers.any?
     
     respond_to do |format|
       if @question.save

@@ -6,11 +6,11 @@
 <% end %>
 
 <h2>ALL QUESTIONS<% if !params[:category].blank? %> IN CATEGORY <%= category_name(params[:category]).upcase %> <% end %></h2>
-<form class="search" action="#">
+<form class="search" action="<%= search_questions_path %>">
 	<fieldset>
 		<div class="row">
 			<span>
-				<input type="text" value="SEARCH QUERY HERE" />
+				<input name="q" type="text" value="SEARCH QUERY HERE" />
 				<input type="submit" value="" class="btn-search" />
 			</span>
 		</div>

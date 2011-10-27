@@ -26,7 +26,8 @@ class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers
   has_many :assignments
-  attr_accessible :title, :description, :category, :tag_list
+  attr_accessible :title, :description, :category, :tag_list, :answers_attributes
+  accepts_nested_attributes_for :answers, :reject_if => :all_blank
   validates :title, :presence => true
   validates :description, :presence => true
   validates :user_id, :presence => true
