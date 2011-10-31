@@ -6,7 +6,7 @@
 				<ul>
 					<li>
 						<div class="visual">
-							<% if !Briefing.last.video.blank? %>
+							<% unless Briefing.last.video.blank? %>
                 <%= Briefing.last.video.html_safe %>
               <% else %>
                 <%= image_tag(Briefing.last.picture.url(:medium)) %>
@@ -15,7 +15,7 @@
 						<div class="textbox">
 							<span><%= link_to "BRIEFINGS", briefings_path %></span>
 							<strong><%= link_to Briefing.last.title, briefing_path(Briefing.last) %></strong>
-							<p><%= Briefing.last.description %> <%= link_to '(learn more)', briefing_path(Briefing.last) %></a></p>
+							<p><%= truncate strip_tags(Briefing.last.description), :length => 256, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(Briefing.last) %></a></p>
 						</div>
 					</li>
 				</ul>
