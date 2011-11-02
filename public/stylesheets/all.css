@@ -66,9 +66,9 @@ fieldset{
 .logo{
 	float:left;
 	margin:0;
-	background:url(../images/logo.jpg) no-repeat;
-	height:24px;
-	width:262px;
+	background:url(../images/logo.png) no-repeat;
+	height:32px;
+	width:294px;
 	text-indent:-9999px;
 	overflow:hidden;
 }
