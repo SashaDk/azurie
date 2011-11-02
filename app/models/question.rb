@@ -47,7 +47,7 @@ class Question < ActiveRecord::Base
       .where(:category => self.category, :id.not_eq => self.id)
       .order(:answers => :created_at.desc)
       .limit(5)
-      .select('distinct questions.*, created_at')
+      .select('distinct questions.*, questions.created_at')
   end
   
   def category1
