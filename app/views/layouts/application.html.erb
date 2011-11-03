@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Azurie</title>
+  <title>Azurie <%= yield :title %></title>
   <%= stylesheet_link_merged(:base).html_safe %>
   <%= javascript_include_merged(:base).html_safe %>
   <%= csrf_meta_tag %>

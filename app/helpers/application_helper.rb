@@ -71,4 +71,8 @@ module ApplicationHelper
     end
     fl.html_safe
   end
+
+  def title(title)
+    content_for(:title) { " | #{title}" }
+  end
 end
