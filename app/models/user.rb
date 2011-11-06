@@ -102,4 +102,8 @@ class User < ActiveRecord::Base
   def self.experts
     User.where(:role => :expert)
   end
+
+  def has_invitations_left?
+    true
+  end
 end

@@ -7,6 +7,9 @@
   <p><%= f.label :email %><br />
   <%= f.text_field :email %></p>
 
+  <p><%= f.label :role %><br />
+  <%= f.select :role, [:expert,:admin,:guest], :selected => :expert %></p>
+
   <p><%= f.submit "Send an invitation" %></p>
 <% end %>
 

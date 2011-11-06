@@ -14,7 +14,7 @@ class Ability
         end
         can [:create, :new], Question
         can :show, User
-        can :manage, User, :id => user.id
+        can [:edit, :update, :show, :destroy], User, :id => user.id
         cannot :index, User
       end
     end
