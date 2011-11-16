@@ -1218,6 +1218,9 @@ a.notifications .notifications-counter {
 	overflow:hidden;
   clear:both;
 }
+#footer p {
+    margin-bottom:0.4em;
+}
 .columns{
 	margin:0 0 25px;
 	width:100%;

@@ -6,16 +6,7 @@
 
 <div id="content">
   <h2>SEARCH RESULTS</h2>
-  <form class="search" action="<%= search_questions_path %>">
-	  <fieldset>
-		  <div class="row">
-			  <span>
-				  <input name="q" type="text" value="<%= params[:q] %>" />
-				  <input type="submit" value="" class="btn-search" />
-			  </span>
-		  </div>
-	  </fieldset>
-  </form>
+  <%= render 'shared/search_form' %>
   <div class="sections">
     <% @questions.each do |question| %>
 	    <%= render question %>
