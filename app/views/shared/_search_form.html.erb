@@ -1,0 +1,10 @@
+  <form class="search" action="<%= search_questions_path %>">
+	  <fieldset>
+		  <div class="row">
+			  <span>
+				  <input name="q" type="text" value="<% unless params[:q].blank? %><%= params[:q] %><% else %>SEARCH QUERY HERE<% end %>" onfocus="javascript:if(this.value=='SEARCH QUERY HERE'){this.value='';}" onblur="javascript:if(this.value==''){this.value='SEARCH QUERY HERE';}"/>
+				  <input type="submit" value="" class="btn-search" />
+			  </span>
+		  </div>
+	  </fieldset>
+  </form>
