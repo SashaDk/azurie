@@ -8,3 +8,4 @@
 </div>
 <p><%= answer.text %> <%= link_to "(learn more)", [answer.question,answer] %></a></p>
 <% if current_user == answer.user %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link">Edit</a></p><% end %>
+<% if can? :manage, :all %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link">Edit</a>&nbsp;<%= link_to 'Destroy', [answer.question,answer], :confirm => 'Are you sure?', :method => :delete %></p><% end %>
