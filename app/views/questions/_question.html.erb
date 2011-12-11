@@ -31,6 +31,7 @@
 		<ul>
 		  <% if can? :create, Answer %>
   			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
+        <% if can? :manage, :all %><li><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></li><% end %>
   	  <% end %>
 		</ul>
 	</div>
