@@ -21,6 +21,7 @@ gem 'aws-s3'
 gem 'will_paginate'
 gem 'thinking-sphinx'
 gem 'flying-sphinx'
+gem 'acts_as_commentable_with_threading'
 
 # Use unicorn as the web server
 #gem 'unicorn'

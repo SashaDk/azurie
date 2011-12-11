@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111018181701) do
+ActiveRecord::Schema.define(:version => 20111211113215) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -52,6 +52,23 @@ ActiveRecord::Schema.define(:version => 20111018181701) do
     t.datetime "picture_updated_at"
     t.text     "video"
   end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "commentable_id",   :default => 0
+    t.string   "commentable_type", :default => ""
+    t.string   "title",            :default => ""
+    t.text     "body",             :default => ""
+    t.string   "subject",          :default => ""
+    t.integer  "user_id",          :default => 0,  :null => false
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "questions", :force => true do |t|
     t.text     "title"
