@@ -8,5 +8,9 @@
 </div>
 <p><%= answer.text %> <%= link_to "(learn more)", [answer.question,answer] %></a></p>
 <% if current_user == answer.user %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link">Edit</a></p><% end %>
-<div class="book_link"><a href="#">The Long Tail: Why the Future is Selling Less of More</a> | <a href="#">Chris Anderson</a></div>
+<% unless answer.book_link.blank? %>
+  <div class="book_link">
+    <a href="<%= answer.book_link %>"><%= answer.book_name || answer.book_link %></a>&nbsp;
+    <% unless answer.book_author.blank? %>|&nbsp;<a href="<%= answer.book_link %>"><%= answer.book_author %></a></div><% end %>
+<% end %>
 <% if can? :manage, :all %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link">Edit</a>&nbsp;<%= link_to 'Destroy', [answer.question,answer], :confirm => 'Are you sure?', :method => :delete %></p><% end %>
