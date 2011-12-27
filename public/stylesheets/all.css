@@ -2215,3 +2215,19 @@ tfoot {font-style:italic;}
     border-bottom:1px solid #CBCBC1;
     padding: 15px 0;
 }
+
+.book_link {
+    background: url(../images/icon-book.png) left center no-repeat;
+    padding-left: 30px;
+}
+
+.book_link, .book_link a {
+    color:#000;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.book_link a:hover {
+    text-decoration:underline;
+}
