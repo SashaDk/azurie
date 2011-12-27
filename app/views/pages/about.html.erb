@@ -13,9 +13,8 @@
     <% if !user_signed_in? %>
 		<div class="find">
 			<strong>FIND KNOWLEDGE <br />&amp; INSPIRATION</strong>
-			<span>On realizing global business ideas</span>
+      <p>Azurie feeds on insights from entrepreneurial and creative thought leaders globally <%= link_to '(read more)', :controller => :pages, :action => :about %></p>
 			<a href="<%= new_user_registration_path %>" class="btn-find"><span>JOIN OUR COMMUNITY</span></a>
-			<p>A cross-disciplinary collaborative of leading professionals worlwide <%= link_to '(read more)', :controller => :pages, :action => :about %></p>
 		</div>
     <% end %>
 		<%= render 'shared/nav_sidebar' %>
