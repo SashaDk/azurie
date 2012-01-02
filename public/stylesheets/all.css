@@ -2288,3 +2288,29 @@ tfoot {font-style:italic;}
 #slider .pagination li.current a {
 	background-position:0 -12px;
 }
+
+label.answer-label {
+    margin: 2px 0 0;
+    font-size: 16px;
+    line-height: 23px;
+    color: #9C6262;
+    font-weight: normal;
+    font-family: 'AlternateGothic2BTRegular';
+    text-transform:uppercase;
+    display:block;
+}
+
+input.anwer-input {
+    padding: 1px 5px;
+    height: 14px;
+    background: white;
+    border: 1px solid #9C6262;
+    font-size: 12px;
+    line-height: 13px;
+}
+
+.anwers-form-section {
+    padding:10px 0 0 16px;
+    display:block;
+    clear:both;
+}
