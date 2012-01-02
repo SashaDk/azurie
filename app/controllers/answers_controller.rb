@@ -25,6 +25,24 @@ class AnswersController < ApplicationController
     end
   end
 
+  # POST /questions/1/answers/1/comment
+  # POST /questions/1/answers/1/comment.xml
+  def comment
+    @answer = @question.answers.find(params[:id])
+   
+    @comment = Comment.build_from(@answer, current_user.id, params[:comment])
+    @comment.save!
+    if params[:parent_id]
+      @parent = Comment.find(params[:parent_id])
+      @comment.move_to_child_of(@parent)
+      @comment.save!
+    end
+    respond_to do |format|
+      format.html { redirect_to([@question,@answer], :notice => 'Comment was successfully added.') }
+      format.xml  { render :xml => @comment }
+    end
+  end
+
   # GET /questions/1/answers/new
   # GET /questions/1/answers/new.xml
   def new

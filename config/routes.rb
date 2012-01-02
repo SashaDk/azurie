@@ -8,7 +8,11 @@ Azurie::Application.routes.draw do
   get "pages/thanks", :as => :thanks
 
   resources :questions do
-    resources :answers
+    resources :answers do
+      member do
+        post :comment
+      end
+    end
     resources :assignments
     collection do
       get :search
