@@ -1,27 +1,37 @@
 <div id="content">
 <% content_for :promo do %>
   <div class="promo">
-		<div id="gallery">
-			<div class="slide">
-				<ul>
-					<li>
-						<div class="visual">
-							<% unless Briefing.last.video.blank? %>
-                <%= Briefing.last.video.html_safe %>
-              <% else %>
-                <%= image_tag(Briefing.last.picture.url(:medium)) %>
-              <% end %>
-						</div>
-						<div class="textbox">
-							<span><%= link_to "BRIEFINGS", briefings_path %></span>
-							<strong><%= link_to Briefing.last.title, briefing_path(Briefing.last) %></strong>
-							<p><%= truncate strip_tags(Briefing.last.description), :length => 256, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(Briefing.last) %></a></p>
-						</div>
-					</li>
-				</ul>
+		<div id="slider"><div class="slides_container">
+      
+      <% Briefing.all.each do |briefing| %>
+			<div style="width:955px;height:300px;">
+        <div class="visual">
+          <% unless briefing.video.blank? %>
+            <!--<%= briefing.video.html_safe %>-->
+          <% else %>
+            <%= image_tag(briefing.picture.url(:medium)) %>
+          <% end %>
+        </div>
+        <div class="slide_textbox">
+          <span><%= link_to "BRIEFINGS", briefings_path %></span>
+          <strong><%= link_to briefing.title, briefing_path(briefing) %></strong>
+          <p><%= truncate strip_tags(briefing.description), :length => 256, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
+        </div>
 			</div>
-		</div>
+    <% end %>   
+		</div></div>
 	</div>
+  <script type="text/javascript"> 
+      $(function(){
+          $("#slider").slides({
+              play: 5000,
+              pause: 2500,
+              slideSpeed: 600,
+              hoverPause: true,
+              generateNextPrev: false
+          });
+      });
+  </script> 
 <% end %>
 
 <% content_for :sidebar do %>
@@ -42,7 +52,7 @@
 <%= render 'shared/search_form' %>
 <strong class="decor"><span>DAILY TOP Q&amp;As</span></strong>
 <!-- sections -->
-<div class="sections">
+<div class="sections">  
 	<% @top_questions.each do |question| %>
 	  <%= render question %>
 	<% end %>

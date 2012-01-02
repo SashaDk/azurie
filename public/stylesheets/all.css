@@ -67,8 +67,8 @@ fieldset{
 	float:left;
 	margin:0;
 	background:url(../images/logo.png) no-repeat;
-	height:32px;
-	width:294px;
+	height:36px;
+	width:246px;
 	text-indent:-9999px;
 	overflow:hidden;
 }
@@ -146,31 +146,9 @@ fieldset{
 .inner #main{padding:23px 0 0;}
 .promo{
 	margin:0 0 22px;
-	padding:28px 80px 0 90px;
-	height:347px;
-}
-#gallery{
-	margin:2px 0 0 -20px;
-	height:315px;
-	width:982px;
-}
-.slide{
-	height:315px;
-	width:982px;
-	position:relative;
-	overflow:hidden;
-}
-.slide ul{
-	margin:0;
-	padding:0;
-	list-style:none;
-	width:99999px;
-	overflow:hidden;
-}
-.slide ul li{
-	float:left;
-	width:982px;
-	overflow:hidden;
+	padding:28px 0 0 73px;
+	height:375px;
+  position:relative;
 }
 .visual{
 	float:left;
@@ -201,30 +179,6 @@ fieldset{
 	text-indent:-9999px;
 	overflow:hidden;
 }
-
-#gallery .textbox, #gallery .textbox p{
-	padding:1px 0 0;
-	font-size:12px;
-	line-height:18px;
-	color:#f8f7f8;
-	height:1%;
-	overflow:hidden;
-	letter-spacing:0.2px;
-}
-
-#gallery .textbox a {
-    color:#fff;
-}
-
-#gallery .textbox span a {
-    color:#CC1885;
-    text-decoration:none;
-}
-
-#gallery .textbox a:hover {
-    color:#CC1885;
-}
-
 .textbox span{
 	display:block;
 	margin:0 0 4px;
@@ -265,28 +219,6 @@ fieldset{
 }
 .textbox p a{text-decoration:none;}
 .textbox p a:hover{text-decoration:underline;}
-.slide ul.switcher{
-	margin:0 0 0 -10px;
-	padding:0;
-	list-style:none;
-	width:auto;
-	overflow:hidden;
-}
-.slide ul.switcher li{
-	float:left;
-	margin:0 7px 0 0;
-	padding:0 0 0 10px;
-	width:auto;
-	background:url(../images/separator-8.jpg) no-repeat 0 4px;
-	font-size:11px;
-	font-weight:bold;
-}
-.slide ul.switcher li.no-line{background:none;}
-.slide ul.switcher a{
-	text-decoration:none;
-	color:#fdfbf8;
-}
-.slide ul.switcher a:hover{color:#cf3b95;}
 .text{
 	font-size:36px;
 	line-height:43px;
@@ -2230,4 +2162,129 @@ tfoot {font-style:italic;}
 
 .book_link a:hover {
     text-decoration:underline;
+}
+
+
+
+
+/*
+	Slideshow
+*/
+
+#slider {
+	z-index:100;
+  width:955px;
+  height:315px;
+  position:relative;
+  displat:block;
+}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.slides_container {
+	width:955px;
+  height:315px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+  display:block;
+}
+
+#slider .slide_textbox {
+    display:block;
+    float:right;
+    width:350px;
+    color:#fff;
+}
+
+#slider .slide_textbox strong {
+    font-size:28px;
+    display:block;
+    font-weight:normal;
+    font-family:'AlternateGothic2BTRegular';
+    margin-bottom:30px;
+    margin-top:10px;
+}
+
+#slider .slide_textbox span {
+    font-family:'AlternateGothic2BTRegular';
+    font-size: 16px;
+    text-transform:uppercase;
+}
+
+#slider .slide_textbox strong a {
+    color:#fff;
+    text-decoration:none;
+}
+
+#slider .slide_textbox strong a:hover {
+    color:#fff;
+    text-decoration:underline;
+}
+
+#slider .slide_textbox span a {
+    color:#fff;
+    text-decoration:none;
+}
+
+#slider .slide_textbox span a:hover {
+    color:#fff;
+    text-decoration:underline;
+}
+
+/*
+	Next/prev buttons
+*/
+
+#slider .next,#slides .prev {
+	position:absolute;
+	top:107px;
+	left:-39px;
+	width:24px;
+	height:43px;
+	display:block;
+	z-index:101;
+}
+
+#slider .next {
+	left:585px;
+}
+
+/*
+	Pagination
+*/
+
+#slider .pagination {
+  margin:0;
+  padding:0;
+	width:100px;
+  position:absolute;
+  top:300px;
+  left:605px;
+}
+
+#slider .pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+#slider .pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url(../images/pagination.png);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+#slider .pagination li.current a {
+	background-position:0 -12px;
 }
