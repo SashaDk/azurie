@@ -387,6 +387,21 @@ fieldset{
 	display:inline;
 	margin:6px 2px 5px 6px;
 }
+
+.picture-video img {
+    float:none;
+}
+
+.briefing-small-image {
+    float:right;
+    margin: 0 0 0 15px;
+}
+
+.briefing-small-image img {
+    float:none;
+    margin-top:0;
+}
+
 .heading, 
 .heading2{
 	width:100%;
