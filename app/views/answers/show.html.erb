@@ -3,7 +3,7 @@
 <div class="sections">
 	<div class="section">
     
-    <p id="notice"><%= notice %></p>
+    <% if !notice.blank? %><div class="notice"><%= notice %></div><% end %>
 		
     <div class="heading2">
 			<ul>
@@ -35,11 +35,11 @@
 		</div>
 	</div>
 	<div class="section">
-		<p><strong>ANSWER CONT’D</strong>  <%= @answer.fulltext %></p>
+		<% if !@answer.fulltext.blank? %><p><strong>ANSWER CONT’D</strong>  <%= @answer.fulltext %></p><% end %>
 		<div class="section-holder">
 			<ul>
         <% if @answer.question.answers.count > 1 %>
-        <li><a href="<%= question_answers_path(@answer.question) %>"><span><%= @answer.question.answers.count %></span></a>MORE ANSWERS</li>
+        <li><a href="<%= question_path(@answer.question) %>"><%= @answer.question.answers.count %> <span>MORE ANSWERS</span></a></li>
         <% end %>
 				<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(@answer.question) %></li>
 			</ul>

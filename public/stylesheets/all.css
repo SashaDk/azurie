@@ -707,11 +707,7 @@ fieldset{
 }
 * html .section-holder ul a{word-spacing:1px;}
 .section-holder ul a span{
-	float:left;
-	font-family:Arial, Helvetica, sans-serif;
-	margin:0 3px 0 0;
-	font-weight:bold;
-	line-height:17px;
+	color:#484747;
 }
 .section-holder ul a strong{font-weight:normal;}
 .section-holder ul a:hover em, 

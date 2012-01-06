@@ -19,7 +19,7 @@
   <div class="section-holder">
 		<ul>
 		  <% if answer.question.answers.count > 1 %>
-			<li><a href="<%= question_answers_path(question) %>"><span><%= answer.question.answers.count %></span></a>MORE ANSWERS</li>
+			<li><a href="<%= question_path(question) %>"><%= answer.question.answers.count %> <span>MORE ANSWERS</span></a></li>
 			<% end %>
 			<% if can? :create, Answer %>
   			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
