@@ -18,10 +18,10 @@
 		</div>
 		<h3><%= @answer.question.title %></h3>
 		<!--ul class="nav-add">
-	<li><span>15</span> APPRECIATED</li>
-	<li><span>456</span> COMMENTS</li>
-	<li><span>300</span> VIEWS</li>
-</ul-->
+      <li><span>15</span> APPRECIATED</li>
+      <li><span>456</span> COMMENTS</li>
+      <li><span>300</span> VIEWS</li>
+    </ul-->
 		<div class="line">
       <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
       <ul>
@@ -114,12 +114,12 @@
 		<div class="com-end"></div>
 	</div-->
   
-	<div class="section">
+	<!--div class="section">
 		<strong class="rel-head">RELATED Q&amp;As</strong>
 		<% @answer.question.similar_questions.each do |question| %>
       <%= render question %>
     <% end %>
-	</div>
+	</div-->
 </div>
 
 <div id="disqus_thread"></div>
