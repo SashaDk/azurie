@@ -8,11 +8,12 @@
 
 		<div class="section-row">
       <div class="picture-video">
-        <% if !Briefing.last.video.blank? %>
-          <%= Briefing.last.video.html_safe %>
-        <% else %>
-          <%= image_tag(Briefing.last.picture.url(:medium)) %>
-        <% end %>
+          <% if !@briefing.video.blank? %>
+          <script type="text/javascript">
+            var BriefingVideo_<%= @briefing.id %> = '<%= @briefing.video.html_safe %>';
+          </script>
+          <% end %>
+          <div <% if !@briefing.video.blank? %>class="video-teaser" onclick='replaceVideoTeaser(this, BriefingVideo_<%= @briefing.id %>)'<% end %>><%= image_tag(@briefing.picture.url(:medium)) %></div>
       </div>
 			<p><%= @briefing.description %></p>
 		</div>

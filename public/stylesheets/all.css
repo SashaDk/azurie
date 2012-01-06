@@ -2324,3 +2324,19 @@ input.anwer-input {
     display:block;
     clear:both;
 }
+
+.video-teaser {
+    display:inline-block;
+    cursor:pointer;
+    position:relative;
+}
+
+.video-teaser-icon {
+    display:block;
+    width:41px;
+    height:40px;
+    background:url(../images/video-play.png) center no-repeat;
+    position:absolute;
+    bottom:20px;
+    left:30px;
+}

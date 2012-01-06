@@ -1,8 +1,8 @@
 ---
 javascripts:
 - base:
-  - application
   - jquery.min
+  - application
   - jquery_ujs
   - popup
   - slides.min.jquery
