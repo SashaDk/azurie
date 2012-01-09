@@ -46,73 +46,46 @@
 		</div>
 	</div>
   
-	<!--div class="box-comments">
+	<div class="box-comments">
 		<div class="comments-top">
 			<div class="comments-top-line">
 				<strong>COMMENT ON THIS POST</strong>
-				<span>23 total comments</span>
-			</div>
-			<div class="comments-block">
-				<strong>WHAT DO YOU THINK? WHAT IS YOUR EXPERIENCE?</strong>
-				<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
-				<form>
-					<fieldset>
-						<label>Sort by:</label>
-						<select>
-							<option>Threads recently updated</option>
-						</select>
-					</fieldset>
-				</form>
+				<span><%= @answer.comments.count %> total comments</span>
 			</div>
 			<ul class="com-post">
-				<li>
-					<div class="com-line">
-						<img src="images/img-7.jpg" alt="" />
-						<strong>KEITH HARING</strong>
-						<a href="#" class="bul-rate">0</a>
-						<a href="#">Reply</a>
-					</div>
-					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-					<a href="#" class="flag">flag</a>
-				</li>
-				<li class="rep-post">
-					<div class="com-line">
-						<img src="images/img-7.jpg" alt="" />
-						<strong>KEITH HARING</strong>
-						<a href="#" class="bul-rate">0</a>
-						<a href="#">Reply</a>
-					</div>
-					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-					<div class="underpost">
-						<a href="#">www.azurie.com</a>
-						<a href="#" class="flag">flag</a>
-					</div>
-				</li>
-				<li>
-					<div class="com-line">
-						<img src="images/img-7.jpg" alt="" />
-						<strong>KEITH HARING</strong>
-						<a href="#" class="bul-rate">0</a>
-						<a href="#">Reply</a>
-					</div>
-					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-					<a href="#" class="flag">flag</a>
-				</li>
+				<% Comment.each_with_level(@answer.comments) do |comment, level| %>
+				  <li <%= "class='rep-post-#{level}'".html_safe if level %> >
+	          <div class="com-line">
+		          <img src="images/img-7.jpg" alt="" />
+		          <strong><%= link_to comment.user.display_name.upcase, user_path(comment.user), :class => 'open' %></strong>
+		          <a href="#" class="bul-rate">0</a>
+		          <a href="#">Reply</a>
+	          </div>
+	          <p><span><%= distance_of_time_in_words_to_now(comment.created_at) %> ago: </span> <%= comment.body %></p>
+	          <div class="underpost">
+		          <a href="#">link</a>
+		          <a href="#" class="flag">flag</a>
+	          </div>
+          </li>
+				<% end %>
 			</ul>
 		</div>
-		<form class="com-form" action="">
-			<fieldset>
-				<strong>LOAD MORE COMMENTS</strong>
-				<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
-				<textarea rows="3" cols="3">Write comment here....</textarea>
-			</fieldset>
-		</form>
-		<div class="com-bot">
-			<a href="#" class="com-info">POSTING GUIDELINES</a>
-			<a href="#" class="com-add">ADD COMMENT</a>
-		</div>
+		<% if user_signed_in? %>
+		  <%= form_tag comment_question_answer_path(@answer.question, @answer), :method => :post, :class => "com-form" do %>
+			  <fieldset>
+				  <strong>WHAT DO YOU THINK? WHAT IS YOUR EXPERIENCE?</strong>				
+				  <textarea rows="3" cols="3" name="comment">Write comment here....</textarea>
+			  </fieldset>
+			  <div class="com-bot">
+			    <a href="#" class="com-info">POSTING GUIDELINES</a>
+			    <input type="submit" class="com-add" value="ADD COMMENT"/>
+		    </div>
+		  <% end %>
+		<% else %>
+		  <span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
+		<% end %>
 		<div class="com-end"></div>
-	</div-->
+	</div>
   
 	<!--div class="section">
 		<strong class="rel-head">RELATED Q&amp;As</strong>
@@ -121,22 +94,6 @@
     <% end %>
 	</div-->
 </div>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'azuriedev'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
 
 <% content_for :sidebar do %>
 <!-- sidebar -->
