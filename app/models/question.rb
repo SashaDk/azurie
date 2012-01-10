@@ -50,15 +50,7 @@ class Question < ActiveRecord::Base
       .select('distinct questions.*, answers.created_at')
   end
   
-  def category1
-    category.split("_").first
-  end
-  
-  def category2
-    category
-  end
-  
   def self.category(category)
-    Question.where(:category.like => "#{category}%")
+    Question.where(:category => category)
   end
 end

@@ -1,12 +1,8 @@
 <strong class="decor" id="nav-bar-decor"><span>CHOOSE  YOUR  Q&amp;A  THEME</span></strong>
 	<ul class="nav-bar">
-	  <% category_groups.each do |group, group_name| %>
-	    <li><%= link_to group_name, questions_path(:category => group) %>
-	      <ul class="dropdown">
-	        <% categories[group_name].each do |category_name, category| %>
-	          <li><%= link_to category_name, questions_path(:category => category) %></li>
-	        <% end %>
-	      </ul>
+	  <% categories.each do |category_name, category| %>
+	    <li>
+        <%= link_to category_name, questions_path(:category => category) %>
 	    </li>  
 	  <% end %>
 	</ul>
