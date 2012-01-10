@@ -16,7 +16,7 @@
         <div class="slide_textbox">
           <span><%= link_to "BRIEFINGS", briefings_path %></span>
           <strong><%= link_to briefing.title, briefing_path(briefing) %></strong>
-          <p><%= truncate strip_tags(briefing.description), :length => 256, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
+          <p><%= truncate strip_tags(briefing.description), :length => 512, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
         </div>
 			</div>
     <% end %>   
