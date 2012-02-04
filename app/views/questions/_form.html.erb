@@ -1,7 +1,4 @@
 
-  <ul class="naving">
-    <li><a href="#">ADD QUESTION </a></li>
-  </ul>
   <%= form_for(@question) do |f| %>
   <% if @question.errors.any? %>
     <div class="error">
@@ -64,7 +61,7 @@
 			</div>
 		</div>
 	<% end if can? :create, Answer %>
-	<div class="row" style="margin-bottom:15px;">
+	<div class="row" style="margin:15px 0;">
     <%= f.submit %>
   </div>
 <% end %>
