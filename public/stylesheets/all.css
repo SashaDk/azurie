@@ -2337,6 +2337,6 @@ input.anwer-input {
     height:40px;
     background:url(../images/video-play.png) center no-repeat;
     position:absolute;
-    bottom:20px;
+    top:260px;
     left:30px;
 }
