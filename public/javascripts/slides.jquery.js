@@ -243,6 +243,8 @@
 			function stop() {
 				// clear interval from stored id
 				clearInterval(elem.data('interval'));
+        //set text back to stop 
+        $('.' + option.playStop).text('play'); 
 			}
 
 			function pause() {
@@ -263,6 +265,8 @@
 					},option.pause);
 					// store pause interval
 					elem.data('pause',pauseTimeout);
+          //set text back to stop 
+          $('.' + option.playStop).text('stop'); 
 				} else {
 					// if no pause, just stop
 					stop();
@@ -430,6 +434,11 @@
 				}
 				animate('prev', effect);
 			});
+      // generate stop/play link 
+      if (option.generatePlayStop) { 
+        //outside of container (to not interfere with click on slide stop) 
+        $('.' + option.container, elem).after('<a href="#" class="'+ option.playStop +'">stop</a>'); 
+      } 
 			
 			// generate pagination
 			if (option.generatePagination) {
@@ -466,6 +475,10 @@
 				// if current slide equals clicked, don't do anything
 				if (current != clicked) {
 					animate('pagination', paginationEffect, clicked);
+          //reset stop/play 
+          option.clickStopped = false; //mark as not stopped 
+          //set text back to stop 
+          $('.' + option.playStop).text('stop'); 
 				}
 				return false;
 			});
@@ -481,6 +494,10 @@
 				// if current slide equals clicked, don't do anything
 				if (current != clicked) {
 					animate('pagination', paginationEffect, clicked);
+          //reset stop/play 
+          option.clickStopped = false; //mark as not stopped 
+          //set text back to stop 
+          $('.' + option.playStop).text('stop');
 				}
 				return false;
 			});
@@ -493,6 +510,51 @@
 				// store interval id
 				elem.data('interval',playInterval);
 			}
+    //custom stop/play item 
+    if (option.generatePlayStop) { 
+            $('.' + option.playStop, elem).click(function(e) { 
+                    e.preventDefault(); 
+                    if (option.clickStopped) { 
+                            //reset mouse leave event 
+                            control.bind('mouseleave',function(){ 
+                                    // on mouse leave start pause timeout 
+                                    pause(); 
+                            }); 
+                            //and start back up witout mouseleave 
+                            pause(); 
+                            option.clickStopped = false; //mark as not stopped 
+                            //set text back to stop 
+                            $(this).text('stop'); 
+                    }else{ 
+                            //stop animation 
+                            stop(); 
+                            //remove mouseleave so it will stay stopped 
+                            control.unbind('mouseleave'); 
+                            option.clickStopped = true; //mark as stopped 
+                            //set text back to play 
+                            $(this).text('play'); 
+                    } 
+            }); 
+    } 
+    if (option.clickStopSlideShow) { 
+            $(control, elem).click(function() { 
+                    if (option.clickStopped) { 
+                            control.bind('mouseleave',function(){ 
+                                    // on mouse leave start pause timeout 
+                                    pause(); 
+                            }); 
+                            option.clickStopped = false; 
+                            //set text back to stop 
+                            $('.' + option.playStop).text('stop'); 
+                    }else{ 
+                            stop(); 
+                            control.unbind('mouseleave'); 
+                            option.clickStopped = true; 
+                            //set text back to play 
+                            $('.' + option.playStop).text('play'); 
+                    } 
+            }); 
+    } 
 		});
 	};
 	
@@ -504,6 +566,10 @@
 		generateNextPrev: false, // boolean, Auto generate next/prev buttons
 		next: 'next', // string, Class name for next button
 		prev: 'prev', // string, Class name for previous button
+    generatePlayStop: true, // boolean, Auto generate play/stop link 
+    playStop: 'playStop', // string, Class name for play/stop link 
+    clickStopSlideShow: true, // boolean, clicking a slide stops/ starts slideshow animation 
+    clickStopped: false, // boolean, default status for click stops 
 		pagination: true, // boolean, If you're not using pagination you can set to false, but don't have to
 		generatePagination: true, // boolean, Auto generate pagination
 		prependPagination: false, // boolean, prepend pagination

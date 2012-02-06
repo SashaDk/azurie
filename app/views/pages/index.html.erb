@@ -1,41 +1,46 @@
-<div id="content">
 <% content_for :promo do %>
-  <div class="promo">
-		<div id="slider"><div class="slides_container">
-      
-      <% Briefing.all.each do |briefing| %>
-			<div style="width:955px;height:300px;">
-        <div class="visual">
-          <% if !briefing.video.blank? %>
-          <script type="text/javascript">
-            var BriefingVideo_<%= briefing.id %> = '<%= briefing.video.html_safe %>';
-          </script>
-          <% end %>
-          <div <% if !briefing.video.blank? %>class="video-teaser" onclick='replaceVideoTeaser(this, BriefingVideo_<%= briefing.id %>)'<% end %>><%= image_tag(briefing.picture.url(:medium)) %></div>
+<div id="featured" class="page-wrapper">
+  <div class="wrapper-content">
+    <div class="promo">
+      <div id="slider"><div class="slides_container">
+        
+        <% Briefing.all.each do |briefing| %>
+        <div style="width:955px;height:450px;">
+          <div class="visual">
+            <% if !briefing.video.blank? %>
+            <script type="text/javascript">
+              var BriefingVideo_<%= briefing.id %> = '<%= briefing.video.html_safe %>';
+            </script>
+            <% end %>
+            <div <% if !briefing.video.blank? %>class="video-teaser" onclick='replaceVideoTeaser(this, BriefingVideo_<%= briefing.id %>)'<% end %>><%= image_tag(briefing.picture.url(:x_medium)) %></div>
+          </div>
+          <div class="slide_textbox">
+            <span><%= link_to "BRIEFINGS", briefings_path %></span>
+            <strong><%= link_to briefing.title, briefing_path(briefing) %></strong>
+            <p><%= truncate strip_tags(briefing.description), :length => 700, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
+          </div>
         </div>
-        <div class="slide_textbox">
-          <span><%= link_to "BRIEFINGS", briefings_path %></span>
-          <strong><%= link_to briefing.title, briefing_path(briefing) %></strong>
-          <p><%= truncate strip_tags(briefing.description), :length => 512, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
-        </div>
-			</div>
-    <% end %>   
-		</div></div>
-	</div>
-  <script type="text/javascript"> 
-      $(function(){
-          $("#slider").slides({
-              play: 10000,
-              pause: 2500,
-              slideSpeed: 1000,
-              hoverPause: true,
-              generateNextPrev: false,
-              effect: 'fade'
-          });
-      });
-  </script> 
+      <% end %>   
+      </div></div>
+    </div>
+    <script type="text/javascript"> 
+        $(function(){
+            $("#slider").slides({
+                play: 10000,
+                pause: 2500,
+                slideSpeed: 1000,
+                hoverPause: true,
+                generateNextPrev: false,
+                effect: 'fade',
+                generatePlayStop: false
+            });
+        });
+    </script>
+  </div>
+</div>
 <% end %>
 
+<div id="content">
 <% content_for :sidebar do %>
   <!-- sidebar -->
 	<div id="sidebar">

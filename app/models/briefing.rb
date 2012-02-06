@@ -4,7 +4,7 @@ class Briefing < ActiveRecord::Base
     :design => "Design & Creativity",
     :trends => "Trends & Progress"
   }
-  has_attached_file :picture, :styles => { :medium => "480>", :small => "196>" },
+  has_attached_file :picture, :styles => { :medium => "480>", :small => "196>", :x_medium => "600" },
     :storage => :s3, :bucket => 'azurie-briefings',
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],

@@ -8,133 +8,140 @@
   <%= javascript_include_merged(:base).html_safe %>
   <%= csrf_meta_tag %>
 </head>
-<body <% unless params[:controller] == 'pages' %> class="inner" <% end %> >
-<!-- wrapper -->
-	<div id="wrapper">
-		<div class="w1">
-			<div class="w2">
-<!-- header -->
-				<div id="header">
-					<div class="area">
-						<h1 class="logo"><a href="/">Azurie VENTURE ROADMAP</a></h1>
-						
-						<% if user_signed_in? %>
-						  <ul class="tools tools-logged-in">
-                <li><%= link_to 'HOME', current_user %></li>
-                <li><%= link_to 'SETTINGS', edit_user_path(current_user) %></li>
-                <li><%= link_to "SIGN OUT", destroy_user_session_path %></li>
-						  </ul>
-						<% else %>
-						  <ul class="tools">
-  						  <li><%= link_to "SIGN IN", new_session_path(:user) %></li>
-							  <!--li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="Sign in with Facebook"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
-							  <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="Sign in with Google+"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li-->
-						  </ul>
-						<% end %>
-						
-					</div>
+<body>
+
+<div id="header" class="page-wrapper">
+  <div class="wrapper-content">
+    <div class="area">
+      <h1 class="logo"><a href="/">Azurie VENTURE ROADMAP</a></h1>
+      
+      <% if user_signed_in? %>
+        <ul class="tools tools-logged-in">
+          <li><%= link_to 'HOME', current_user %></li>
+          <li><%= link_to 'SETTINGS', edit_user_path(current_user) %></li>
+          <li><%= link_to "SIGN OUT", destroy_user_session_path %></li>
+        </ul>
+      <% else %>
+        <ul class="tools">
+          <li><%= link_to "SIGN IN", new_session_path(:user) %></li>
+          <!--li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="Sign in with Facebook"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
+          <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="Sign in with Google+"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li-->
+        </ul>
+      <% end %>
+      
+    </div>
 <!-- nav -->
-					<ul id="nav">
-						<li  <% if params[:controller] == 'briefings' || current_page?('/') %> class="active" <% end %> >
-						  <%= link_to "BRIEFINGS", briefings_path %>
-						</li>
-						<li <% if params[:controller] == 'questions' %> class="active" <% end %> >
-						  <%= link_to "ALL Q&amp;As".html_safe, questions_path %>
-						</li>
-						<!--li <% if params[:controller] =~ /(^devise\/*)|(^users$)/ %> class="active" <% end %> >
-						  <%= link_to "PEOPLE", users_path %>
-						</li-->
-						<li <% if current_page?(about_path) %> class="active" <% end %> >
-						  <%= link_to "ABOUT", about_path %>
-					  </li>
-					</ul>
-				</div>
-<!-- main -->
-				<div id="main">
-				  <!-- promo slot -->
-				  <%= yield :promo %>
-				  <div class="main-content">
-				      <%= yield %>
-				    <!-- sidebar slot -->
-				    <%= yield :sidebar %>  
-          </div>
-        </div>
-        <div id="footer">
-					<div class="columns">
-						<div class="column-1">
-							<strong>NEWS</strong>
-							<p><strong>12 Jan 2012</strong> The beta version of Azurie has been launched and we will be testing the platform with a select group of people. Please be patient, invitations will go out to the wider community soon! To get on the mailing list please send your name through the feedback link.</p>
-						</div>
-						<div class="column-2">
-							<strong>VISION AND MISSION</strong>
-							<p>Our vision is to consolidate knowledge through conversations with entrepreneurial and creative thought leaders and make the resource open to all</p>
-              <p>Our mission is to empower frontier entrepreneurship and promote those with an entrepreneurial passion</p>
-							<!--ul>
-								<li>
-									<ul>
-										<li><a href="#">About</a></li>
-										<li><a href="#">Press</a></li>
-										<li><a href="#">Careers</a></li>
-									</ul>
-								</li>
-								<li>
-									<ul>
-										<li><a href="#">Editors and Contributors</a></li>
-										<li><a href="#">Special Thanks</a></li>
-										<li><a href="#"></a></li>
-									</ul>
-								</li>
-							</ul-->
-						</div>
-						<div class="column-3">
-							<strong>CONNECT WITH US</strong>
-							<ul>
-								<!--li>
-									<img src="/images/ico-2.jpg" height="17" width="17" alt="ico" />
-									<a href="#">Join us on Google+</a>
-								</li-->
-								<li>
-									<img src="/images/ico-3.jpg" height="17" width="17" alt="ico" />
-									<a href="#">Like us on Facebook</a>
-								</li>
-								<!--li>
-									<img src="/images/ico-4.jpg" height="17" width="17" alt="ico" />
-									<a href="#">Read our blog on Tumblr</a>
-								</li-->
-								<li>
-									<img src="/images/ico-5.jpg" height="17" width="17" alt="ico" />
-									<a href="http://twitter.com/#!/VentureRoadmap">Follow us on Twitter</a>
-								</li>
-								<!--li>
-									<img src="/images/ico-6.jpg" height="17" width="17" alt="ico" />
-									<a href="#">Connect to us on Linkedin</a>
-								</li-->
-                <li>
-									<img src="/images/ico-7.jpg" height="17" width="17" alt="ico" />
-									<a href="#">Subscribe to us via RSS</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="footer-holder">
-						<span class="copy">&copy; 2011 Azurie  </span>
-						<ul class="navigation">
-							<li><%= link_to 'About', :controller => '/pages', :action => :about %></li>
-							<!--li><%= link_to 'Special thanks', :controller => '/pages', :action => :thanks %></li>
-							<li><a href="#">Community Guidelines</a></li-->
-							<li><a href="mailto:hello@azurie.com">Feedback</a></li>
-              <% if can? :manage, :all %>
-                <li><%= link_to "Invite user", new_user_invitation_path %></li>
-                <li><%= link_to "Users", users_path %></li>
-                <li><%= link_to "Pending questions", pending_questions_path %></li>
-                <li><%= link_to "Unanswered questions", unanswered_questions_path %></li>
-              <% end %>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <ul id="nav">
+      <li  <% if params[:controller] == 'briefings' || current_page?('/') %> class="active" <% end %> >
+        <%= link_to "BRIEFINGS", briefings_path %>
+      </li>
+      <li <% if params[:controller] == 'questions' %> class="active" <% end %> >
+        <%= link_to "ALL Q&amp;As".html_safe, questions_path %>
+      </li>
+      <!--li <% if params[:controller] =~ /(^devise\/*)|(^users$)/ %> class="active" <% end %> >
+        <%= link_to "PEOPLE", users_path %>
+      </li-->
+      <li <% if current_page?(about_path) %> class="active" <% end %> >
+        <%= link_to "ABOUT", about_path %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<%= yield :promo %>
+ 
+<div id="main" class="page-wrapper">
+  <div class="wrapper-content">
+    <!-- promo slot -->
+    <div class="main-content">
+        <%= yield %>
+      <!-- sidebar slot -->
+      <%= yield :sidebar %>  
+    </div>
+  </div>
+</div>
+        
+<div id="footer" class="page-wrapper">
+  <div class="wrapper-content">
+    <div class="columns">
+      <div class="column-1">
+        <strong>NEWS</strong>
+        <p><strong>12 Jan 2012</strong> The beta version of Azurie has been launched and we will be testing the platform with a select group of people. Please be patient, invitations will go out to the wider community soon! To get on the mailing list please send your name through the feedback link.</p>
+      </div>
+      <div class="column-2">
+        <strong>VISION AND MISSION</strong>
+        <p>Our vision is to consolidate knowledge through conversations with entrepreneurial and creative thought leaders and make the resource open to all</p>
+        <p>Our mission is to empower frontier entrepreneurship and promote those with an entrepreneurial passion</p>
+        <!--ul>
+          <li>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li><a href="#">Editors and Contributors</a></li>
+              <li><a href="#">Special Thanks</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </li>
+        </ul-->
+      </div>
+      <div class="column-3">
+        <strong>CONNECT WITH US</strong>
+        <ul>
+          <!--li>
+            <img src="/images/ico-2.jpg" height="17" width="17" alt="ico" />
+            <a href="#">Join us on Google+</a>
+          </li-->
+          <li>
+            <img src="/images/ico-3.jpg" height="17" width="17" alt="ico" />
+            <a href="#">Like us on Facebook</a>
+          </li>
+          <!--li>
+            <img src="/images/ico-4.jpg" height="17" width="17" alt="ico" />
+            <a href="#">Read our blog on Tumblr</a>
+          </li-->
+          <li>
+            <img src="/images/ico-5.jpg" height="17" width="17" alt="ico" />
+            <a href="http://twitter.com/#!/VentureRoadmap">Follow us on Twitter</a>
+          </li>
+          <!--li>
+            <img src="/images/ico-6.jpg" height="17" width="17" alt="ico" />
+            <a href="#">Connect to us on Linkedin</a>
+          </li-->
+          <li>
+            <img src="/images/ico-7.jpg" height="17" width="17" alt="ico" />
+            <a href="#">Subscribe to us via RSS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-links" class="page-wrapper">
+  <div class="wrapper-content">    
+    <div class="footer-holder">
+      <span class="copy">&copy; 2011 Azurie  </span>
+      <ul class="navigation">
+        <li><%= link_to 'About', :controller => '/pages', :action => :about %></li>
+        <!--li><%= link_to 'Special thanks', :controller => '/pages', :action => :thanks %></li>
+        <li><a href="#">Community Guidelines</a></li-->
+        <li><a href="mailto:hello@azurie.com">Feedback</a></li>
+        <% if can? :manage, :all %>
+          <li><%= link_to "Invite user", new_user_invitation_path %></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Pending questions", pending_questions_path %></li>
+          <li><%= link_to "Unanswered questions", unanswered_questions_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+  
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'azuriedev'; // required: replace example with your forum shortname
