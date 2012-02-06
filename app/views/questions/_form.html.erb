@@ -38,6 +38,10 @@
 			</fieldset>
       
 	</div>
+  
+  
+<% if can? :manage, :all %> 
+  
   <%= f.fields_for :answers do |ff| %>
 	  <div class="section3">
 			<div class="section3-content">
@@ -60,6 +64,10 @@
 					</fieldset>
 			</div>
 		</div>
+    
+<% end %>
+    
+    
 	<% end if can? :create, Answer %>
 	<div class="row" style="margin:15px 0;">
     <%= f.submit %>
