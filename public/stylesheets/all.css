@@ -2149,12 +2149,12 @@ a.notifications .notifications-counter {
 
 .error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
 .error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
-.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
-.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+/*.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}*/
+.success, .notice {background:#e6efc2;color:#264409;border-color:#c6d880;}
 .info {background:#d5edf8;color:#205791;border-color:#92cae4;}
 .error a, .alert a {color:#8a1f11;}
-.notice a {color:#514721;}
-.success a {color:#264409;}
+/*.notice a {color:#514721;}*/
+.success a, .notice a {color:#264409;}
 .info a {color:#205791;}
 table {margin-bottom:1.4em;width:100%;}
 th {font-weight:bold;}
