@@ -175,6 +175,15 @@ fieldset{
 	text-indent:-9999px;
 	overflow:hidden;
 }
+
+em.describtion {
+    color:#9C6262;
+    font-style:normal;
+    padding-top:5px;
+    display:block;
+    font-size:11px;
+}
+
 .textbox span{
 	display:block;
 	margin:0 0 4px;
@@ -2322,7 +2331,7 @@ input.anwer-input {
 }
 
 .anwers-form-section {
-    padding:10px 0 0 16px;
+    padding:10px 0 0 8px;
     display:block;
     clear:both;
 }
