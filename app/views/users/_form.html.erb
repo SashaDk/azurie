@@ -38,7 +38,7 @@
 		  </div>
       <div class="form-section">
         <label for="in_brief">Your background in brief</label>
-        <%= f.text_area :in_brief %>
+        <%= f.text_area :in_brief, :class => 'size1', :rows => 8 %>
       </div>
 	  </fieldset>
     
@@ -68,7 +68,7 @@
 			  <%= f.text_field :twitter, :class => 'size1' %>
 		  </div>
       <div class="form-section-save">
-			  <%= f.submit %>
+			  <%= f.submit :value => 'Update' %>
 		  </div>
 	  </fieldset>
 								

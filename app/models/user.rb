@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
-    }
+    },
+    :default_url => '/images/default_avatar.png'
   devise :invitable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, :confirmable, :token_authenticatable, :invitable
