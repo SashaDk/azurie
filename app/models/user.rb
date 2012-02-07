@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :questions, :dependent => :destroy
   has_many :answers, :dependent => :destroy
   has_many :assignments, :dependent => :destroy
+  has_many :assigned_questions, :through => :assignments
   has_many :briefings, :dependent => :destroy
   
   validates :facebook, :format => { :with => /^http(s)?:\/\/(www\.)?facebook\.com\/(.*)/, 
