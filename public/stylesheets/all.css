@@ -2118,6 +2118,7 @@ a.notifications .notifications-counter {
     clear:both;
     display:block;
     margin-bottom:1em;
+    overflow:hidden;
 }
 
 .form-section input[type=text], .form-section input[type=password] {
