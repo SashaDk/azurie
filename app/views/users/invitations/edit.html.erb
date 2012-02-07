@@ -1,16 +1,30 @@
 <div id="content">
-<h2>Set your password</h2>
+  <ul class="naving">
+    <li><span>Set your password</span></li>
+  </ul>
+  
+  <div style="width:350px;margin-bottom:25px;">You were invited to join Azurie &mdash; international Q&A hub for startup entrepreneurs who seek knowledge and insights from foremost professionals and thought leaders in business, academic and creative disciplines. To join us, please create your password first.</div>
 
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :invitation_token %>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
-
-  <p><%= f.submit "Set my password" %></p>
+  
+  <fieldset>
+    <div class="form-section">
+      <%= f.label :password %>
+      <%= f.password_field :password, :class => 'size2' %>
+    </div>
+  
+    <div class="form-section">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, :class => 'size2' %>
+    </div>
+  
+    <div class="form-section-save">
+      <%= f.submit "Set my password" %>
+    </div>
+  
+  </fieldset>
 <% end %>
 </div>
