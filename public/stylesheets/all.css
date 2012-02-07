@@ -939,7 +939,6 @@ em.describtion {
 	margin:0 0 15px 0;
 	background:url(../images/bg-decor.jpg) no-repeat;
 	height:15px;
-	width:260px;
 	font-weight:normal;
   clear:both;
 }
@@ -2005,7 +2004,7 @@ a.notifications .notifications-counter {
         right:5px;
 }
 
-#profile-block {
+#profile-block, .profile-block {
         margin: 0 0 0 24px;
         width:290px;
 }

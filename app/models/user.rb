@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end
   
   def pending_questions
-    Question.includes(:assingnments).where(:assignments => { :user_id => self.id }, :answers_count => 0)
+    Question.includes(:assignments).where(:assignments => { :user_id => self.id }, :answers_count => 0)
   end
   
   def make_admin!
