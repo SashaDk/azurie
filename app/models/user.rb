@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
     :facebook, :twitter, :google_plus, :linkedin,
     :password, :password_confirmation, :remember_me, :avatar,
     :in_brief
-  has_many :questions
-  has_many :answers
-  has_many :assignments
-  has_many :briefings
+  has_many :questions, :dependent => :destroy
+  has_many :answers, :dependent => :destroy
+  has_many :assignments, :dependent => :destroy
+  has_many :briefings, :dependent => :destroy
   
   validates :facebook, :format => { :with => /^http(s)?:\/\/(www\.)?facebook\.com\/(.*)/, 
     :message => "Facebook account should starts with 'http://facebook.com/'" }, :allow_blank => true

@@ -24,8 +24,8 @@ class Question < ActiveRecord::Base
     set_property :delta => false
   end
   belongs_to :user
-  has_many :answers
-  has_many :assignments
+  has_many :answers, :dependent => :destroy
+  has_many :assignments, :dependent => :destroy
   attr_accessible :title, :description, :category, :tag_list, :answers_attributes
   accepts_nested_attributes_for :answers, :reject_if => :all_blank
   validates :title, :presence => true
