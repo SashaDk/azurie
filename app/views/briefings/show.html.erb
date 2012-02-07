@@ -13,7 +13,7 @@
             var BriefingVideo_<%= @briefing.id %> = '<%= @briefing.video.html_safe %>';
           </script>
           <% end %>
-          <div <% if !@briefing.video.blank? %>class="video-teaser" onclick='replaceVideoTeaser(this, BriefingVideo_<%= @briefing.id %>)'<% end %>><%= image_tag(@briefing.picture.url(:medium)) %></div>
+          <div <% if !@briefing.video.blank? %>class="video-teaser" onclick='replaceVideoTeaser(this, BriefingVideo_<%= @briefing.id %>)'<% end %>><%= image_tag(@briefing.picture.url(:x_medium)) %></div>
       </div>
 			<p><%= auto_link simple_format @briefing.description %></p>
 		</div>

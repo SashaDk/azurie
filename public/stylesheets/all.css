@@ -10,12 +10,11 @@
 }
 body{
 	margin:0;
-	background:#fff url(../images/bg-body.jpg) repeat-x 0 111px;
 	font:13px/18px Helvetica, Arial, sans-serif;
 	color:#020308;
 	min-width:1000px;
 }
-.inner{background:#fff url(../images/bg-inner-body.jpg) repeat-x 0 111px;}
+
 a{
 	text-decoration:underline;
 	color:#cc1885;
@@ -35,30 +34,27 @@ fieldset{
 	padding:0;
 	border-style:none;
 }
-#wrapper{
-	background:url(../images/bg-wrapper.jpg) repeat-x 0 100%;
-	width:100%;
-	overflow:hidden;
-	position:relative;
+
+.page-wrapper {
+    width:100%;
+    text-align:center;
 }
-.w1{
-	width:1100px;
-	position:relative;
-	float:left;
-	left:50%;
+
+.page-wrapper .wrapper-content {
+    width:950px;
+    display:block;
+    margin:0 auto;
+    text-align:left;
 }
-.w2{
-	width:1100px;
-	position:relative;
-	float:left;
-	left:-50%;
+
+#header {
+    overflow:hidden;
+    padding-top:25px;
+    border-bottom:4px solid #cf3b95;
+    padding-bottom:8px;
 }
-#header{
-	height:1%;
-	overflow:hidden;
-	padding:12px 67px 8px 73px;
-}
-.area{
+
+.area {
 	margin:0 0 39px;
 	width:100%;
 	overflow:hidden;
@@ -143,17 +139,18 @@ fieldset{
 	clear:both;
 	content:"";
 }
-.inner #main{padding:23px 0 0;}
+
+#featured {
+    background:#29282a;
+    padding-top:25px;
+}
+
 .promo{
-	margin:0 0 22px;
-	padding:28px 0 0 73px;
-	height:375px;
   position:relative;
 }
 .visual{
 	float:left;
-	width:480px;
-	margin:0 40px 0 0;
+	margin:0;
 	position:relative;
 }
 .visual img{
@@ -163,7 +160,6 @@ fieldset{
 }
 .visual a{
 	position:absolute;
-	top:290px;
 	left:438px;
 	font-size:11px;
 	color:#cf3b95;
@@ -179,6 +175,15 @@ fieldset{
 	text-indent:-9999px;
 	overflow:hidden;
 }
+
+em.describtion {
+    color:#9C6262;
+    font-style:normal;
+    padding-top:5px;
+    display:block;
+    font-size:11px;
+}
+
 .textbox span{
 	display:block;
 	margin:0 0 4px;
@@ -235,10 +240,11 @@ fieldset{
 }
 .text p{margin:0;}
 .text p span{color:#cc1885;}
-.main-content{
-	padding:0 69px 0 49px;
-	height:1%;
+
+.main-content {
+    margin-top: 25px;
 }
+
 .main-content:after{
 	display:block;
 	content:"";
@@ -246,9 +252,7 @@ fieldset{
 }
 #content{
 	float:right;
-	margin:0 0 0 -4px;
-	/*padding:11px 0 0;*/
-	width:598px;
+  width:590px;
 }
 .inner #content{padding:0;}
 #content h2{
@@ -355,7 +359,7 @@ fieldset{
 #content .decor{
 	margin:0 0 21px;
 	background:url(../images/bg-content-decor.jpg) no-repeat;
-	width:594px;
+	width:100%;
 }
 .sections{
 	/*margin:0 0 -28px;*/
@@ -932,8 +936,7 @@ fieldset{
 .find p a:hover{text-decoration:underline;}
 .decor{
 	display:block;
-	margin:0 0 15px 25px;
-	padding:0 0 0 33px;
+	margin:0 0 15px 0;
 	background:url(../images/bg-decor.jpg) no-repeat;
 	height:15px;
 	width:260px;
@@ -950,7 +953,8 @@ fieldset{
 	color:#2d2d2d;
 	letter-spacing:1px;
 	word-spacing:1px;
-        margin-right:16px;
+  margin-right:16px;
+  margin-left:33px;
 }
 
 .decor a{
@@ -1000,7 +1004,7 @@ a.notifications .notifications-counter {
 }
 
 .nav-bar{
-	margin:0 0 19px 24px;
+	margin:0 0 19px 0;
 	padding:0;
 	list-style:none;
 	width:348px;
@@ -1114,7 +1118,7 @@ a.notifications .notifications-counter {
 }
 .nav-list2 li img{float:left;}
 .links{
-	margin:18px 0 0 24px;
+	margin-top:18px;
 	padding:0 0 0 1px;
 	height:1%;
 	overflow:hidden;
@@ -1153,17 +1157,19 @@ a.notifications .notifications-counter {
 .links ul span{
     color:#989898;
 }
-#footer{
-	height:1%;
-	padding:32px 0 0 74px;
-	overflow:hidden;
-  clear:both;
+
+#footer {
+    background:#ededed;
+    border-top:1px solid #cbcbc1;
+    padding-top:35px;
+    padding-bottom:25px;
 }
+
 #footer p {
     margin-bottom:0.4em;
 }
 .columns{
-	margin:0 0 25px;
+	margin:0;
 	width:100%;
 	overflow:hidden;
 	font-size:12px;
@@ -1176,12 +1182,12 @@ a.notifications .notifications-counter {
 }
 .column-2{
 	float:left;
-	padding:0 58px 0 0;
-	width:360px;
+	padding:0 30px 0 0;
+	width:350px;
 }
 .column-3{
 	float:left;
-	width:210px;
+	width:180px;
 }
 .columns strong{
 	display:block;
@@ -1249,11 +1255,18 @@ a.notifications .notifications-counter {
 	color:#cb1784;
 }
 .column-3 ul a:hover{text-decoration:underline;}
+
+#footer-links {
+    background:#ededed;
+    border-top:1px solid #cbcbc1;
+}
+
 .footer-holder{
-	padding:14px 0 16px 0;
+	padding: 15px 0 15px 0;
 	height:1%;
 	overflow:hidden;
 }
+
 .footer-hf{
 	margin:0 auto;
 	width:878px;
@@ -1534,7 +1547,7 @@ a.notifications .notifications-counter {
 .section2{background:url(../images/bg-section2-holder.jpg) repeat-y 2px 0;}
 .section2-holder{
 	margin:-1px 0 0 -13px;
-	padding:4px 0 29px 21px;
+	padding:4px 0 15px 21px;
 	background:url(../images/bg-section2.jpg) no-repeat 0 29px;
 	height:1%;
 	overflow:hidden;
@@ -2136,12 +2149,12 @@ a.notifications .notifications-counter {
 
 .error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
 .error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
-.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
-.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+/*.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}*/
+.success, .notice {background:#e6efc2;color:#264409;border-color:#c6d880;}
 .info {background:#d5edf8;color:#205791;border-color:#92cae4;}
 .error a, .alert a {color:#8a1f11;}
-.notice a {color:#514721;}
-.success a {color:#264409;}
+/*.notice a {color:#514721;}*/
+.success a, .notice a {color:#264409;}
 .info a {color:#205791;}
 table {margin-bottom:1.4em;width:100%;}
 th {font-weight:bold;}
@@ -2184,9 +2197,8 @@ tfoot {font-style:italic;}
 #slider {
 	z-index:100;
   width:955px;
-  height:315px;
   position:relative;
-  displat:block;
+  display:block;
 }
 
 /*
@@ -2198,7 +2210,6 @@ tfoot {font-style:italic;}
 
 .slides_container {
 	width:955px;
-  height:315px;
 	overflow:hidden;
 	position:relative;
 	display:none;
@@ -2208,7 +2219,7 @@ tfoot {font-style:italic;}
 #slider .slide_textbox {
     display:block;
     float:right;
-    width:350px;
+    width:320px;
     color:#fff;
 }
 
@@ -2274,8 +2285,8 @@ tfoot {font-style:italic;}
   padding:0;
 	width:100px;
   position:absolute;
-  top:300px;
-  left:605px;
+  top:393px;
+  left:635px;
 }
 
 #slider .pagination li {
@@ -2320,7 +2331,7 @@ input.anwer-input {
 }
 
 .anwers-form-section {
-    padding:10px 0 0 16px;
+    padding:10px 0 0 8px;
     display:block;
     clear:both;
 }
@@ -2337,6 +2348,6 @@ input.anwer-input {
     height:40px;
     background:url(../images/video-play.png) center no-repeat;
     position:absolute;
-    bottom:20px;
+    top:330px;
     left:30px;
 }
