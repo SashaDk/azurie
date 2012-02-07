@@ -93,13 +93,14 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     @question.user = current_user 
-    @question.answers.first.user = current_user if @question.answers.any?
+     @question.answers.first.user = current_user if @question.answers.any?
     
     respond_to do |format|
       if @question.save
         format.html { redirect_to(@question, :notice => 'Question was successfully created.') }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
+        @question.answers.build unless @question.answers    
         format.html { render :action => "new" }
         format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }
       end
