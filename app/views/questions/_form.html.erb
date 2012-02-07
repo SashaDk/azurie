@@ -40,11 +40,12 @@
 	</div>
   
   
-<% if can? :manage, :all %> 
+<% if can? :create, Answer %> 
   
   <%= f.fields_for :answers do |ff| %>
 	  <div class="section3">
 			<div class="section3-content">
+        <span>A</span>
 				<div class="section3-holder">
 					<div class="panel">
 						<strong>ANSWER IN BRIEF - THE ESSENCE</strong>
@@ -53,7 +54,6 @@
 							<%= ff.text_area :text %>
 						</fieldset>
 				</div>
-				<span>A</span>
 			</div>
 			<div class="section3-holder">
 				<div class="panel">
