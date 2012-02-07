@@ -2125,11 +2125,7 @@ a.notifications .notifications-counter {
     float:none;
 }
 
-.form-section .size1 {
-    width:250px;
-}
-
-.form-section .size2 {
+.form-section .size1, .form-section .size2 {
     width:350px;
 }
 
