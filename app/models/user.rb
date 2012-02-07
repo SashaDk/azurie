@@ -20,16 +20,17 @@ class User < ActiveRecord::Base
   has_many :questions, :dependent => :destroy
   has_many :answers, :dependent => :destroy
   has_many :assignments, :dependent => :destroy
+  has_many :assigned_questions, :through => :assignments
   has_many :briefings, :dependent => :destroy
   
   validates :facebook, :format => { :with => /^http(s)?:\/\/(www\.)?facebook\.com\/(.*)/, 
-    :message => "Facebook account should starts with 'http://facebook.com/'" }, :allow_blank => true
+    :message => "should starts with 'http://facebook.com/'" }, :allow_blank => true
   validates :twitter, :format => { :with => /^http(s)?:\/\/?(www\.)?twitter\.com\/(.*)/, 
-    :message => "Twitter account should starts with 'http://twitter.com/'" }, :allow_blank => true
+    :message => "should starts with 'http://twitter.com/'" }, :allow_blank => true
   validates :google_plus, :format => { :with => /^http(s)?:\/\/?plus\.google\.com\/(.*)/, 
-    :message => "Google+ account should starts with 'http://plus.google.com/'" }, :allow_blank => true
-  validates :linkedin, :format => { :with => /^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/pub\/(.*)/, 
-    :message => "LinkedIn account should starts with 'http://linkedin.com/pub/'" }, :allow_blank => true
+    :message => "should starts with 'http://plus.google.com/'" }, :allow_blank => true
+  validates :linkedin, :format => { :with => /^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/pub\/(.*)|^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/profile\/view\/(.*)/, 
+    :message => "should starts with 'http://linkedin.com/pub/' or 'http://linkedin.com/profile/view/'" }, :allow_blank => true
     
   def display_name
     self.first_name ? "#{self.first_name} #{self.last_name}" : self.email
