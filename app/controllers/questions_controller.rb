@@ -100,7 +100,7 @@ class QuestionsController < ApplicationController
         format.html { redirect_to(@question, :notice => 'Question was successfully created.') }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
-        @question.answers.build unless @question.answers    
+        @question.answers.build unless @question.answers.any?
         format.html { render :action => "new" }
         format.xml  { render :xml => @question.errors, :status => :unprocessable_entity }
       end
