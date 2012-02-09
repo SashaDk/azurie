@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227170119) do
+ActiveRecord::Schema.define(:version => 20120209210854) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20111227170119) do
     t.text     "book_name"
     t.string   "book_author"
     t.string   "book_link"
+  end
+
+  create_table "assigments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "assignments", :force => true do |t|
@@ -74,8 +81,8 @@ ActiveRecord::Schema.define(:version => 20111227170119) do
     t.text     "description"
     t.integer  "user_id"
     t.datetime "deleted_at"
-    t.string   "state",         :default => "new"
-    t.integer  "answers_count"
+    t.string   "state"
+    t.integer  "answers_count", :default => 0, :null => false
   end
 
   create_table "taggings", :force => true do |t|
