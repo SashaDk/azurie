@@ -108,4 +108,8 @@ class User < ActiveRecord::Base
   def has_invitations_left?
     true
   end
+
+  def deliver_invitation
+    UserMailer.invitation_instructions(self).deliver
+  end 
 end
