@@ -1,15 +1,15 @@
 module ApplicationHelper
   CATEGORIES = {
-    'Traction' => :traction,
-    'Business Model' => :business_model,
+    'Gaining Traction' => :traction,
+    'Business Models' => :business_model,
     'People Management' => :people_management,
     'Marketing and Sales' => :marketing,
-    'Capital Raising' => :capital_rising,
-    'Presentation' => :presentation,
-    'Communication' => :communication,
-    'Innovation' => :innovation,
-    'Design' => :design,
-    'Well-being' => :well_being,
+    'Raising capital' => :capital_rising,
+    'Mastering Presentation' => :presentation,
+    'Mastering Media' => :communication,
+    'New Frontiers' => :innovation,
+    'Product Design' => :design,
+    'Work-Life Balance' => :well_being,
     'Failure' => :failure
   }
   
