@@ -13,13 +13,15 @@
 	<li class="bul-slash"><a href="<%= url_for(params.merge(:order => 'popular')) %>"><% if params[:order] == 'popular' %><span>POPULARITY</span><% else %>POPULARITY<% end %></a></li>
 	<li><a href="<%= url_for(params.merge(:order => 'date')) %>"><% if params[:order] == 'date' || params[:order].blank? %><span>DATE</span><% else %>DATE<% end %></a></li>
 </ul>
-<div class="sections">
+<div class="sections questions-list">
   <% @questions.each do |question| %>
 	  <%= render question %>
 	<% end %>
 </div>
 <div class="section-area">
 	<h4>CAN'T FIND AN ANSWER? <%= link_to 'THEN POST YOUR QUESTION HERE', new_question_path %></h4>
-	<!--a href="#" class="load">LOAD MORE Q&amp;As</a-->
+  <% if @questions_count > WillPaginate.per_page %>
+    <%= link_to "LOAD MORE Q&amp;As".html_safe, params.merge(:page => 2), :remote => true, :class => 'load load-more-questions' %>
+  <% end %>
 </div>
 </div>
