@@ -5,7 +5,7 @@ javascripts:
   - application
   - jquery_ujs
   - popup
-  - slides.min.jquery
+  - slides.jquery
 stylesheets:
 - base:
   - all

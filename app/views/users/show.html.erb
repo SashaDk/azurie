@@ -1,17 +1,25 @@
 <div id="content">
 
-<p id="notice"><%= notice %></p>
+<% if !notice.blank? %><div class="notice"><%= notice %></div><% end %>
 							<ul class="naving">
 								<li><%= link_to @user.display_name.upcase, @user %></li>
-								<li>Conversations</li>
+								<li>Discussions</li>
 							</ul>
-              <strong class="decor">
+              <!--strong class="decor">
                   <span>PERSONAL</span>
-              </strong>
+              </strong-->
 
 <div>
   <% @user.answered_questions.each do |question| %>
     <%= render question %>
+  <% end %>
+  
+  <% if current_user == @user %>
+  <% if @user.answered_questions.blank? %>
+  <p>Currently you don't have any questions and answers to show in your profile. You can start adding your own <%= link_to "frequently asked questions", new_question_path %>, answer curated questions that have been asked, or answer other questions on the Q&amp;A platform.</p>
+  <% end %>
+  <% else %>
+    <p>This expert hasn't answered any questions yet.</p>
   <% end %>
 </div>
 

@@ -1,8 +1,7 @@
 <div class="section">
 	<div class="heading">
 		<ul>
-			<li><a href="<%= questions_path(:category => question.category1) %>"><%= category1_name question.category %></a></li>
-			<li><a href="<%= questions_path(:category => question.category2) %>"><%= category2_name question.category %></a></li>
+			<li><a href="<%= questions_path(:category => question.category) %>"><%= category_name question.category %></a></li>
 		</ul>
 		<% if !question.tags.blank? %>
 		  <ul class="nav-list3">

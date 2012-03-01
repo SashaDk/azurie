@@ -4,8 +4,7 @@
 		<div class="section" style="border-bottom:none;padding:0;">
       <div class="heading2">
         <ul>
-          <li><a href="<%= questions_path(:category => @question.category1) %>"><%= category1_name @question.category %></a></li>
-    			<li><a href="<%= questions_path(:category => @question.category2) %>"><%= category2_name @question.category %></a></li>
+          <li><a href="<%= questions_path(:category => @question.category) %>"><%= category_name @question.category %></a></li>
         </ul>
         <ul class="nav-list3">
           <% @question.tags.each do |tag| %>

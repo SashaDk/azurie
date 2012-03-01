@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
-    }
+    },
+    :default_url => '/images/default_avatar.png'
   devise :invitable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, :confirmable, :token_authenticatable, :invitable
@@ -16,19 +17,20 @@ class User < ActiveRecord::Base
     :facebook, :twitter, :google_plus, :linkedin,
     :password, :password_confirmation, :remember_me, :avatar,
     :in_brief
-  has_many :questions
-  has_many :answers
-  has_many :assignments
-  has_many :briefings
+  has_many :questions, :dependent => :destroy
+  has_many :answers, :dependent => :destroy
+  has_many :assignments, :dependent => :destroy
+  has_many :assigned_questions, :through => :assignments
+  has_many :briefings, :dependent => :destroy
   
   validates :facebook, :format => { :with => /^http(s)?:\/\/(www\.)?facebook\.com\/(.*)/, 
-    :message => "Facebook account should starts with 'http://facebook.com/'" }, :allow_blank => true
+    :message => "should starts with 'http://facebook.com/'" }, :allow_blank => true
   validates :twitter, :format => { :with => /^http(s)?:\/\/?(www\.)?twitter\.com\/(.*)/, 
-    :message => "Twitter account should starts with 'http://twitter.com/'" }, :allow_blank => true
+    :message => "should starts with 'http://twitter.com/'" }, :allow_blank => true
   validates :google_plus, :format => { :with => /^http(s)?:\/\/?plus\.google\.com\/(.*)/, 
-    :message => "Google+ account should starts with 'http://plus.google.com/'" }, :allow_blank => true
-  validates :linkedin, :format => { :with => /^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/pub\/(.*)/, 
-    :message => "LinkedIn account should starts with 'http://linkedin.com/pub/'" }, :allow_blank => true
+    :message => "should starts with 'http://plus.google.com/'" }, :allow_blank => true
+  validates :linkedin, :format => { :with => /^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/pub\/(.*)|^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/profile\/view\/(.*)/, 
+    :message => "should starts with 'http://linkedin.com/pub/' or 'http://linkedin.com/profile/view/'" }, :allow_blank => true
     
   def display_name
     self.first_name ? "#{self.first_name} #{self.last_name}" : self.email
@@ -39,7 +41,7 @@ class User < ActiveRecord::Base
   end
   
   def pending_questions
-    Question.includes(:assingnments).where(:assignments => { :user_id => self.id }, :answers_count => 0)
+    Question.includes(:assignments).where(:assignments => { :user_id => self.id }, :answers_count => 0)
   end
   
   def make_admin!
@@ -106,4 +108,8 @@ class User < ActiveRecord::Base
   def has_invitations_left?
     true
   end
+
+  def deliver_invitation
+    UserMailer.invitation_instructions(self).deliver
+  end 
 end

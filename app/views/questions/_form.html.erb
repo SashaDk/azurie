@@ -1,7 +1,4 @@
 
-  <ul class="naving">
-    <li><a href="#">ADD QUESTION </a></li>
-  </ul>
   <%= form_for(@question) do |f| %>
   <% if @question.errors.any? %>
     <div class="error">
@@ -14,7 +11,7 @@
 		<div class="section6-holder">
 			<span>Q</span>
 			<div class="section6-box">
-				<strong><%= f.label :title %></strong>
+				<strong><%= f.label :title, 'QUESTION' %></strong>
 						<fieldset style="margin-bottom:15px;">
               <%= f.text_area :title %>
 						</fieldset>
@@ -41,9 +38,14 @@
 			</fieldset>
       
 	</div>
+  
+  
+<% if can? :create, Answer %> 
+  
   <%= f.fields_for :answers do |ff| %>
 	  <div class="section3">
 			<div class="section3-content">
+        <span>A</span>
 				<div class="section3-holder">
 					<div class="panel">
 						<strong>ANSWER IN BRIEF - THE ESSENCE</strong>
@@ -52,7 +54,6 @@
 							<%= ff.text_area :text %>
 						</fieldset>
 				</div>
-				<span>A</span>
 			</div>
 			<div class="section3-holder">
 				<div class="panel">
@@ -63,8 +64,12 @@
 					</fieldset>
 			</div>
 		</div>
+    
+<% end %>
+    
+    
 	<% end if can? :create, Answer %>
-	<div class="row" style="margin-bottom:15px;">
+	<div class="row" style="margin:15px 0;">
     <%= f.submit %>
   </div>
 <% end %>

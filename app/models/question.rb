@@ -24,12 +24,11 @@ class Question < ActiveRecord::Base
     set_property :delta => false
   end
   belongs_to :user
-  has_many :answers
-  has_many :assignments
+  has_many :answers, :dependent => :destroy
+  has_many :assignments, :dependent => :destroy
   attr_accessible :title, :description, :category, :tag_list, :answers_attributes
   accepts_nested_attributes_for :answers, :reject_if => :all_blank
   validates :title, :presence => true
-  validates :description, :presence => true
   validates :user_id, :presence => true
   
   scope :top, :conditions => { :answers_count.gt => 0, :state => :verified }
@@ -50,15 +49,7 @@ class Question < ActiveRecord::Base
       .select('distinct questions.*, answers.created_at')
   end
   
-  def category1
-    category.split("_").first
-  end
-  
-  def category2
-    category
-  end
-  
   def self.category(category)
-    Question.where(:category.like => "#{category}%")
+    Question.where(:category => category)
   end
 end

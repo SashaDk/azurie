@@ -1,4 +1,7 @@
 <div id="content">
+  <ul class="naving">
+    <li><a href="#">ADD QUESTION<% if can? :create, Answer %> AND ANSWER<% end %></a></li>
+  </ul>
 <%= render 'form' %>
 <% content_for :sidebar do %>
 <div id="sidebar">

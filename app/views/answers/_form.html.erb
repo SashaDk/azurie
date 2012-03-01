@@ -11,12 +11,14 @@
 									<span>Q</span>
 									<div class="section2-frame">
 										<strong><%= @question.title %></strong>
-										<p><%= @question.description %></p>
+										<p><%= auto_link simple_format @question.description %></p>
+                    <% if current_user == @question.user %><a href="<%= url_for edit_question_path(@question) %>" class="edit-link">Edit question</a><% end %>
 									</div>
 								</div>
 							</div>
 							<div class="section3">
 								<div class="section3-content">
+                  <span>A</span>
 									<div class="section3-holder">
 										<div class="panel">
 											<strong>ANSWER IN BRIEF - THE ESSENCE</strong>
@@ -24,8 +26,8 @@
 											<fieldset>
 												<%= f.text_area :text %>
 											</fieldset>
+                      <em class="describtion">Please try to limit to 80 words</em>
 									</div>
-									<span>A</span>
 								</div>
 								<div class="section3-holder">
 									<div class="panel">
