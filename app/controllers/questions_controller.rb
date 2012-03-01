@@ -21,8 +21,10 @@ class QuestionsController < ApplicationController
     @questions = @questions.order(:answers_count.desc) if params[:order] == 'popular'
     @questions_count = @questions.count
     @answers_count = Answer.where(:question_id => @questions).count
+    @questions = @questions.paginate(:page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
+      format.js # index.js.erb
       format.xml  { render :xml => @questions }
     end
   end

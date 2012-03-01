@@ -11,3 +11,4 @@ $(function(){
         $(this).append("<div class='video-teaser-icon'></div>");    
     });    
 });
+
