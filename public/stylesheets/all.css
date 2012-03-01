@@ -2226,6 +2226,7 @@ tfoot {font-style:italic;}
     font-family:'AlternateGothic2BTRegular';
     margin-bottom:30px;
     margin-top:10px;
+		line-height: 1em;
 }
 
 #slider .slide_textbox span {
