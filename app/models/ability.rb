@@ -2,6 +2,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :read, :all
+    can :search, Question
     if user.blank?
       cannot :index, User
     else
@@ -18,6 +20,5 @@ class Ability
         cannot :index, User
       end
     end
-    can :read, :all
   end
 end
