@@ -110,6 +110,5 @@ class User < ActiveRecord::Base
   end
 
   def deliver_invitation
-    UserMailer.invitation_instructions(self).deliver
   end 
 end

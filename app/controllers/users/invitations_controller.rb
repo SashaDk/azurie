@@ -4,8 +4,13 @@ class Users::InvitationsController < Devise::InvitationsController
     self.resource = resource_class.invite!(params[resource_name], current_inviter)    
     respond_to do |format|
       if resource.errors.empty?
-        self.resource.make_expert! if params[:user][:role] == 'expert'
-        self.resource.make_admin! if params[:user][:role] == 'admin'
+        resource.make_expert! if params[:user][:role] == 'expert'
+        resource.make_admin! if params[:user][:role] == 'admin'
+        if params[:user][:role] == 'expert' #resource.expert?
+          UserMailer.expert_invitation_instructions(resource).deliver
+        else
+          UserMailer.invitation_instructions(resource).deliver
+        end
         set_flash_message :notice, :send_instructions, :email => self.resource.email
         format.html { redirect_to edit_user_path(self.resource) }
         format.xml  { head :ok }
