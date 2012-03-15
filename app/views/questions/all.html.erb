@@ -1,5 +1,5 @@
 <%= flash_helper %>
-<h1>Listing unanswered questions</h1>
+<h1>Listing all questions</h1>
 
 <table>
   <thead>
@@ -8,7 +8,9 @@
     <th>Author</th>
     <th>Category</th>
     <th>Tags</th>
-    <th>Description</th>
+    <th>State</th>
+    <th>Answers Count</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,18 +18,28 @@
   </tr>
   </thead>
   <tbody>
-
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.title %></td>
     <td><%= link_to question.user.display_name, question.user %></td>
     <td><%= question.category %></td>
     <td><%= question.tag_list %></td>
-    <td><%= question.description %></td>
+    <td><%= question.state %></td>
+    <td><%= question.answers_count %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
-    <td><%= link_to 'Assign', new_question_assignment_path(question)%></td>
+    <% if question.new? %>
+      <td><%= link_to 'Verify', verify_question_path(question), :confirm => 'Are you sure?' %></td>
+    <% else %>
+      <td><%= link_to 'Unverify', unverify_question_path(question), :confirm => 'Are you sure?' %></td>
+    <% end %>
+    <% if question.verified? %>
+      <td>
+        <%= link_to 'Assign', new_question_assignment_path(question) %>&nbsp;
+        <%= link_to 'Assignments', question_assignments_path(question) %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
   </tbody>

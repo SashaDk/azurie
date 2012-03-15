@@ -29,10 +29,20 @@ class QuestionsController < ApplicationController
     end
   end
   
+  # GET /questions/all
+  # GET /questions/all.xml
+  def all
+    @questions = Question.all.paginate(:page => params[:page])
+    respond_to do |format|
+      format.html # pending.html.erb
+      format.xml  { render :xml => @questions }
+    end
+  end
+
   # GET /questions/pending
   # GET /questions/pending.xml
   def pending
-    @questions = Question.pending
+    @questions = Question.pending.paginate(:page => params[:page])
     respond_to do |format|
       format.html # pending.html.erb
       format.xml  { render :xml => @questions }
@@ -42,7 +52,7 @@ class QuestionsController < ApplicationController
   # GET /questions/unanswered
   # GET /questions/unanswered.xml
   def unanswered
-    @questions = Question.unanswered
+    @questions = Question.unanswered.paginate(:page => params[:page])
     respond_to do |format|
       format.html # unanswered.html.erb
       format.xml  { render :xml => @questions }

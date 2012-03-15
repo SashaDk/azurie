@@ -34,9 +34,10 @@ class Question < ActiveRecord::Base
   scope :top, :conditions => { :answers_count.gt => 0, :state => :verified }
   scope :recent, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :created_at.desc
   scope :popular, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :answers_count.desc
-  scope :pending, :conditions => { :state => :new }
-  scope :unanswered, :conditions => { :answers_count => 0, :state => :verified }
-  
+  scope :pending, :conditions => { :state => :new }, :order => :created_at.desc
+  scope :unanswered, :conditions => { :answers_count => 0, :state => :verified }, :order => :created_at.desc
+  scope :all, :order => :created_at.desc
+
   def has_answers?
     self.answers.exists?
   end

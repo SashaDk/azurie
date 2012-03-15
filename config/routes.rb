@@ -16,6 +16,7 @@ Azurie::Application.routes.draw do
     resources :assignments
     collection do
       get :search
+      get :all
       get :pending
       get :unanswered
       get :deleted
