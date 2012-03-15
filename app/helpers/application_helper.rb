@@ -17,7 +17,7 @@ module ApplicationHelper
     CATEGORIES
   end
   
-  def category_values(selected)    
+  def category_values(selected=nil)    
     options_for_select(CATEGORIES, selected)
   end
   
