@@ -22,4 +22,10 @@ class UserMailer < ActionMailer::Base
     @invited_by = user.invited_by
     mail(:to => user.email, :subject => "#{@invited_by.first_name} #{@invited_by.last_name} invited you to join on Azurie")
   end
+
+  def guest_invitation_instructions(user)
+    @user = user
+    @invited_by = user.invited_by
+    mail(:to => user.email, :subject => "#{@invited_by.first_name} #{@invited_by.last_name} invited you to join on Azurie")
+  end
 end

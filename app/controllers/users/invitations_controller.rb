@@ -6,8 +6,10 @@ class Users::InvitationsController < Devise::InvitationsController
       if resource.errors.empty?
         resource.make_expert! if params[:user][:role] == 'expert'
         resource.make_admin! if params[:user][:role] == 'admin'
-        if params[:user][:role] == 'expert' #resource.expert?
+        if params[:user][:role] == 'expert' 
           UserMailer.expert_invitation_instructions(resource).deliver
+        elsif params[:user][:role] == 'guest' 
+          UserMailer.guest_invitation_instructions(resource).deliver
         else
           UserMailer.invitation_instructions(resource).deliver
         end
