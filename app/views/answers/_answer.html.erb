@@ -2,7 +2,7 @@
   <%= link_to answer.user.display_name.upcase, user_path(answer.user), :class => 'open' %>
 	<ul>
     <li><span><%= answer.user.occupation %> <% if !answer.user.company.blank? %> at <%= answer.user.company %><% end %></span></li>
-		<li><%= link_to '0 Comments', question_answer_path(answer.question, answer) + '#disqus_thread' %></li>
+		<!--li><%= link_to '0 Comments', question_answer_path(answer.question, answer) + '#disqus_thread' %></li-->
 		<li>posted <%= distance_of_time_in_words_to_now(answer.created_at) %> ago</li>
 	</ul>
 </div>
