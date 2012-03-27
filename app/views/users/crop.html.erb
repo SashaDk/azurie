@@ -1,0 +1,41 @@
+<% title "Crop Avatar" %>
+<% content_for (:head) do %>
+  <%= stylesheet_link_tag "jquery.Jcrop" %>
+  <%= javascript_include_tag "jquery.Jcrop.min" %>
+  <script type="text/javascript">
+    var origWidth = 0;
+    var largeWidth = 0;
+    $(function() {
+      $('#cropbox').Jcrop({
+        onChange: update_crop,
+        onSelect: update_crop,
+        setSelect: [10, 10, 290, 290],
+      });
+      var orig = new Image();
+      orig.onload = function() {
+        origWidth = this.width;
+      }
+      orig.src = '<%= @user.avatar(:original) %>';
+      var large = new Image();
+      large.onload = function() {
+        largeWidth = this.width;
+      }
+      large.src = '<%= @user.avatar(:large) %>';
+    });
+    function update_crop(coords) {
+      var ratio = origWidth / largeWidth; 
+      $('#crop_x').val(Math.floor(coords.x * ratio));
+      $('#crop_y').val(Math.floor(coords.y * ratio));
+      $('#crop_w').val(Math.floor(coords.w * ratio));
+      $('#crop_h').val(Math.floor(coords.h * ratio));  
+    }
+  </script>
+<% end %>
+<p>Please resize your avatar image:</p>
+<%= image_tag @user.avatar.url(:large), :id => "cropbox" %>
+<% form_for @user do |form| %>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+    <%= form.hidden_field attribute, :id => attribute %>
+  <% end %>
+  <p><%= form.submit "Save" %></p>
+<% end %>

@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   ROLES = [ :guest, :expert, :admin ]
 
   has_paper_trail
-  has_attached_file :avatar, :styles => { :medium => "290x290^" },
+  has_attached_file :avatar, :styles => { :medium => "290x", :large => "700x700>" },
     :storage => :s3, :bucket => 'azurie-avatars',
+    :processors => [:cropper],
     :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
     :occupation, :location, :company, :contact_email,
     :facebook, :twitter, :google_plus, :linkedin,
     :password, :password_confirmation, :remember_me, :avatar,
-    :in_brief
+    :in_brief, :crop_x, :crop_y, :crop_w, :crop_h
   has_many :questions, :dependent => :destroy
   has_many :answers, :dependent => :destroy
   has_many :assignments, :dependent => :destroy
@@ -31,7 +32,14 @@ class User < ActiveRecord::Base
     :message => "should starts with 'http://plus.google.com/'" }, :allow_blank => true
   validates :linkedin, :format => { :with => /^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/pub\/(.*)|^http(s)?:\/\/?(.{2,4}\.)?linkedin\.com\/profile\/view\/(.*)/, 
     :message => "should starts with 'http://linkedin.com/pub/' or 'http://linkedin.com/profile/view/'" }, :allow_blank => true
-    
+
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  after_update :reprocess_avatar, :if => :cropping?
+
+  def cropping?
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  end
+
   def display_name
     self.first_name ? "#{self.first_name} #{self.last_name}" : self.email
   end
@@ -110,5 +118,10 @@ class User < ActiveRecord::Base
   end
 
   def deliver_invitation
+  end
+
+protected
+  def reprocess_avatar
+    avatar.reprocess!
   end 
 end

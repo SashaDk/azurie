@@ -7,6 +7,7 @@
   <%= stylesheet_link_merged(:base).html_safe %>
   <%= javascript_include_merged(:base).html_safe %>
   <%= csrf_meta_tag %>
+  <%= yield :head %>
 </head>
 <body>
 
