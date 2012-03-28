@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /records/search
   def search
     @page = params[:page].to_i + 1 if params[:page]
-    @questions = Question.search params[:q], :match_mode => :boolean, :page => @page, :per_page => params[:pagelimit]
+    @questions = Question.search params[:q], :match_mode => :all, :page => @page, :per_page => params[:pagelimit]
     @questions_count = @questions.total_entries
     respond_to do |format|
       format.html # search.html.erb
