@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     can :read, :all
     can :search, Question
+    can :fakereg, User
     if user.blank?
       cannot :index, User
     else
