@@ -1,9 +1,9 @@
 production:
   default_from_email: "Azurie Team <team@azurie.com>"
-  default_to_email: "artem.kiselev@gmail.com"
+  default_to_email: "dieterink@mac.com"
 development:
   default_from_email: "Azurie Team <team@azurie.com>"
-  default_to_email: "artem.kiselev@gmail.com"
+  default_to_email: "grophen@gmail.com"
 test:
   default_from_email: "Azurie Team <team@azurie.com>"
-  default_to_email: "artem.kiselev@gmail.com"
+  default_to_email: "grophen@gmail.com"
