@@ -3,32 +3,8 @@
 <li><a href="#">ADD ANSWER</a></li>
 </ul>
 <%= render 'form' %>
-<% content_for :sidebar do %>
-						<div id="sidebar">
-							<strong class="decor"><span>WHAT MAKES A GOOD ANSWER ?</span></strong>
-							<div class="textbox">
-								<p>Entrepreneurs have lots of diffirent questions. They probably have questions about the subjects that you know best. That’s an opportunity for you and your organization. The advantage of Azurie is the quality of the experts answering questions and the answers being provided.</p>
-								<strong>What makes a good answer?</strong>
-								<ul>
-									<li>
-										<span>1.</span>
-										<p>Be clear and succinct. Azurie is about breaking up large quantity of information into more digestable briefings. The briefings are to the point, ideally 80 words max, with an option to ellaborate on the subject matter if neccesary.</p>
-									</li>
-									<li>
-										<span>2.</span>
-										<p>A good answer on Azurie explains the underlying rationale for answers, not just the answer itself.</p>
-									</li>
-									<li>
-										<span>3.</span>
-										<p>Be a resource, not a sales clerk. Lets keep the conversations add free.</p>
-									</li>
-									<li>
-										<span>4.</span>
-										<p>Be a connector. Sometimes you don’t have the answer, but you know just the person who does. Rather than making something up, make the referral. Provide a link to reach the other expert.</p>
-									</li>
-								</ul>
-								<p>The bottom line is that being helpful is a great way to gain trust. And when people trust you, they’re more comfortable doing business with you.</p>
-							</div>
-						</div>
-<% end %>
 </div>
+
+<% content_for :sidebar do %>
+  <%= render 'sidebar' %>
+<% end %>

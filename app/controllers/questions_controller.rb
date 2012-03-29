@@ -5,8 +5,9 @@ class QuestionsController < ApplicationController
   # GET /records/search
   def search
     @page = params[:page].to_i + 1 if params[:page]
-    @questions = Question.search(params[:q], :match_mode => :all, :page => @page, :per_page => params[:pagelimit]).compact
+    @questions = Question.search(params[:q], :match_mode => :all, :page => @page, :per_page => params[:pagelimit])
     @questions_count = @questions.total_entries
+    @questions.compact!
     respond_to do |format|
       format.html # search.html.erb
     end
@@ -74,7 +75,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
   def new
     @question = Question.new
-    @question.answers.build
+    @answer = @question.answers.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @question }

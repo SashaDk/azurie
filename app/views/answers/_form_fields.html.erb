@@ -1,0 +1,49 @@
+<div class="section3">
+	<div class="section3-content">
+    <span>A</span>
+		<div class="section3-holder">
+			<div class="panel">
+				<strong>ANSWER IN BRIEF - THE ESSENCE</strong>
+			</div>
+				<fieldset>
+					<%= f.text_area :text %>
+				</fieldset>
+        <em class="describtion">Please try to limit to 80 words</em>
+		</div>
+	</div>
+	<div class="section3-holder">
+		<div class="panel">
+			<!--div class="panel-holder">
+				<ul>
+					<li><a href="#"><img src="images/ico-26.jpg" height="18" width="19" alt="" /></a></li>
+				</ul>
+				<ul>
+					<li><a href="#"><img src="images/ico-25.jpg" height="18" width="19" alt="" /></a></li>
+					<li><a href="#"><img src="images/ico-24.jpg" height="18" width="19" alt="" /></a></li>
+					<li><a href="#"><img src="images/ico-23.jpg" height="18" width="19" alt="" /></a></li>
+				</ul>
+				<ul>
+					<li><a href="#"><img src="images/ico-22.jpg" height="18" width="19" alt="" /></a></li>
+					<li><a href="#"><img src="images/ico-21.jpg" height="18" width="19" alt="" /></a></li>
+					<li><a href="#"><img src="images/ico-20.jpg" height="18" width="19" alt="" /></a></li>
+				</ul>
+			</div-->
+			<strong>ELLABORATE IN MORE DETAIL (OPTIONAL)</strong>
+		</div>
+    <fieldset>
+      <%= f.text_area :fulltext %>
+    </fieldset>
+	</div>
+  <div class="anwers-form-section">
+    <%= f.label :book_name, 'Title of Book, Blog or Alternative Resource', :class => "answer-label" %>
+    <%= f.text_field :book_name, :class => "anwer-input" %>
+  </div>
+  <div class="anwers-form-section">
+    <%= f.label :book_author, 'Author of Book, Blog or Alternative Resource', :class => "answer-label" %>
+    <%= f.text_field :book_author, :class => "anwer-input" %>
+  </div>
+  <div class="anwers-form-section">
+    <%= f.label :book_link, 'Link to Book, Blog or Alternative Resource', :class => "answer-label" %>
+    <%= f.text_field :book_link, :class => "anwer-input" %>
+  </div>
+</div>

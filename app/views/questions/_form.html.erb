@@ -1,5 +1,4 @@
-
-  <%= form_for(@question) do |f| %>
+<%= form_for(@question) do |f| %>
   <% if @question.errors.any? %>
     <div class="error">
       <% @question.errors.full_messages.each do |msg| %>
@@ -26,50 +25,24 @@
 		</div>
 	</div>
 	<div class="section4">
-			<fieldset class="select">
-				<div class="row">
-					<label>Select Topic: </label>
-          <%= f.select :category, category_values(@question.category) %>
-				</div>
-				<div class="row">
-					<label>Add Tags, Suggest New Topic:</label>
-          <%= f.text_field :tag_list %>
-				</div>
-			</fieldset>
-      
+		<fieldset class="select">
+			<div class="row">
+				<label>Select Topic: </label>
+        <%= f.select :category, category_values(@question.category) %>
+			</div>
+			<div class="row">
+				<label>Add Tags, Suggest New Topic:</label>
+        <%= f.text_field :tag_list %>
+			</div>
+		</fieldset>
 	</div>
   
-  
-<% if can? :create, Answer %> 
-  
-  <%= f.fields_for :answers do |ff| %>
-	  <div class="section3">
-			<div class="section3-content">
-        <span>A</span>
-				<div class="section3-holder">
-					<div class="panel">
-						<strong>ANSWER IN BRIEF - THE ESSENCE</strong>
-					</div>
-						<fieldset>
-							<%= ff.text_area :text %>
-						</fieldset>
-				</div>
-			</div>
-			<div class="section3-holder">
-				<div class="panel">
-					<strong>ELLABORATE IN MORE DETAIL (OPTIONAL)</strong>
-				</div>
-					<fieldset>
-						<%= ff.text_area :fulltext %>
-					</fieldset>
-			</div>
-		</div>
-    
-<% end %>
-    
-    
-	<% end if can? :create, Answer %>
-	<div class="row" style="margin:15px 0;">
+  <% if can? :create, Answer %> 
+    <%= f.fields_for :answers do |ff| %>
+      <%= render 'answers/form_fields', :f => ff %>  
+    <% end %>      
+  <% end %>
+  <div class="row" style="margin:15px 0;">
     <%= f.submit %>
   </div>
 <% end %>
