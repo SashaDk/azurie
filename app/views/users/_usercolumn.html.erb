@@ -29,7 +29,7 @@
               </div>
               <% if current_user == @user %>
               <div class="start-conversation">
-                  <a href="<%= new_question_path %>">Start a new discussion by adding a <span>FAQ</span> here<i></i></a>
+                  <a href="<%= new_question_path(:faq => true) %>">Start a new discussion by adding a <span>FAQ</span> here<i></i></a>
               </div>
               
               <% if !@user.pending_questions.blank? %>
