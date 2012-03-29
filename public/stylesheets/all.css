@@ -479,7 +479,12 @@ em.describtion {
 
 
 
-
+.text-box h3{
+  font-family:'Helvetica';
+  font-size:16px;
+  font-weight:bold;
+  font-style:oblique;
+}
 .section h3{
 	margin:0 0 13px;
 	font-size:26px;
@@ -2347,4 +2352,8 @@ input.anwer-input {
     position:absolute;
     top:330px;
     left:30px;
+}
+
+.question_small a {
+  margin: 0 0 10px 0;
 }

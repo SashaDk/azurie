@@ -42,17 +42,7 @@
 
 <div id="content">
 <% content_for :sidebar do %>
-  <!-- sidebar -->
-	<div id="sidebar">
-    <% if !user_signed_in? %>
-		<div class="find">
-			<strong>FIND NEW INSIGHTS <br />&amp; INSPIRATION</strong>
-      <p>Azurie feeds on insights from entrepreneurial and creative thought leaders globally <%= link_to '(read more)', :controller => :pages, :action => :about %></p>
-			<a href="<%= new_user_registration_path %>" class="btn-find"><span>REQUEST AN INVITATION</span></a>
-		</div>
-    <% end %>
-		<%= render 'shared/nav_sidebar' %>
-	</div>
+	<%= render 'shared/nav_sidebar' %>
 <% end %>
 
 <h2>Q&amp;A</h2>
