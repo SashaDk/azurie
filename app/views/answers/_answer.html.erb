@@ -4,7 +4,7 @@
     <li><span><%= answer.user.occupation %> <% if !answer.user.company.blank? %> at <%= answer.user.company %><% end %></span></li>
 	</ul>
 </div>
-<p><%= auto_link simple_format answer.text %> <%= link_to "(learn more)", [answer.question,answer] %></a></p>
+<p><%= auto_link simple_format answer.text %> <%= link_to "(Learn more | comment | like)", [answer.question,answer] %></a></p>
 <% if current_user == answer.user %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link">Edit</a></p><% end %>
 <% unless answer.book_link.blank? %>
   <div class="book_link">
