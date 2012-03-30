@@ -2010,7 +2010,7 @@ a.notifications .notifications-counter {
 }
 
 #profile-block, .profile-block {
-        margin: 0 0 0 24px;
+        margin: 0;
         width:290px;
 }
 
