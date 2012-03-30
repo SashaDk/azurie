@@ -2346,12 +2346,12 @@ input.anwer-input {
 
 .video-teaser-icon {
     display:block;
-    width:41px;
-    height:40px;
+    width:119px;
+    height:117px;
     background:url(../images/video-play.png) center no-repeat;
     position:absolute;
-    top:330px;
-    left:30px;
+    top:140px;
+    left:240px;
 }
 
 .question_small a {
