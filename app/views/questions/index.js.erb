@@ -3,5 +3,5 @@ $(".questions-list").append("<%= escape_javascript(questions_html.html_safe)%>")
 <% if @questions_count <= WillPaginate.per_page * params[:page].to_i %>
   $(".load-more-questions").hide();  
 <% else %>
-  $(".load-more-questions").attr("href", "<%= params.merge(:page => params[:page].to_i + 1)%>");
+  $(".load-more-questions").attr("href", "<%= url_for params.merge(:page => params[:page].to_i + 1)%>");
 <% end%>
