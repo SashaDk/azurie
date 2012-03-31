@@ -4,7 +4,7 @@ module ApplicationHelper
     'Business Models' => :business_model,
     'People Management' => :people_management,
     'Marketing and Sales' => :marketing,
-    'Raising capital' => :capital_rising,
+    'Raising Capital' => :capital_rising,
     'Mastering Presentation' => :presentation,
     'Mastering Media' => :communication,
     'New Frontiers' => :innovation,
