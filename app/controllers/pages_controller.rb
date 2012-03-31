@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @top_questions = Question.top
+    @top_questions = Question.top.paginate(:page => params[:page])
   end
 
   def about

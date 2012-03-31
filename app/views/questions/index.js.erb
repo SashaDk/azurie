@@ -1,5 +1,5 @@
 <% questions_html = ""; @questions.each {|q| questions_html += render(q) } %>
-$(".questions-list").append("<%= escape_javascript(questions_html).html_safe%>");
+$(".questions-list").append("<%= escape_javascript(questions_html.html_safe)%>");
 <% if @questions_count <= WillPaginate.per_page * params[:page].to_i %>
   $(".load-more-questions").hide();  
 <% else %>
