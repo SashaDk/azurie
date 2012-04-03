@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.js # index.js.erb
-      format.xml  { render :xml => @questions }
+      format.rss # index.rss.builder
     end
   end
   

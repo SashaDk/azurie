@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+  <link rel=”alternate” type=”application/rss+xml” title=”Azurie RSS” href=”<%= questions_path :format => :rss %>” />
   <title>Azurie <%= yield :title %></title>
   <%= stylesheet_link_merged(:base).html_safe %>
   <%= javascript_include_merged(:base).html_safe %>
@@ -115,7 +116,7 @@
           </li-->
           <li>
             <img src="/images/ico-7.jpg" height="17" width="17" alt="ico" />
-            <a href="#">Subscribe to us via RSS</a>
+            <a href="<%= questions_path :format => :rss %>">Subscribe to us via RSS</a>
           </li>
         </ul>
       </div>
