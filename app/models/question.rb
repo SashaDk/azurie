@@ -51,6 +51,6 @@ class Question < ActiveRecord::Base
   end
   
   def self.category(category)
-    Question.where(:category => category)
+    Question.top.where(:category => category)
   end
 end
