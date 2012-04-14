@@ -67,6 +67,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
+        UserMailer.new_answer_notification(@answer).deliver
         format.html { redirect_to([@question,@answer], :notice => 'Answer was successfully created.') }
         format.xml  { render :xml => @answer, :status => :created, :location => @answer }
       else

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>New Question Posted On <a href='http://azurie.com'>Azurie</a> by <%= link_to @question.user.display_name, user_url(@question.user) %></h1>
+    <p><b>
+      <%= link_to @question.title, question_url(@question) %>
+    </b></p>
+    <p>
+      <%= @question.description %>
+    </p>
+  </body>
+</html>

@@ -1,6 +1,16 @@
 class UserMailer < ActionMailer::Base
   default :from => APP_CONFIG[:default_from_email]
   
+  def new_answer_notification answer
+    @answer = answer
+    mail(:to => APP_CONFIG[:default_to_email], :subject => "New answer posted on Azurie")
+  end
+
+  def new_question_notification question
+    @question = question
+    mail(:to => APP_CONFIG[:default_to_email], :subject => "New question posted on Azurie")
+  end
+
   def fakereg(params)
     @params = params
     mail(:to => APP_CONFIG[:default_to_email], :subject => "Yet Another Reg From Azurie")
