@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413202121) do
+ActiveRecord::Schema.define(:version => 20120414151247) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -86,7 +86,12 @@ ActiveRecord::Schema.define(:version => 20120413202121) do
     t.boolean  "is_top"
   end
 
+  add_index "questions", ["answers_count", "state"], :name => "index_questions_on_answers_count_and_state"
+  add_index "questions", ["created_at"], :name => "index_questions_on_created_at"
   add_index "questions", ["is_top"], :name => "index_questions_on_is_top"
+  add_index "questions", ["state"], :name => "index_questions_on_state"
+  add_index "questions", ["title"], :name => "index_questions_on_title"
+  add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
