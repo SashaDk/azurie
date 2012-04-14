@@ -24,6 +24,7 @@ Azurie::Application.routes.draw do
     member do
       get :verify
       get :unverify
+      get :settop
     end
   end
 

@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = params[:category].blank? ? Question.top : Question.category(params[:category])
+    @questions = params[:category].blank? ? Question.verified : Question.category(params[:category])
     @questions = @questions.includes(:answers, :tags).paginate(:page => params[:page])
     @questions = @questions.order(:created_at.desc) if params[:order] == 'date'
     @questions = @questions.order(:answers_count.desc) if params[:order] == 'popular'
@@ -100,6 +100,14 @@ class QuestionsController < ApplicationController
     @question.unverify
     redirect_to(pending_questions_path, :notice => 'Question was successfully unverified.')
   end
+
+  # GET /questions/1/settop
+  def settop
+    @question = Question.find(params[:id])
+    @question.is_top = params[:top] == 'true'
+    @question.save!
+    redirect_to(all_questions_path, :notice => 'Question was successfully modified.')
+  end 
 
   # POST /questions
   # POST /questions.xml

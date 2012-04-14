@@ -15,6 +15,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -39,6 +40,11 @@
         <%= link_to 'Assign', new_question_assignment_path(question) %>&nbsp;
         <%= link_to 'Assignments', question_assignments_path(question) %>
       </td>
+    <% end %>
+    <% if question.is_top %>
+      <td><%= link_to 'Untop', settop_question_path(question, :top => false), :confirm => 'Are you sure?' %></td>
+    <% else %>
+      <td><%= link_to 'Top', settop_question_path(question, :top => true), :confirm => 'Are you sure?' %></td>
     <% end %>
   </tr>
 <% end %>

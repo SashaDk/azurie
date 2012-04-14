@@ -31,7 +31,8 @@ class Question < ActiveRecord::Base
   validates :title, :presence => true
   validates :user_id, :presence => true
   
-  scope :top, :conditions => { :answers_count.gt => 0, :state => :verified }
+  scope :top, :conditions => { :is_top => true }
+  scope :verified, :conditions => { :answers_count.gt => 0, :state => :verified }
   scope :recent, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :created_at.desc
   scope :popular, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :answers_count.desc
   scope :pending, :conditions => { :state => :new }, :order => :created_at.desc
