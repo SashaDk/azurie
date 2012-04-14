@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = params[:category].blank? ? Question.verified : Question.category(params[:category])
     @questions = @questions.includes(:answers, :tags).paginate(:page => params[:page])
-    @questions = @questions.order(:created_at.desc) if params[:order] == 'date'
+    @questions = @questions.order(:created_at.desc) if params[:order] == 'date' || params[:order].blank?
     @questions = @questions.order(:answers_count.desc) if params[:order] == 'popular'
     @questions_count = @questions.count
     @answers_count = Answer.where(:question_id => @questions).count
