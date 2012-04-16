@@ -18,10 +18,12 @@
 	  <%= render question %>
 	<% end %>
 </div>
-<div class="section-area">
-	<h4>CAN'T FIND AN ANSWER? <%= link_to 'THEN POST YOUR QUESTION HERE', new_question_path %></h4>
+<div class="sections">
   <% if @questions_count > WillPaginate.per_page %>
     <%= link_to "LOAD MORE Q&amp;As".html_safe, params.merge(:page => 2), :remote => true, :class => 'load load-more-questions' %>
   <% end %>
+</div>
+<div class="section-area">
+	<h4>CAN'T FIND AN ANSWER? <%= link_to 'THEN POST YOUR QUESTION HERE', new_question_path %></h4>
 </div>
 </div>

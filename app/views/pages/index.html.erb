@@ -54,6 +54,9 @@
 	  <%= render question %>
 	<% end %>
 </div>
+<div class="sections">
+  <%= link_to "MORE Q&amp;As".html_safe, questions_path, :remote => true, :class => 'load load-more-questions' %>
+</div>
 <div class="section-area">
 	<!--a href="#" class="load">LOAD MORE Q&amp;As</a-->
 	<h4>CAN'T FIND AN ANSWER? <%= link_to 'THEN POST YOUR QUESTION HERE', new_question_path %></a></h4>
