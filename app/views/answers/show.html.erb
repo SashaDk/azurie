@@ -55,7 +55,7 @@
     <iframe scrolling="no" frameborder="0" src="http://www.facebook.com/plugins/like.php?href=<%= question_answer_url(@answer.question,@answer) %>&amp;layout=button_count&amp;show_faces=true&amp;width=110&amp;action=like&amp;colorscheme=light&amp;height=20" style="border: medium none; overflow: hidden; width: 107px; height: 20px; position: relative;" allowtransparency="true"></iframe>
   </li>
   <li>
-    <g:plusone size="medium" href="http://spasiboeva.ru/blog/13776.html"></g:plusone>
+    <g:plusone size="medium" href="<%= question_answer_url(@answer.question,@answer) %>"></g:plusone>
   </li>
 </ul>
 <div class="fb-comments" data-href="<%= question_answer_url(@answer.question,@answer) %>" data-num-posts="10" data-width="590"></div>
