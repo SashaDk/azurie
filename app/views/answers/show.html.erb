@@ -45,74 +45,6 @@
 		</div>
 	</div>
   
-	<!--div class="box-comments">
-		<div class="comments-top">
-			<div class="comments-top-line">
-				<strong>COMMENT ON THIS POST</strong>
-				<span>23 total comments</span>
-			</div>
-			<div class="comments-block">
-				<strong>WHAT DO YOU THINK? WHAT IS YOUR EXPERIENCE?</strong>
-				<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
-				<form>
-					<fieldset>
-						<label>Sort by:</label>
-						<select>
-							<option>Threads recently updated</option>
-						</select>
-					</fieldset>
-				</form>
-			</div>
-			<ul class="com-post">
-				<li>
-					<div class="com-line">
-						<img src="images/img-7.jpg" alt="" />
-						<strong>KEITH HARING</strong>
-						<a href="#" class="bul-rate">0</a>
-						<a href="#">Reply</a>
-					</div>
-					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-					<a href="#" class="flag">flag</a>
-				</li>
-				<li class="rep-post">
-					<div class="com-line">
-						<img src="images/img-7.jpg" alt="" />
-						<strong>KEITH HARING</strong>
-						<a href="#" class="bul-rate">0</a>
-						<a href="#">Reply</a>
-					</div>
-					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-					<div class="underpost">
-						<a href="#">www.azurie.com</a>
-						<a href="#" class="flag">flag</a>
-					</div>
-				</li>
-				<li>
-					<div class="com-line">
-						<img src="images/img-7.jpg" alt="" />
-						<strong>KEITH HARING</strong>
-						<a href="#" class="bul-rate">0</a>
-						<a href="#">Reply</a>
-					</div>
-					<p><span>Two Weeks Ago: </span>e of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a successful company and creating a product that people love is to find and exploit a gap in the existing market. One of the keys to building a</p>
-					<a href="#" class="flag">flag</a>
-				</li>
-			</ul>
-		</div>
-		<form class="com-form" action="">
-			<fieldset>
-				<strong>LOAD MORE COMMENTS</strong>
-				<span><a href="#">Sign in to add a comment</a> or <a href="#">Join (it’s free and fast)</a></span>
-				<textarea rows="3" cols="3">Write comment here....</textarea>
-			</fieldset>
-		</form>
-		<div class="com-bot">
-			<a href="#" class="com-info">POSTING GUIDELINES</a>
-			<a href="#" class="com-add">ADD COMMENT</a>
-		</div>
-		<div class="com-end"></div>
-	</div-->
-  
 	<!--div class="section">
 		<strong class="rel-head">RELATED Q&amp;As</strong>
 		<% @answer.question.similar_questions.each do |question| %>
@@ -121,21 +53,18 @@
 	</div-->
 </div>
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'azuriedev'; // required: replace example with your forum shortname
+<ul class="social-links">
+  <li><a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="azurie">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
+  <li>
+    <iframe scrolling="no" frameborder="0" src="http://www.facebook.com/plugins/like.php?href=<%= question_answer_url(@answer.question,@answer) %>&amp;layout=button_count&amp;show_faces=true&amp;width=110&amp;action=like&amp;colorscheme=light&amp;height=20" style="border: medium none; overflow: hidden; width: 107px; height: 20px; position: relative;" allowtransparency="true"></iframe>
+  </li>
+  <li>
+    <g:plusone size="medium" href="http://spasiboeva.ru/blog/13776.html"></g:plusone>
+  </li>
+</ul>
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
+<div class="fb-comments" data-href="<%= question_answer_url(@answer.question,@answer) %>" data-num-posts="10" data-width="590"></div>
 
 <% content_for :sidebar do %>
 <!-- sidebar -->
