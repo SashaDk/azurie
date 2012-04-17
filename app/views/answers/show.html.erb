@@ -16,11 +16,6 @@
 			</ul>
 		</div>
 		<h3><%= @answer.question.title %></h3>
-		<!--ul class="nav-add">
-      <li><span>15</span> APPRECIATED</li>
-      <li><span>456</span> COMMENTS</li>
-      <li><span>300</span> VIEWS</li>
-    </ul-->
 		<div class="line">
       <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
       <ul>
@@ -63,7 +58,6 @@
     <g:plusone size="medium" href="http://spasiboeva.ru/blog/13776.html"></g:plusone>
   </li>
 </ul>
-
 <div class="fb-comments" data-href="<%= question_answer_url(@answer.question,@answer) %>" data-num-posts="10" data-width="590"></div>
 
 <% content_for :sidebar do %>
