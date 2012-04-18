@@ -6,7 +6,6 @@ javascripts:
   - jquery_ujs
   - popup
   - slides.jquery
-  - social
 stylesheets:
 - base:
   - all
