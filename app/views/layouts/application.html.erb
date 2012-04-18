@@ -15,17 +15,9 @@
 <div id="fb-root"></div>
 <script>
 window.fbAsyncInit = function() {
-FB.init({status: true, cookie: true, xfbml: true});
-  FB.Event.subscribe('edge.create',
-    function(response) {
-      alert('You liked the URL: ' + response);
-    }
-  );
-  FB.Event.subscribe('edge.remove',
-    function(response) {
-      alert('You unliked the URL: ' + response);
-    }
-  );
+  FB.init({status: true, cookie: true, xfbml: true});
+  FB.Event.subscribe('edge.create', social_handler(responce));
+  FB.Event.subscribe('edge.remove', social_handler(responce));
 };
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -49,10 +41,12 @@ FB.init({status: true, cookie: true, xfbml: true});
     return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
   }(document, "script", "twitter-wjs"));
   twttr.ready(function (twttr) {
-    twttr.events.bind('tweet', function(event) {
-      alert('You tweeted the URL: ' + document.url);
-    });
+    twttr.events.bind('tweet', social_handler(event));
   });
+
+  function social_handler(result) {
+    alert('You liked: ' + document.URL);
+  }
 </script>
 
 <div id="header" class="page-wrapper">
