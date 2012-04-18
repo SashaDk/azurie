@@ -52,6 +52,6 @@ class Question < ActiveRecord::Base
   end
   
   def self.category(category)
-    Question.top.where(:category => category)
+    Question.verified.where(:category => category)
   end
 end
