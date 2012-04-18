@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = params[:category].blank? ? Question.verified : Question.category(params[:category])
     @questions_count = @questions.count
-    @answers_count = @questions.select('sum(answers_count) as answers_sum').first.answers_sum
+    @answers_count = @questions.select('sum(answers_count) as answers_sum').first.answers_sum || 0
     @questions = @questions.includes(:answers, :tags)
     @questions = @questions.order(:created_at.desc) if params[:order] == 'date' || params[:order].blank?
     @questions = @questions.order(:answers_count.desc) if params[:order] == 'popular'
