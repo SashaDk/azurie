@@ -32,7 +32,7 @@ class Question < ActiveRecord::Base
   validates :user_id, :presence => true
   
   scope :top, :conditions => { :is_top => true }, :order => :updated_at.desc
-  scope :verified, :conditions => { :answers_count.gt => 0, :state => :verified }, :order => :is_top.desc
+  scope :verified, :conditions => { :answers_count.gt => 0, :state => :verified }
   scope :recent, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :created_at.desc
   scope :popular, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :answers_count.desc
   scope :pending, :conditions => { :state => :new }, :order => :created_at.desc
