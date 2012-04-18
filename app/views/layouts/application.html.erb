@@ -18,6 +18,8 @@ window.fbAsyncInit = function() {
   FB.init({status: true, cookie: true, xfbml: true});
   FB.Event.subscribe('edge.create', social_handler);
   FB.Event.subscribe('edge.remove', social_handler);
+  FB.Event.subscribe('comment.create', social_handler);
+  FB.Event.subscribe('comment.remove', social_handler);
 };
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -43,10 +45,6 @@ window.fbAsyncInit = function() {
   twttr.ready(function (twttr) {
     twttr.events.bind('tweet', social_handler);
   });
-
-  function social_handler(result) {
-    alert('You liked: ' + document.URL);
-  }
 </script>
 
 <div id="header" class="page-wrapper">

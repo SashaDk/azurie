@@ -12,3 +12,8 @@ $(function(){
     });    
 });
 
+
+
+function social_handler(result) {
+  alert('You liked: ' + document.URL);
+}
