@@ -16,8 +16,8 @@
 <script>
 window.fbAsyncInit = function() {
   FB.init({status: true, cookie: true, xfbml: true});
-  FB.Event.subscribe('edge.create', social_handler(responce));
-  FB.Event.subscribe('edge.remove', social_handler(responce));
+  FB.Event.subscribe('edge.create', social_handler);
+  FB.Event.subscribe('edge.remove', social_handler);
 };
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -41,7 +41,7 @@ window.fbAsyncInit = function() {
     return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
   }(document, "script", "twitter-wjs"));
   twttr.ready(function (twttr) {
-    twttr.events.bind('tweet', social_handler(event));
+    twttr.events.bind('tweet', social_handler);
   });
 
   function social_handler(result) {
