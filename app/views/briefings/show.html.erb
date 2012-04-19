@@ -21,7 +21,9 @@
 </div>
 
 <%= render :partial => 'shared/social', :locals => { :url => briefing_url(@briefing) } %>
-
+<% content_for :social_init do %>
+  <%= render 'shared/social_init' %>
+<% end %>
 <% content_for :sidebar do %>
 <!-- sidebar -->
 	<div id="sidebar">

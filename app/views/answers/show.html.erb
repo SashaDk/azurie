@@ -49,6 +49,9 @@
 </div>
 
 <%= render :partial => 'shared/social', :locals => { :url => question_answer_url(@answer.question,@answer) } %>
+<% content_for :social_init do %>
+  <%= render 'shared/social_init' %>
+<% end %>
 <% content_for :sidebar do %>
 <!-- sidebar -->
 	<div id="sidebar">
