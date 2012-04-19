@@ -43,7 +43,7 @@ window.fbAsyncInit = function() {
     return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
   }(document, "script", "twitter-wjs"));
   twttr.ready(function (twttr) {
-    //twttr.events.bind('tweet', social_handler);
+    twttr.events.bind('tweet', tweet_callback);
   });
 </script>
 

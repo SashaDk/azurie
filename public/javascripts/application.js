@@ -28,6 +28,10 @@ function fb_comment_remove_callback(params) {
   return social_handler("type=comment&act=dec");
 }
 
+function tweet_callback(params) {
+  return social_handler("type=like&act=inc");
+}
+
 function gplusone_callback(params) {
   var act = params.state == 'on' ? "inc" : "dec" ;
   return social_handler("type=like&act=" + act);
