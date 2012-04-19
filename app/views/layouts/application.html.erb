@@ -16,10 +16,10 @@
 <script>
 window.fbAsyncInit = function() {
   FB.init({status: true, cookie: true, xfbml: true});
-  //FB.Event.subscribe('edge.create', social_handler);
-  //FB.Event.subscribe('edge.remove', social_handler);
-  //FB.Event.subscribe('comment.create', social_handler);
-  //FB.Event.subscribe('comment.remove', social_handler);
+  FB.Event.subscribe('edge.create', fb_edge_create_callback);
+  FB.Event.subscribe('edge.remove', fb_edge_remove_callback);
+  FB.Event.subscribe('comment.create', fb_comment_create_callback);
+  FB.Event.subscribe('comment.remove', fb_comment_remove_callback);
 };
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

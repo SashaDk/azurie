@@ -1,5 +1,9 @@
 Azurie::Application.routes.draw do
-  resources :briefings
+  resources :briefings do
+    member do
+      get :social_handler
+    end
+  end
 
   get "pages/index", :as => :root
 
@@ -11,6 +15,7 @@ Azurie::Application.routes.draw do
     resources :answers do
       member do
         post :comment
+        get :social_handler
       end
     end
     resources :assignments

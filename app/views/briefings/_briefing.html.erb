@@ -7,7 +7,7 @@
 	<h3><%= link_to briefing.title, briefing %></h3>
 	<div class="line">
 		<ul>
-			<li><%= link_to '0 Comments and 0 Reactions', briefing_path(briefing) + '#disqus_thread' %></li>
+			<li><%= link_to "#{briefing.comments_count} Comments and #{briefing.likes_count} Reactions", briefing_path(briefing) %></li>
 			<li>posted <%= distance_of_time_in_words_to_now(briefing.created_at) %> ago</li>
 		</ul>
 		<div class="section-row">

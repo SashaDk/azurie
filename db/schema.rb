@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120418195636) do
+ActiveRecord::Schema.define(:version => 20120419195003) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20120418195636) do
     t.text     "book_name"
     t.string   "book_author"
     t.string   "book_link"
+    t.integer  "likes_count",    :default => 0, :null => false
+    t.integer  "comments_count", :default => 0, :null => false
   end
 
   create_table "assigments", :force => true do |t|
@@ -54,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20120418195636) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.text     "video"
+    t.integer  "likes_count",          :default => 0, :null => false
+    t.integer  "comments_count",       :default => 0, :null => false
   end
 
   create_table "comments", :force => true do |t|

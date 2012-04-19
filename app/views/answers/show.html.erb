@@ -20,7 +20,7 @@
       <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
       <ul>
         <li><span><%= @answer.user.occupation %><% if @answer.user.company %> at <%= @answer.user.company %><% end %></span></li>
-        <li><%= link_to '0 Comments', question_answer_path(@answer.question, @answer) + '#disqus_thread' %></li>
+        <li><%= "#{@answer.comments_count} Comments" %></li>
         <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li>
       </ul>
     </div>
@@ -55,7 +55,7 @@
     <div class="fb-like" data-layout="button_count" data-send="false" data-width="107" data-show-faces="false"></div>
   </li>
   <li>
-    <g:plusone size="medium" href="<%= question_answer_url(@answer.question,@answer) %>"></g:plusone>
+    <g:plusone callback="gplusone_callback" size="medium" href="<%= question_answer_url(@answer.question,@answer) %>"></g:plusone>
   </li>
 </ul>
 <div class="fb-comments" data-href="<%= question_answer_url(@answer.question,@answer) %>" data-num-posts="10" data-width="590"></div>

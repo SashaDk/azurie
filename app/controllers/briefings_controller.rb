@@ -1,10 +1,12 @@
 class BriefingsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :social_handler]
+  load_and_authorize_resource
 
   # GET /briefings
   # GET /briefings.xml
   def index
     @briefings = Briefing.all
+    @comments_count = Briefing.select('sum(comments_count) as comments_sum').first.comments_sum || 0
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,6 +24,24 @@ class BriefingsController < ApplicationController
       format.xml  { render :xml => @briefing }
     end
   end
+
+  # GET /briefings/1/social_handler
+  def social_handler
+    @briefing = Briefing.find(params[:id])
+    if params[:type] == "like"
+      @briefing.likes_count += 1 if params[:act] == "inc"
+      @briefing.likes_count -= 1 if params[:act] == "dec"
+    end
+    if params[:type] == "comment"
+      @briefing.comments_count += 1 if params[:act] == "inc"
+      @briefing.comments_count -= 1 if params[:act] == "dec"
+    end
+    @briefing.save!
+
+    respond_to do |format|
+      format.json { render :json => :ok }
+    end
+  end 
 
   # GET /briefings/new
   # GET /briefings/new.xml

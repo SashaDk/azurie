@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :social_handler]
   before_filter :find_question
   load_and_authorize_resource
 
@@ -24,6 +24,24 @@ class AnswersController < ApplicationController
       format.xml  { render :xml => @answer }
     end
   end
+
+  # GET /questions/1/answers/1/social_handler
+  def social_handler
+    @answer = @question.answers.find(params[:id])
+    if params[:type] == "like"
+      @answer.likes_count += 1 if params[:act] == "inc"
+      @answer.likes_count -= 1 if params[:act] == "dec"
+    end
+    if params[:type] == "comment"
+      @answer.comments_count += 1 if params[:act] == "inc"
+      @answer.comments_count -= 1 if params[:act] == "dec"
+    end
+    @answer.save!
+
+    respond_to do |format|
+      format.json { render :json => :ok }
+    end
+  end 
 
   # POST /questions/1/answers/1/comment
   # POST /questions/1/answers/1/comment.xml

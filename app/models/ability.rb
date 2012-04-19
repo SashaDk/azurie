@@ -5,6 +5,8 @@ class Ability
     can :read, :all
     can :search, Question
     can :fakereg, User
+    can :social_handler, Answer
+    can :social_handler, Briefing
     if user.blank?
       cannot :index, User
     else
