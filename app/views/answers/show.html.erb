@@ -20,8 +20,8 @@
       <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
       <ul>
         <li><span><%= @answer.user.occupation %><% if @answer.user.company %> at <%= @answer.user.company %><% end %></span></li>
-        <li><%= "#{@answer.comments_count} Comments" %></li>
-        <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li>
+        <!--li><%= "#{@answer.comments_count} Comments" %></li>
+        <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li-->
       </ul>
     </div>
 		<div class="section-row">
