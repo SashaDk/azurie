@@ -5,7 +5,7 @@ class BriefingsController < ApplicationController
   # GET /briefings
   # GET /briefings.xml
   def index
-    @briefings = Briefing.all
+    @briefings = Briefing.order(:created_at.desc)
     @comments_count = Briefing.select('sum(comments_count) as comments_sum').first.comments_sum || 0
 
     respond_to do |format|
