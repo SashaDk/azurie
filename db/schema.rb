@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419195003) do
+ActiveRecord::Schema.define(:version => 20120421220532) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(:version => 20120419195003) do
     t.integer  "likes_count",          :default => 0, :null => false
     t.integer  "comments_count",       :default => 0, :null => false
   end
+
+  add_index "briefings", ["created_at"], :name => "index_briefings_on_created_at"
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
