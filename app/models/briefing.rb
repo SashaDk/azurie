@@ -15,4 +15,6 @@ class Briefing < ActiveRecord::Base
   attr_accessible :title, :description, :category, :source, :is_quote, :picture, :video
   validates :title, :presence => true
   validates :description, :presence => true
+
+  scope :top, :limit => 5, :order => :created_at.desc
 end
