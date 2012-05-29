@@ -3,8 +3,7 @@
   <div class="wrapper-content">
     <div class="promo">
       <div id="slider"><div class="slides_container">
-        
-        <% @top_briefings.shuffle[0,1].each do |briefing| %>
+          <% briefing = @top_briefings.shuffle.first; @top_briefings.delete_if{|b| b.id == briefing.id } %> 
         <div style="width:955px;height:450px;">
           <div class="visual">
             <% if !briefing.video.blank? %>
@@ -20,7 +19,6 @@
             <p><%= truncate strip_tags(briefing.description), :length => 800, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
           </div>
         </div>
-      <% end %>   
       </div></div>
     </div>
     <script type="text/javascript"> 

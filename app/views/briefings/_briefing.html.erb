@@ -6,10 +6,10 @@
 	</div>
 	<h3><%= link_to briefing.title.upcase, briefing %></h3>
 	<div class="line">
-		<ul>
+		<!--ul>
 			<li><%= link_to "#{briefing.comments_count} Comments and #{briefing.likes_count} Reactions", briefing_path(briefing) %></li>
 			<li>posted <%= distance_of_time_in_words_to_now(briefing.created_at) %> ago</li>
-		</ul>
+		</ul-->
 		<div class="section-row">
       <div class="briefing-small-image">
         <%= image_tag(briefing.picture.url(:small)) %>
