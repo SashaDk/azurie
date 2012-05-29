@@ -43,9 +43,9 @@ Azurie::Application.routes.draw do
       get :make_admin
       get :make_guest
     end
-    collection do
-      post :fakereg
-    end
+    #collection do
+      #post :fakereg
+    #end
   end
 
   root :to => "pages#index"

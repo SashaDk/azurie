@@ -26,8 +26,8 @@
       <% else %>
         <ul class="tools">
           <li><%= link_to "SIGN IN", new_session_path(:user) %></li>
-          <!--li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="Sign in with Facebook"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
-          <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="Sign in with Google+"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li-->
+          <li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="Sign in with Facebook"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
+          <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="Sign in with Google+"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li>
         </ul>
       <% end %>
       
