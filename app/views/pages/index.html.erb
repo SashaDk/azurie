@@ -4,7 +4,7 @@
     <div class="promo">
       <div id="slider"><div class="slides_container">
         
-        <% Briefing.top.each do |briefing| %>
+        <% @top_briefings.shuffle[0,1].each do |briefing| %>
         <div style="width:955px;height:450px;">
           <div class="visual">
             <% if !briefing.video.blank? %>
@@ -15,8 +15,8 @@
             <div <% if !briefing.video.blank? %>class="video-teaser" onclick='replaceVideoTeaser(this, BriefingVideo_<%= briefing.id %>)'<% end %>><%= image_tag(briefing.picture.url(:x_medium)) %></div>
           </div>
           <div class="slide_textbox">
-            <span><%= link_to "BRIEFINGS", briefings_path %></span>
-            <strong><%= link_to briefing.title, briefing_path(briefing) %></strong>
+            <span><%= link_to "MEDIA", briefings_path %></span>
+            <strong><%= link_to briefing.title.upcase, briefing_path(briefing) %></strong>
             <p><%= truncate strip_tags(briefing.description), :length => 800, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
           </div>
         </div>
@@ -45,8 +45,16 @@
 	<%= render 'shared/nav_sidebar' %>
 <% end %>
 
-<h2>Q&amp;A</h2>
 <%= render 'shared/search_form' %>
+<%#<h2>MEDIA</h2>%>
+<strong class="decor"><span>DAILY TOP MEDIA</span></strong>
+<div class="sections">  
+	<% @top_briefings.each do |briefing| %>
+	  <%= render briefing %>
+	<% end %>
+</div>
+
+<%#<h2>Q&amp;A</h2>%>
 <strong class="decor"><span>DAILY TOP Q&amp;As</span></strong>
 <!-- sections -->
 <div class="sections">  

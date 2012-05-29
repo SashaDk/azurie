@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @top_questions = Question.top.paginate(:page => params[:page])
+    @top_questions = Question.top
+    @top_briefings = Briefing.top
   end
 
   def about

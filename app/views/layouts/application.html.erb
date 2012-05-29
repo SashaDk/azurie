@@ -35,7 +35,7 @@
 <!-- nav -->
     <ul id="nav">
       <li  <% if params[:controller] == 'briefings' || current_page?('/') %> class="active" <% end %> >
-        <%= link_to "BRIEFINGS", briefings_path %>
+        <%= link_to "MEDIA", briefings_path %>
       </li>
       <li <% if params[:controller] == 'questions' %> class="active" <% end %> >
         <%= link_to "Q&amp;As".html_safe, questions_path %>
