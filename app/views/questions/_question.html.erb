@@ -18,10 +18,10 @@
   <div class="section-holder">
 		<ul>
 		  <% if answer.question.answers.count > 1 %>
-			<li><a href="<%= question_path(question) %>"><%= answer.question.answers.count %> <span>MORE ANSWERS</span></a></li>
+        <li><a href="<%= question_path(question) %>"><%= answer.question.answers.count %> <span><%= t('questions.question.more_answers') %></span></a></li>
 			<% end %>
 			<% if can? :create, Answer %>
-  			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
+  			<li><%= link_to t('questions.question.add_answer'),  new_question_answer_path(question) %></a></li>
   	  <% end %>
 		</ul>
 	</div>
@@ -29,13 +29,12 @@
 	<div class="section-holder">
 		<ul>
 		  <% if can? :create, Answer %>
-  			<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(question) %></a></li>
+  			<li><%= link_to t('questions.question.add_answer'),  new_question_answer_path(question) %></a></li>
       <% end %>
       <% if can? :manage, :all %>
-        <li><a href="<%= url_for edit_question_path(question) %>" class="edit-link">Edit</a></li>
-        <li><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></li>
-      <% end %>
-  	  
+        <li><a href="<%= url_for edit_question_path(question) %>" class="edit-link"><%= t('questions.question.edit') %></a></li>
+        <li><%= link_to t('questions.question.delete'), question, :confirm => t('questions.question.confirm'), :method => :delete %></li>
+      <% end %> 
 		</ul>
 	</div>
 	<% end %>

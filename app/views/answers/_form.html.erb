@@ -12,7 +12,7 @@
 			<div class="section2-frame">
 				<strong><%= @question.title %></strong>
 				<p><%= auto_link simple_format @question.description %></p>
-        <% if current_user == @question.user %><a href="<%= url_for edit_question_path(@question) %>" class="edit-link">Edit question</a><% end %>
+        <% if current_user == @question.user %><a href="<%= url_for edit_question_path(@question) %>" class="edit-link"><%= t 'answers.form.edit_question' %></a><% end %>
 			</div>
 		</div>
 	</div>

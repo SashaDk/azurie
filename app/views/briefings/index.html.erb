@@ -5,12 +5,12 @@
 	</div>
 <% end %>
 
-<h2>FEATURED MEDIA</h2>
+<h2><%= t '.featured_media' %></h2>
 <form class="search" action="#">
 	<fieldset>
 		<div class="row">
 			<span>
-				<input type="text" value="<% unless params[:q].blank? %><%= params[:q] %><% else %>SEARCH QUERY HERE<% end %>" onfocus="javascript:if(this.value=='SEARCH QUERY HERE'){this.value='';}" onblur="javascript:if(this.value==''){this.value='SEARCH QUERY HERE';}" />
+        <input type="text" value="<% unless params[:q].blank? %><%= params[:q] %><% else %><%= t '.search_here' %><% end %>" onfocus="javascript:if(this.value=='<%= t '.search_here' %>'){this.value='';}" onblur="javascript:if(this.value==''){this.value='<%= t '.search_here' %>';}" />
 				<input type="submit" value="" class="btn-search" />
 			</span>
 
@@ -18,8 +18,8 @@
 	</fieldset>
 </form>
 <ul class="nav-add">
-	<li><a href="#"><span><%= @briefings.count %></span> FEATURED MEDIA</a></li>
-	<li><a href="#"><span><%= @comments_count %></span> COMMENTS</a></li>
+  <li><a href="#"><span><%= @briefings.count %></span> <%= t '.featured_media' %></a></li>
+  <li><a href="#"><span><%= @comments_count %></span> <%= t '.comments' %></a></li>
 
 	<!--li class="bul-slash"><a href="#">RATING</a></li>
 	<li><a href="#"><span>POPULARITY</span></a></li>
@@ -32,6 +32,6 @@
 	<% end %>
 </div>
 <div class="section-area">
-	<h4>ARE YOU A PASSIONATE VENTURE REPORTER?  <a href="mailto:hello@azurie.com">PLEASE CONTACT US ></a></h4>
+  <h4><%= t '.are_you_expert' %>  <a href="mailto:hello@azurie.com"><%= t '.contact_us' %> ></a></h4>
 </div>
 </div>

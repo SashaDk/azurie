@@ -1,9 +1,511 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
-  fail: 'Auhtentication FAIL!!'
-  success: 'Authentication SUCCESS!!!'
-  signed_in: 'Estamos dentro'
-  welcome: 'Bienvenido'
+  categories:
+    traction: Gaining Traction
+    business_model: Business Models
+    people_management: People Management
+    marketing: Marketing and Sales
+    capital_rising: Raising Capital
+    presentation: Mastering Presentation
+    communication: Mastering Media
+    innovation: New Frontiers
+    design: Product Design
+    well_being: Work-Life Balance
+    failure: Failure
+  layout:
+    logo: Azurie VENTURE ROADMAP
+    tools:
+      home: HOME
+      settings: SETTINGS
+      signin: SIGN IN
+      signout: SIGN OUT
+      facebook: Sign in with Facebook
+      googleplus: Sign in with Google+
+    menu:
+      media: MEDIA
+      qa: Q&amp;As
+      people: PEOPLE
+      about: ABOUT
+    news: NEWS
+    news1: The beta version of Azurie has been launched and we will be testing the
+      platform with a select group of people. Please be patient, invitations will
+      go out to the wider community soon! To get on the mailing list please send your
+      name through the feedback link.
+    vision: VISION AND MISSION
+    vision1: Our vision is to become the leading edge knowledge resource and community
+      for frontier entrepreneurship globally
+    vision2: Our mission is to put the spotlight on leading experts and those driving
+      innovation in their industries &mdash; how to succeed and where to invest.
+    connect:
+      title: CONNECT WITH US
+      facebook: Like us on Facebook
+      googleplus: Join us on Google+
+      twitter: Follow us on Twitter
+      rss: Subscribe to us via RSS
+    footer:
+      about: About
+      thanks: Special thanks
+      feedback: Feedback
+  search_form:
+    search_here: SEARCH HERE
+  sidebar:
+    find_new_insights: FIND NEW INSIGHTS
+    inspiration: INSPIRATION
+    about_text: Azurie feeds on insights from entrepreneurial and creative thought
+      leaders globally
+    read_more: read more
+    join_us: JOIN US NOW
+    categories: CATEGORIES
+    whats_popular: WHAT’S  POPULAR  NOW
+    most_recent: MOST  RECENT
+  pages:
+    index:
+      promo:
+        media: MEDIA
+        learn_more: learn more
+      top_media: DAILY TOP MEDIA
+      top_qa: DAILY TOP Q&amp;As
+      more_qa: MORE Q&amp;As
+      cant_find_answer: CAN'T FIND AN ANSWER?
+      post_your_question: THEN POST YOUR QUESTION HERE
+    about:
+      manifesto: MANIFESTO
+      manifesto1: VENTURE DECODED
+      manifesto2: COLLABORATION MANIFESTED, ITS NET WIDENED, THE ACCESS GREAT.
+      manifesto3: IMAGES FOR AN ENTREPRENEURIAL WORLD
+      manifesto4: MAKING CONNECTIONS, RELATIONS, ASSOCIATIONS.
+      manifesto5: PROMPTING GROWTH
+      manifesto6: GIVING DIRECTION
+      manifesto7: INSPIRING CHANGE. STATUS QUO QUESTIONED, FORGED, EXPLORED, REFORGED.
+      manifesto8: ENTREPRENEUR AS GAMECHANGER
+      manifesto9: EMPOWERED AND RESOLVED
+      manifesto10: A FRONTIER SPIRIT, A TRANSNATIONAL DIALOGUE, CREATIVE-BUSINESS
+        HYBRIDS. THE NEW DESIGN OF GLOBALISM
+      about: ABOUT
+      about1: Putting the spotlight on leading experts and those driving innovation
+        in their industries &mdash; how to succeed and where to invest.
+      about2: Azurie is '<b>knowledge media</b>' for the worldwide entrepreneurial
+        community. We slash through the Web's jungle of information on entrepreneurship
+        to reveal the top experts, the brightest ideas, and the edgiest products from
+        around the world.
+      about3: Through one-on-one interviews with leading entrepreneurs and curated
+        Q&A sessions from expert panels, Azurie acts as a hub for new and seasoned
+        entrepreneurs to learn, gain inspiration, connect, and interact with top thinkers
+        — all while promoting the underground sensations whose prowess has yet to
+        be recognized.
+      join_us: Join us
+      join_us2: and become part of a dynamic community.
+      background: BACKGROUND
+      background1: Azurie was launched in Moscow in 2012 by Artem Kiselev, Yuriy Gomozov,
+        and Alexandra Dieterink. Respectively a serial startup entrepreneur, software
+        developer, and venture capital professional. It was prompted by a desire to
+        consolidate important entrepreneurial know-how that is increasingly being
+        shared by thinkers and most innovative participants in business and connect
+        those with an entrepreneurial passion.
+      background2: The platform is being developed with the support of key contributors
+        from different corners of the globe.
+  briefings:
+    briefing:
+      learn_more: learn_more
+    index:
+      featured_media: FEATURED MEDIA
+      comments: COMMENTS
+      search_here: SEARCH HERE
+      are_you_expert: ARE YOU A PASSIONATE VENTURE REPORTER?
+      contact_us: PLEASE CONTACT US
+  questions:
+    form:
+      question: QUESTION
+      add_context: ADD CONTEXT TO YOUR QUESTION (OPTIONAL)
+      select_topic: Select Topic
+      add_tags: Add Tags, Suggest New Topic
+    sidebar:
+      faq: START SHARING YOUR EXPERTISE!
+      faq1: Don’t see any questions related to your expertise yet? Go ahead and create
+        <b>Frequently Asked Questions</b> here as part of your homepage. The goal
+        for each Q&A page is that it becomes the best source for anyone looking for
+        the answer on a specific topic.
+      faq2: Entrepreneurs have lots of different questions. They probably have questions
+        about the subjects that you know best. That’s an opportunity for you and your
+        organization. The advantage of Azurie is the quality of the experts answering
+        questions and the answers being provided.
+      guideline: WHAT MAKES A GOOD QUESTION?
+      guideline1: Don't see any answers to the question you have? Go ahead and pose
+        your query. The goal for each question page is that it becomes the best source
+        for anyone looking for the answer to that question.
+      guideline2: Q&A GUIDELINE
+      guideline3: What makes a good question?
+      guideline4: Good questions always ask "why?" and request narrative answer. A
+        good question on Azurie seeks to understand the underlying rationale for answers,
+        not just the answer itself.
+      guideline5: Good questions are sufficiently open-ended. For example, "Are there
+        any iPhone calendar apps?" should be phrased "What are the calendar apps for
+        the iPhone?"
+      guideline6: ! 'Avoid using the second person (questions generally should not
+        include the word "you”). Those words suggest that the question is soliciting
+        the opinion of a single user. Example: "Do you think that company founders
+        should negotiate a controlling stake with investors?" should be written as
+        "Should founders negotiate controlling stakes with investors?" because the
+        latter form usually ends up generating better, more useful, answers.'
+      guideline7: Give your question enough context so that anyone can understand
+        what you’re asking, regardless of when or where they answer your question.
+      guideline8: Polling (yes-or-no) or survey types of questions that seek a one
+        word are not allowed on Azurie.
+      guideline9: Use proper spelling, capitalization, and grammar.
+      guideline10: What makes a good answer?
+      guideline11: Be clear and succinct. Azurie is about breaking up large quantity
+        of information into more digestible content. Answers are to the point, ideally
+        80 words max, with an option to elaborate on the subject matter if necessary.
+      guideline12: A good answer on Azurie explains the underlying rationale for answers,
+        not just the answer itself.
+      guideline13: Be a resource, not a sales clerk. Lets keep the conversations add
+        free.
+      guideline14: Be a connector. Sometimes you don’t have the answer, but you know
+        just the person who does. Rather than making something up, make the referral.
+        Provide a quote and a link to another source.
+      guideline15: The bottom line is that being helpful is a great way to gain trust.
+        And when people trust you, they’re more comfortable doing business with you.
+      guideline16: Make book, blog or article referrals (optional)
+      guideline17: You may refer to a book, blog or any other source by adding the
+        name, author, and link in the designated fields below the answer.
+    question:
+      more_answers: MORE ANSWERS
+      add_answer: ADD YOUR ANSWER
+      delete: Delete
+      edit: Edit
+      confirm: Are you sure?
+    index:
+      all_questions: ALL QUESTIONS
+      in_category: IN CATEGORY
+      questions: QUESTIONS
+      answers: ANSWERS
+      popularity: POPULARITY
+      date: DATE
+      load_more: LOAD MORE Q&amp;As
+      cant_find_answer: CAN'T FIND AN ANSWER?
+      post_your_question: THEN POST YOUR QUESTION HERE
+    show:
+      no_answers: No one answered this question yet.
+      add_answer: Post an answer
+    edit:
+      edit_question: EDIT QUESTION
+    new:
+      add_question: ADD QUESTION
+      and_answer: AND ANSWER
+  answers:
+    form:
+      edit_question: Edit question
+    form_fields:
+      text_label: ANSWER IN BRIEF - THE ESSENCE
+      fulltext_label: ELLABORATE IN MORE DETAIL (OPTIONAL)
+      text_description: Please try to limit to 80 words
+      bookname_label: Title of Book, Blog or Alternative Resource
+      bookauthor_label: Author of Book, Blog or Alternative Resource
+      booklink_label: Link to Book, Blog or Alternative Resource
+    sidebar:
+      guideline: Q&A GUIDELINE
+      guideline1: Entrepreneurs have lots of different questions. They probably have
+        questions about the subjects that you know best. That’s an opportunity for
+        you and your organization. The advantage of Azurie is the quality of the experts
+        answering questions and the answers being provided.
+      guideline2: What makes a good answer?
+      guideline3: Be clear and succinct. Azurie is about breaking up large quantity
+        of information into more digestible content. Answers are to the point, ideally
+        80 words max, with an option to elaborate on the subject matter if necessary.
+      guideline4: A good answer on Azurie explains the underlying rationale for answers,
+        not just the answer itself.
+      guideline5: Be a resource, not a sales clerk. Lets keep the conversations add
+        free.
+      guideline6: Be a connector. Sometimes you don’t have the answer, but you know
+        just the person who does. Rather than making something up, make the referral.
+        Provide a quote and a link to another source.
+      guideline7: The bottom line is that being helpful is a great way to gain trust.
+        And when people trust you, they’re more comfortable doing business with you.
+      guideline8: Make book, blog or article referrals (optional)
+      guideline9: You may refer to a book, blog or any other source by adding the
+        name, author, and link in the designated fields below the answer.
+    answer:
+      learn_more: learn more | comment | like
+      delete: Delete
+      edit: Edit
+      confirm: Are you sure?
+    show:
+      comments: Comments
+      add_answer: ADD YOUR ANSWER
+      more_answers: MORE ANSWERS
+      answer_contd: ANSWER CONT’D
+    new:
+      add_answer: ADD ANSWER
+    edit:
+      edit_answer: EDIT ANSWER
+  users:
+    form:
+      personal: PERSONAL
+      in_brief: Your background in brief
+      contacts: CONTACTS
+      update: Update
+    usercolumn:
+      pending: YOUR PENDING QUESTIONS
+      faq: Start a new discussion by adding a <span>FAQ</span> here
+    edit:
+      profile_info: Profile Information
+      security_settings: Security settings
+    show:
+      discussions: Discussions
+      no_answers: This expert hasn't answered any questions yet.
+      no_answers_self1: Currently you don't have any questions and answers to show
+        in your profile. You can start adding your own
+      no_answers_self2: frequently asked questions
+      no_answers_self3: answer curated questions that have been asked, or answer other
+        questions on the Q&A platform.
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  devise:
+    confirmations:
+      confirmed: Your account was successfully confirmed. You are now signed in.
+      send_instructions: You will receive an email with instructions about how to
+        confirm your account in a few minutes.
+    failure:
+      inactive: Your account was not activated yet.
+      invalid: Invalid email or password.
+      invalid_token: Invalid authentication token.
+      locked: Your account is locked.
+      timeout: Your session expired, please sign in again to continue.
+      unauthenticated: You need to sign in or sign up before continuing.
+      unconfirmed: You have to confirm your account before continuing.
+    invitations:
+      accept_instructions: Please fill in your profile now.
+      invitation_token_invalid: The invitation provided is invalid!
+      no_invitations_remaining: No invitations remaining
+      send_instructions: An invitation email has been sent to %{email}.
+      updated: Your password was set successfully. You are now signed in.
+    mailer:
+      confirmation_instructions:
+        subject: Confirmation instructions
+      invitation_instructions:
+        subject: Invitation instructions
+      reset_password_instructions:
+        subject: Reset password instructions
+      unlock_instructions:
+        subject: Unlock Instructions
+    omniauth_callbacks:
+      failure: Could not authorize you from %{kind} because "%{reason}".
+      success: Successfully authorized from %{kind} account.
+    passwords:
+      send_instructions: You will receive an email with instructions about how to
+        reset your password in a few minutes.
+      updated: Your password was changed successfully. You are now signed in.
+    registrations:
+      destroyed: Bye! Your account was successfully cancelled. We hope to see you
+        again soon.
+      inactive_signed_up: You have signed up successfully. However, we could not sign
+        you in because your account is %{reason}.
+      signed_up: Welcome! You have signed up successfully.
+      updated: You updated your account successfully.
+    sessions:
+      signed_in: Signed in successfully.
+      signed_out: Signed out successfully.
+    unlocks:
+      send_instructions: You will receive an email with instructions about how to
+        unlock your account in a few minutes.
+      unlocked: Your account was successfully unlocked. You are now signed in.
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be accepted
+      already_confirmed: was already confirmed, please try signing in
+      blank: can't be blank
+      confirmation: doesn't match confirmation
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      not_found: not found
+      not_locked: was not locked
+      not_saved:
+        one: ! '1 error prohibited this %{resource} from being saved:'
+        other: ! '%{count} errors prohibited this %{resource} from being saved:'
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm

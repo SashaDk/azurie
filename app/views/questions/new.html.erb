@@ -1,6 +1,6 @@
 <div id="content">
   <ul class="naving">
-    <li><a href="#">ADD QUESTION<% if can? :create, Answer %> AND ANSWER<% end %></a></li>
+    <li><a href="#"><%= t '.add_question' %><% if can? :create, Answer %> <%= t '.and_answer' %><% end %></a></li>
   </ul>
 <%= render 'form' %>
 </div>

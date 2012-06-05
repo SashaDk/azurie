@@ -15,19 +15,19 @@
 <div id="header" class="page-wrapper">
   <div class="wrapper-content">
     <div class="area">
-      <h1 class="logo"><a href="/">Azurie VENTURE ROADMAP</a></h1>
+      <h1 class="logo"><a href="/"><%= t 'layout.logo' %></a></h1>
       
       <% if user_signed_in? %>
         <ul class="tools tools-logged-in">
-          <li><%= link_to 'HOME', current_user, {:style => 'color:#CC1885;'} %></li>
-          <li><%= link_to 'SETTINGS', edit_user_path(current_user) %></li>
-          <li><%= link_to "SIGN OUT", destroy_user_session_path %></li>
+          <li><%= link_to t('layout.tools.home'), current_user, {:style => 'color:#CC1885;'} %></li>
+          <li><%= link_to t('layout.tools.settings'), edit_user_path(current_user) %></li>
+          <li><%= link_to t('layout.tools.signout'), destroy_user_session_path %></li>
         </ul>
       <% else %>
         <ul class="tools">
-          <li><%= link_to "SIGN IN", new_session_path(:user) %></li>
-          <li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="Sign in with Facebook"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
-          <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="Sign in with Google+"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li>
+          <li><%= link_to t('layout.tools.signin'), new_session_path(:user) %></li>
+          <li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="<%= t('layout.tools.facebook') %>"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
+          <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="<%= t('layout.tools.googleplus') %>"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li>
         </ul>
       <% end %>
       
@@ -35,16 +35,16 @@
 <!-- nav -->
     <ul id="nav">
       <li  <% if params[:controller] == 'briefings' || current_page?('/') %> class="active" <% end %> >
-        <%= link_to "MEDIA", briefings_path %>
+        <%= link_to t('layout.menu.media'), briefings_path %>
       </li>
       <li <% if params[:controller] == 'questions' %> class="active" <% end %> >
-        <%= link_to "Q&amp;As".html_safe, questions_path %>
+        <%= link_to t('layout.menu.qa').html_safe, questions_path %>
       </li>
       <!--li <% if params[:controller] =~ /(^devise\/*)|(^users$)/ %> class="active" <% end %> >
-        <%= link_to "PEOPLE", users_path %>
+        <%= link_to t('layout.menu.people'), users_path %>
       </li-->
       <li <% if current_page?(about_path) %> class="active" <% end %> >
-        <%= link_to "ABOUT", about_path %>
+        <%= link_to t('layout.menu.about'), about_path %>
       </li>
     </ul>
   </div>
@@ -67,13 +67,13 @@
   <div class="wrapper-content">
     <div class="columns">
       <div class="column-1">
-        <strong>NEWS</strong>
-        <p><strong>12 Jan 2012</strong> The beta version of Azurie has been launched and we will be testing the platform with a select group of people. Please be patient, invitations will go out to the wider community soon! To get on the mailing list please send your name through the feedback link.</p>
+        <strong><%= t('layout.news') %></strong>
+        <p><strong>12 Jan 2012</strong>&nbsp;<%= t('layout.news1') %></p>
       </div>
       <div class="column-2">
-        <strong>VISION AND MISSION</strong>
-        <p>Our vision is to become the leading edge knowledge resource and community for frontier entrepreneurship globally</p>
-        <p>Our mission is to put the spotlight on leading experts and those driving innovation in their industries &mdash; how to succeed and where to invest.</p>
+        <strong><%= t('layout.vision') %></strong>
+        <p><%= t('layout.vision1') %></p>
+        <p><%= t('layout.vision2').html_safe %></p>
         <!--ul>
           <li>
             <ul>
@@ -92,15 +92,15 @@
         </ul-->
       </div>
       <div class="column-3">
-        <strong>CONNECT WITH US</strong>
+        <strong><%= t('layout.connect.title') %></strong>
         <ul>
           <li>
             <img src="/images/ico-2.jpg" height="17" width="17" alt="ico" />
-            <a href="https://plus.google.com/u/0/115224815136943317404">Join us on Google+</a>
+            <a href="https://plus.google.com/u/0/115224815136943317404"><%= t('layout.connect.googleplus') %></a>
           </li>
           <li>
             <img src="/images/ico-3.jpg" height="17" width="17" alt="ico" />
-            <a href="https://www.facebook.com/azuriemedia">Like us on Facebook</a>
+            <a href="https://www.facebook.com/azuriemedia"><%= t('layout.connect.facebook') %></a>
           </li>
           <!--li>
             <img src="/images/ico-4.jpg" height="17" width="17" alt="ico" />
@@ -108,7 +108,7 @@
           </li-->
           <li>
             <img src="/images/ico-5.jpg" height="17" width="17" alt="ico" />
-            <a href="http://twitter.com/#!/VentureRoadmap">Follow us on Twitter</a>
+            <a href="http://twitter.com/#!/VentureRoadmap"><%= t('layout.connect.twitter') %></a>
           </li>
           <!--li>
             <img src="/images/ico-6.jpg" height="17" width="17" alt="ico" />
@@ -116,7 +116,7 @@
           </li-->
           <li>
             <img src="/images/ico-7.jpg" height="17" width="17" alt="ico" />
-            <a href="<%= questions_path :format => :rss %>">Subscribe to us via RSS</a>
+            <a href="<%= questions_path :format => :rss %>"><%= t('layout.connect.rss') %></a>
           </li>
         </ul>
       </div>
@@ -129,10 +129,10 @@
     <div class="footer-holder">
       <span class="copy">&copy; 2011 Azurie  </span>
       <ul class="navigation">
-        <li><%= link_to 'About', :controller => '/pages', :action => :about %></li>
-        <!--li><%= link_to 'Special thanks', :controller => '/pages', :action => :thanks %></li>
+        <li><%= link_to t('layout.footer.about'), :controller => '/pages', :action => :about %></li>
+        <!--li><%= link_to t('layout.footer.thanks'), :controller => '/pages', :action => :thanks %></li>
         <li><a href="#">Community Guidelines</a></li-->
-        <li><a href="mailto:team@azurie.com">Feedback</a></li>
+        <li><a href="mailto:team@azurie.com"><%= t('layout.footer.feedback') %></a></li>
         <% if can? :manage, :all %>
           <li><%= link_to "Invite user", new_user_invitation_path %></li>
           <li><%= link_to "Users", users_path %></li>

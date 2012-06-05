@@ -1,0 +1,433 @@
+ru:
+  answers:
+    answer:
+      confirm: Вы уверены?
+      delete: Удалить
+      edit: Редактировать
+      learn_more: дальше | комментировать | поделиться
+    edit:
+      edit_answer: РЕДАКТИРОВАНИЕ ОТВЕТА
+    form:
+      edit_question: Редактировать вопрос
+    form_fields:
+      bookauthor_label: Автор книги, блога или другого ресурса
+      booklink_label: Ссылка на книгу, блог или другой ресурс
+      bookname_label: Название книги, блога или другого ресурса
+      fulltext_label: РАЗВЕРНУТЫЙ ОТВЕТ (НЕ ОБЯЗАТЕЛЬНО)
+      text_description: Постарайтесь уложиться в 80 слов
+      text_label: КРАТКИЙ ОТВЕТ - ОСНОВНАЯ МЫСЛЬ
+    new:
+      add_answer: ДОБАВИТЬ ОТВЕТ
+    show:
+      add_answer: ДОБАВИТЬ СВОЙ ОТВЕТ
+      answer_contd: РАЗВЕРНУТЫЙ ОТВЕТ
+      comments: Комментариев
+      more_answers: ЕЩЕ ОТВЕТЫ
+    sidebar:
+      guideline2: Признаки хорошего ответа
+      guideline8: Добавьте ссылку на книгу, блог или статью (не обязательно)
+  briefings:
+    briefing:
+      learn_more: еще
+    index:
+      comments: КОММЕНТАРИЕВ
+      contact_us: СВЯЖИТЕСЬ С НАМИ
+      featured_media: ИЗБРАННЫЕ МЕДИА
+      search_here: ПОИСК
+  categories:
+    business_model: Бизнес-модели
+    capital_rising: Привлечение капитала
+    communication: СМИ
+    design: Создание продукта
+    failure: Неудачи
+    innovation: Новые горизонты
+    marketing: Маркетинг и продажи
+    people_management: Работа с людьми
+    presentation: Искусство презентации
+    traction: Набираем обороты
+    well_being: Работа и личная жизнь
+  date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    - 
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
+    month_names:
+    - 
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: около %{count} часов
+        many: около %{count} часов
+        one: около %{count} часа
+        other: около %{count} часа
+      about_x_months:
+        few: около %{count} месяцев
+        many: около %{count} месяцев
+        one: около %{count} месяца
+        other: около %{count} месяца
+      about_x_years:
+        few: около %{count} лет
+        many: около %{count} лет
+        one: около %{count} года
+        other: около %{count} лет
+      almost_x_years:
+        few: почти %{count} года
+        many: почти %{count} лет
+        one: почти 1 год
+        other: почти %{count} лет
+      half_a_minute: меньше минуты
+      less_than_x_minutes:
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        one: меньше %{count} минуты
+        other: меньше %{count} минуты
+      less_than_x_seconds:
+        few: меньше %{count} секунд
+        many: меньше %{count} секунд
+        one: меньше %{count} секунды
+        other: меньше %{count} секунды
+      over_x_years:
+        few: больше %{count} лет
+        many: больше %{count} лет
+        one: больше %{count} года
+        other: больше %{count} лет
+      x_days:
+        few: ! '%{count} дня'
+        many: ! '%{count} дней'
+        one: ! '%{count} день'
+        other: ! '%{count} дня'
+      x_minutes:
+        few: ! '%{count} минуты'
+        many: ! '%{count} минут'
+        one: ! '%{count} минуту'
+        other: ! '%{count} минуты'
+      x_months:
+        few: ! '%{count} месяца'
+        many: ! '%{count} месяцев'
+        one: ! '%{count} месяц'
+        other: ! '%{count} месяца'
+      x_seconds:
+        few: ! '%{count} секунды'
+        many: ! '%{count} секунд'
+        one: ! '%{count} секунда'
+        other: ! '%{count} секунды'
+    prompts:
+      day: День
+      hour: Часов
+      minute: Минут
+      month: Месяц
+      second: Секунд
+      year: Год
+  devise:
+    failure:
+      inactive: Ваш аккаунт не активирован
+      invalid: Неправильный email или пароль
+      invalid_token: Неверный токен
+      locked: Ваш аккаунт заблокирован
+      timeout: Ваша сессия истекла, пожалуйста, войдите заново.
+      unauthenticated: Вы должны войти или зарегистрироваться, чтобы продолжить.
+      unconfirmed: Вы должны подтвердить свой аккаунт, чтбы продолжить.
+    invitations:
+      accept_instructions: Пожалуйста, заполните свой профиль прямо сейчас.
+      invitation_token_invalid: Приглашение недействительно
+      no_invitations_remaining: Приглашения закончились
+      send_instructions: ! 'Приглашение было отправлено по адресу: %{email}'
+      updated: Пароль установлен. Вы вошли на сайт.
+    mailer:
+      confirmation_instructions:
+        subject: Подтверждение аккаунта
+      invitation_instructions:
+        subject: Приглашение
+      reset_password_instructions:
+        subject: Изменение пароля
+      unlock_instructions:
+        subject: Снятие блокировки аккаунта
+    passwords:
+      updated: Ваш пароль установлен. Вы вошли на сайт.
+    registrations:
+      signed_up: Добро пожаловать! Вы вошли на сайт.
+      updated: Изменения сохранены.
+    sessions:
+      signed_in: Вы вошли на сайт.
+      signed_out: Вы вышли.
+    unlocks:
+      unlocked: Ваш аккаунт разблокирован. Теперь вы можете войти на сайт.
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: нужно подтвердить
+      already_confirmed: уже подтвержден, попробуйте войти на сайт.
+      blank: не может быть пустым
+      confirmation: не совпадает с подтверждением
+      empty: не может быть пустым
+      equal_to: может иметь лишь значение, равное %{count}
+      even: может иметь лишь нечетное значение
+      exclusion: имеет зарезервированное значение
+      greater_than: может иметь значение большее %{count}
+      greater_than_or_equal_to: может иметь значение большее или равное %{count}
+      inclusion: имеет непредусмотренное значение
+      invalid: имеет неверное значение
+      less_than: может иметь значение меньшее чем %{count}
+      less_than_or_equal_to: может иметь значение меньшее или равное %{count}
+      not_a_number: не является числом
+      not_an_integer: не является целым числом
+      not_found: не найден
+      not_locked: не заблокирован
+      odd: может иметь лишь четное значение
+      record_invalid: ! 'Возникли ошибки: %{errors}'
+      taken: уже существует
+      too_long:
+        few: слишком большой длины (не может быть больше чем %{count} символа)
+        many: слишком большой длины (не может быть больше чем %{count} символов)
+        one: слишком большой длины (не может быть больше чем %{count} символ)
+        other: слишком большой длины (не может быть больше чем %{count} символа)
+      too_short:
+        few: недостаточной длины (не может быть меньше %{count} символов)
+        many: недостаточной длины (не может быть меньше %{count} символов)
+        one: недостаточной длины (не может быть меньше %{count} символа)
+        other: недостаточной длины (не может быть меньше %{count} символа)
+      wrong_length:
+        few: неверной длины (может быть длиной ровно %{count} символа)
+        many: неверной длины (может быть длиной ровно %{count} символов)
+        one: неверной длины (может быть длиной ровно %{count} символ)
+        other: неверной длины (может быть длиной ровно %{count} символа)
+    template:
+      body: ! 'Проблемы возникли со следующими полями:'
+      header:
+        few: ! '%{model}: сохранение не удалось из-за %{count} ошибок'
+        many: ! '%{model}: сохранение не удалось из-за %{count} ошибок'
+        one: ! '%{model}: сохранение не удалось из-за %{count} ошибки'
+        other: ! '%{model}: сохранение не удалось из-за %{count} ошибки'
+  helpers:
+    select:
+      prompt: ! 'Выберите: '
+    submit:
+      create: Создать %{model}
+      submit: Сохранить %{model}
+      update: Сохранить %{model}
+  layout:
+    connect:
+      facebook: Наша страница в Facebook
+      googleplus: Наша страница в Google+
+      rss: Наш RSS
+      title: СВЯЖИТЕСЬ С НАМИ
+      twitter: Наш Twitter
+    footer:
+      about: О проекте
+      feedback: Обратная связь
+      thanks: Благодарности
+    menu:
+      about: О ПРОЕКТЕ
+      media: МЕДИА
+      people: ЛЮДИ
+      qa: ВОПРОСЫ И ОТВЕТЫ
+    news: НОВОСТИ
+    tools:
+      facebook: Войти через Facebook
+      googleplus: Войти через Google+
+      home: ПРОФИЛЬ
+      settings: НАСТРОЙКИ
+      signin: ВОЙТИ
+      signout: ВЫЙТИ
+    vision: ВИДЕНИЕ И МИССИЯ
+    logo: Azurie ДОРОЖНАЯ КАРТА ИННОВАЦИЙ
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%n %u'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: руб.
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            few: миллиардов
+            many: миллиардов
+            one: миллиард
+            other: миллиардов
+          million:
+            few: миллионов
+            many: миллионов
+            one: миллион
+            other: миллионов
+          quadrillion:
+            few: квадриллионов
+            many: квадриллионов
+            one: квадриллион
+            other: квадриллионов
+          thousand:
+            few: тысяч
+            many: тысяч
+            one: тысяча
+            other: тысяч
+          trillion:
+            few: триллионов
+            many: триллионов
+            one: триллион
+            other: триллионов
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            few: байта
+            many: байт
+            one: байт
+            other: байта
+          gb: ГБ
+          kb: КБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  pages:
+    about:
+      about: О ПРОЕКТЕ
+      background: БЭКГРАУНД
+      join_us: Присоединяйтесь
+      join_us2: к сообществу
+      manifesto: МАНИФЕСТ
+    index:
+      cant_find_answer: НЕ НАШЛИ ОТВЕТ?
+      more_qa: ЗАГРУЗИТЬ ЕЩЕ
+      post_your_question: ЗАДАЙТЕ СВОЙ ВОПРОС ТУТ
+      promo:
+        learn_more: еще
+        media: МЕДИА
+      top_media: ПОПУЛЯРНЫЕ МЕДИА
+      top_qa: ПОПУЛЯРНЫЕ ВОПРОСЫ
+  questions:
+    edit:
+      edit_question: РЕДАКТОРОВАТЬ ВОПРОС
+    form:
+      add_context: ДОБАВЬТЕ КОНТЕКСТ К ВОПРОСУ (НЕ ОБЯЗАТЕЛЬНО)
+      add_tags: Добавьте теги
+      question: ВОПРОС
+      select_topic: Выберите категорию
+    index:
+      all_questions: ВСЕ ВОПРОСЫ
+      answers: ОТВЕТЫ
+      cant_find_answer: НЕ НАШЛИ ОТВЕТ?
+      date: ПО ДАТЕ
+      in_category: В КАТЕГОРИИ
+      load_more: ЗАГРУЗИТЬ ЕЩЕ
+      popularity: ПО ПОПУЛЯРНОСТИ
+      post_your_question: ЗАДАЙТЕ СВОЙ ВОПРОС ТУТ
+      questions: ВОПРОСЫ
+    new:
+      add_question: ДОБАВИТЬ ВОПРОС
+      and_answer: ДОБАВИТЬ ОТВЕТ
+    question:
+      add_answer: ДОБАВИТЬ СВОЙ ОТВЕТ
+      confirm: Вы уверены?
+      delete: Удалить
+      edit: Редактировать
+      more_answers: ЕЩЕ ОТВЕТЫ
+    show:
+      add_answer: Добавить ответ
+      no_answers: На этот вопрос еще никто не ответил
+    sidebar:
+      faq: НАЧНИТЕ ДЕЛИТЬСЯ ОПЫТОМ
+      guideline: ПРИЗНАКИ ХОРОШЕГО ВОПРОСА
+      guideline10: Признаки хорошего ответа
+      guideline2: ИНСТРУКЦИЯ
+  support:
+    array:
+      last_word_connector: ! ' и '
+      two_words_connector: ! ' и '
+      words_connector: ! ', '
+  time:
+    am: утра
+    formats:
+      default: ! '%a, %d %b %Y, %H:%M:%S %z'
+      long: ! '%d %B %Y, %H:%M'
+      short: ! '%d %b, %H:%M'
+    pm: вечера
+  sidebar:
+    categories: КАТЕГОРИИ
+    join_us: ПРИСОЕДИНЯЙТЕСЬ
+    most_recent: НОВОЕ
+    read_more: еще
+    whats_popular: ПОПУЛЯРНОЕ
+    find_new_insights: НАЙДИТЕ НОВЫЕ ИДЕИ
+    inspiration: ВДОХНОВЕНИЕ
+  search_form:
+    search_here: ПОИСК
+  users:
+    edit:
+      profile_info: Информация о пользователе
+      security_settings: Настройки безопасности
+    form:
+      contacts: КОНТАКТЫ
+      personal: ЛИЧНОЕ
+      update: Обновить
+    show:
+      discussions: Обсуждения
+      no_answers: Этот эксперт еще не ответил ни на один вопрос
+      no_answers_self2: часто задаваемые вопросы

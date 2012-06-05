@@ -10,11 +10,11 @@
 		<div class="section6-holder">
 			<span>Q</span>
 			<div class="section6-box">
-				<strong><%= f.label :title, 'QUESTION' %></strong>
+				<strong><%= f.label :title, t('.question') %></strong>
 						<fieldset style="margin-bottom:15px;">
               <%= f.text_area :title %>
 						</fieldset>
-				<strong>ADD CONTEXT TO YOUR QUESTION (OPTIONAL)</strong>
+            <strong><%= t '.add_context' %></strong>
 				<div class="textbox2-block">
 						<fieldset>
               <%= f.text_area :description %>
@@ -26,11 +26,11 @@
 	<div class="section4">
 		<fieldset class="select">
 			<div class="row">
-				<label>Select Topic: </label>
+        <label><%= t '.select_topic' %>: </label>
         <%= f.select :category, category_values(@question.category) %>
 			</div>
 			<div class="row">
-				<label>Add Tags, Suggest New Topic:</label>
+        <label><%= t '.add_tags' %>:</label>
         <%= f.text_field :tag_list %>
 			</div>
 		</fieldset>

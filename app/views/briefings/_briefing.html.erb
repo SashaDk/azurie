@@ -14,7 +14,7 @@
       <div class="briefing-small-image">
         <%= image_tag(briefing.picture.url(:small)) %>
       </div>
-      <p><%= truncate strip_tags(briefing.description), :length => 800, :separator => "\n" %> <%= link_to "(learn more)", [briefing] %></p>
+      <p><%= truncate strip_tags(briefing.description), :length => 800, :separator => "\n" %> <%= link_to "(#{t 'briefings.briefing.learn_more'})", [briefing] %></p>
 		</div>
     <% if can? :manage, :all %><p class="edit-block"><a href="<%= url_for edit_briefing_path(briefing) %>" class="edit-link">Edit</a>&nbsp;<%= link_to 'Destroy', [briefing], :confirm => 'Are you sure?', :method => :delete %></p><% end %>
 	</div>

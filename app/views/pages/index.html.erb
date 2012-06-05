@@ -14,9 +14,9 @@
             <div <% if !briefing.video.blank? %>class="video-teaser" onclick='replaceVideoTeaser(this, BriefingVideo_<%= briefing.id %>)'<% end %>><%= image_tag(briefing.picture.url(:x_medium)) %></div>
           </div>
           <div class="slide_textbox">
-            <span><%= link_to "MEDIA", briefings_path %></span>
+            <span><%= link_to t('.promo.media'), briefings_path %></span>
             <strong><%= link_to briefing.title.upcase, briefing_path(briefing) %></strong>
-            <p><%= truncate strip_tags(briefing.description), :length => 800, :separator => "\n" %> <%= link_to '(learn more)', briefing_path(briefing) %></a></p>
+            <p><%= truncate strip_tags(briefing.description), :length => 800, :separator => "\n" %> <%= link_to "(#{t('.promo.learn_more')})", briefing_path(briefing) %></a></p>
           </div>
         </div>
       </div></div>
@@ -44,16 +44,14 @@
 <% end %>
 
 <%= render 'shared/search_form' %>
-<%#<h2>MEDIA</h2>%>
-<strong class="decor"><span>DAILY TOP MEDIA</span></strong>
+<strong class="decor"><span><%= t('.top_media') %></span></strong>
 <div class="sections">  
 	<% @top_briefings.each do |briefing| %>
 	  <%= render briefing %>
 	<% end %>
 </div>
 
-<%#<h2>Q&amp;A</h2>%>
-<strong class="decor"><span>DAILY TOP Q&amp;As</span></strong>
+<strong class="decor"><span><%= t('.top_qa').html_safe %></span></strong>
 <!-- sections -->
 <div class="sections">  
 	<% @top_questions.each do |question| %>
@@ -61,10 +59,9 @@
 	<% end %>
 </div>
 <div class="sections">
-  <%= link_to "MORE Q&amp;As".html_safe, questions_path, :class => 'load load-more-questions' %>
+  <%= link_to t('.more_qa').html_safe, questions_path, :class => 'load load-more-questions' %>
 </div>
 <div class="section-area">
-	<!--a href="#" class="load">LOAD MORE Q&amp;As</a-->
-	<h4>CAN'T FIND AN ANSWER? <%= link_to 'THEN POST YOUR QUESTION HERE', new_question_path %></a></h4>
+  <h4><%= t('.cant_find_answer') %> <%= link_to t('.post_your_question'), new_question_path %></a></h4>
 </div>  
 </div>

@@ -20,7 +20,7 @@
       <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
       <ul>
         <li><span><%= @answer.user.occupation %><% if @answer.user.company %> at <%= @answer.user.company %><% end %></span></li>
-        <!--li><%= "#{@answer.comments_count} Comments" %></li>
+        <!--li><%= "#{@answer.comments_count} #{t '.comments'}" %></li>
         <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li-->
       </ul>
     </div>
@@ -29,13 +29,13 @@
 		</div>
 	</div>
 	<div class="section">
-		<% if !@answer.fulltext.blank? %><p><strong>ANSWER CONT’D</strong>  <%= auto_link simple_format @answer.fulltext %></p><% end %>
+    <% if !@answer.fulltext.blank? %><p><strong><%= t('.answer_contd') %></strong>  <%= auto_link simple_format @answer.fulltext %></p><% end %>
 		<div class="section-holder">
 			<ul>
         <% if @answer.question.answers.count > 1 %>
-        <li><a href="<%= question_path(@answer.question) %>"><%= @answer.question.answers.count %> <span>MORE ANSWERS</span></a></li>
+          <li><a href="<%= question_path(@answer.question) %>"><%= @answer.question.answers.count %> <span><%= t '.more_answers' %></span></a></li>
         <% end %>
-				<li><%= link_to "ADD YOUR ANSWER",  new_question_answer_path(@answer.question) %></li>
+				<li><%= link_to t('.add_answer'),  new_question_answer_path(@answer.question) %></li>
 			</ul>
 		</div>
 	</div>

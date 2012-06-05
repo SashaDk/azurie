@@ -3,8 +3,8 @@
   <div class="wrapper-content">
 		<div class="promo">
 			<div class="text" style="padding-bottom:1em;">
-				<strong>MANIFESTO</strong>
-				<p><span>VENTURE DECODED</span>, COLLABORATION MANIFESTED, ITS NET WIDENED, THE ACCESS GREAT. <span>IMAGES FOR AN ENTREPRENEURIAL WORLD</span>, MAKING CONNECTIONS, RELATIONS, ASSOCIATIONS. <span>PROMPTING GROWTH</span>, <span>GIVING DIRECTION</span>, INSPIRING CHANGE. STATUS QUO QUESTIONED, FORGED, EXPLORED, REFORGED. <span>ENTREPRENEUR AS GAMECHANGER</span>, <span>EMPOWERED AND RESOLVED</span>. A FRONTIER SPIRIT, A TRANSNATIONAL DIALOGUE, CREATIVE-BUSINESS HYBRIDS. THE NEW DESIGN OF GLOBALISM</p>
+        <strong><%= t('.manifesto') %></strong>
+        <p><span><%= t('.manifesto1') %></span>, <%= t('.manifesto2') %> <span><%= t('.manifesto3') %></span>, <%= t('.manifesto4') %> <span><%= t('.manifesto5') %></span>, <span><%= t('.manifesto6') %></span>, <%= t('.manifesto7') %> <span><%= t('.manifesto8') %></span>, <span><%= t('.manifesto9') %></span>. <%= t('.manifesto10') %></p>
 			</div>
 		</div>
 	</div>
@@ -16,16 +16,16 @@
 	<%= render 'shared/nav_sidebar' %>
 <% end %>
 
-<h2>ABOUT</h2>
+<h2><%= t '.about' %></h2>
 <div class="text-box">
-  <h3>'Putting the spotlight on leading experts and those driving innovation in their industries &mdash; how to succeed and where to invest.'</h3>
-  <p>Azurie is '<b>knowledge media</b>' for the worldwide entrepreneurial community. We slash through the Web's jungle of information on entrepreneurship to reveal the top experts, the brightest ideas, and the edgiest products from around the world.</p> 
-  <p>Through one-on-one interviews with leading entrepreneurs and curated Q&A sessions from expert panels, Azurie acts as a hub for new and seasoned entrepreneurs to learn, gain inspiration, connect, and interact with top thinkers — all while promoting the underground sensations whose prowess has yet to be recognized.</p>
+  <h3>'<%= t('.about1').html_safe %>'</h3>
+  <p><%= t('.about2').html_safe %></p> 
+  <p><%= t('.about3').html_safe %></p>
   <% unless user_signed_in? %>
-  <p><a href="<%= new_user_registration_path %>">Request an invitation</a> and become part of a dynamic community.</p>
+    <p><a href="<%= new_user_registration_path %>"><%= t('.join_us') %></a> <%= t('.join_us2') %></p>
   <% end %>
-	<strong class="decor"><span>BACKGROUND</span></strong>
-	<p>Azurie was launched in Moscow in 2012 by Artem Kiselev, Yuriy Gomozov, and Alexandra Dieterink. Respectively a serial startup entrepreneur, software developer, and venture capital professional. It was prompted by a desire to consolidate important entrepreneurial know-how that is increasingly being shared by thinkers and most innovative participants in business and connect those with an entrepreneurial passion.</p>
- <p>The platform is being developed with the support of key contributors from different corners of the globe.</p>
+  <strong class="decor"><span><%= t('.background') %></span></strong>
+  <p><%= t('.background1') %></p>
+  <p><%= t('.background2') %></p>
 </div>
 </div>
