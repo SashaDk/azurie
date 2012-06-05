@@ -1,28 +1,26 @@
 module ApplicationHelper
-  CATEGORIES = {
-    'Gaining Traction' => :traction,
-    'Business Models' => :business_model,
-    'People Management' => :people_management,
-    'Marketing and Sales' => :marketing,
-    'Raising Capital' => :capital_rising,
-    'Mastering Presentation' => :presentation,
-    'Mastering Media' => :communication,
-    'New Frontiers' => :innovation,
-    'Product Design' => :design,
-    'Work-Life Balance' => :well_being,
-    'Failure' => :failure
-  }
-  
   def categories
-    CATEGORIES
+    {
+      I18n.t('categories.traction') => :traction,
+      I18n.t('categories.business_model') => :business_model,
+      I18n.t('categories.people_management') => :people_management,
+      I18n.t('categories.marketing') => :marketing,
+      I18n.t('categories.capital_rising') => :capital_rising,
+      I18n.t('categories.presentation') => :presentation,
+      I18n.t('categories.communication') => :communication,
+      I18n.t('categories.innovation') => :innovation,
+      I18n.t('categories.design') => :design,
+      I18n.t('categories.well_being') => :well_being,
+      I18n.t('categories.failure') => :failure
+    }
   end
   
   def category_values(selected=nil)    
-    options_for_select(CATEGORIES, selected)
+    options_for_select(categories, selected)
   end
   
   def category_name(category)
-    CATEGORIES.invert[category.to_sym] || "<unknown>"
+    categories.invert[category.to_sym] || "<unknown>"
   end
   
   def pluralize_without_number(number, string)

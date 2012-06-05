@@ -4,11 +4,11 @@
     <li><span><%= answer.user.occupation %> <% if !answer.user.company.blank? %> at <%= answer.user.company %><% end %></span></li>
 	</ul>
 </div>
-<p><%= auto_link simple_format answer.text %> <%= link_to "(learn more | comment | like)", [answer.question,answer] %></a></p>
+<p><%= auto_link simple_format answer.text %> <%= link_to "(#{t 'answers.answer.learn_more'})", [answer.question,answer] %></a></p>
 <% if current_user == answer.user %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link">Edit</a></p><% end %>
 <% unless answer.book_link.blank? %>
   <div class="book_link">
     <a href="<%= answer.book_link %>"><%= answer.book_name || answer.book_link %></a>&nbsp;
     <% unless answer.book_author.blank? %>|&nbsp;<a href="<%= answer.book_link %>"><%= answer.book_author %></a></div><% end %>
 <% end %>
-<% if can? :manage, :all %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link">Edit</a>&nbsp;<%= link_to 'Destroy', [answer.question,answer], :confirm => 'Are you sure?', :method => :delete %></p><% end %>
+<% if can? :manage, :all %><p class="edit-block"><a href="<%= url_for edit_question_answer_path(answer.question,answer) %>" class="edit-link"><%= t 'answers.answer.edit' %></a>&nbsp;<%= link_to t('answers.answer.delete'), [answer.question,answer], :confirm => t('answers.answer.confirm'), :method => :delete %></p><% end %>

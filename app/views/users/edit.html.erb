@@ -1,12 +1,12 @@
 <div id="content">
 <ul class="naving">
-  <li><span>Profile Information</span></li>
+  <li><span><%= t '.profile_info' %></span></li>
 </ul>
 <div><%= flash_helper %></div>
 
 <%= render 'form' %>
 
-<%= link_to 'Security settings', edit_user_registration_path %>
+<%= link_to t('.security_settings'), edit_user_registration_path %>
 
 <% content_for :sidebar do %>
   <%= render 'users/usercolumn' %>

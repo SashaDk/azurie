@@ -2,7 +2,7 @@
 	  <fieldset>
 		  <div class="row">
 			  <span>
-				  <input name="q" type="text" value="<% unless params[:q].blank? %><%= params[:q] %><% else %>SEARCH HERE<% end %>" onfocus="javascript:if(this.value=='SEARCH HERE'){this.value='';}" onblur="javascript:if(this.value==''){this.value='SEARCH HERE';}"/>
+          <input name="q" type="text" value="<% unless params[:q].blank? %><%= params[:q] %><% else %><%= t 'search_form.search_here' %><% end %>" onfocus="javascript:if(this.value=='<%= t 'search_form.search_here' %>'){this.value='';}" onblur="javascript:if(this.value==''){this.value='<%= t 'search_form.search_here' %>';}"/>
 				  <input type="submit" value="" class="btn-search" />
 			  </span>
 		  </div>

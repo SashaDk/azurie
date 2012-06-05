@@ -16,7 +16,7 @@
     </div>
 </div>
 <% if @question.answers == 0 %>
-  <p>No one answered this question yet. <% if current_user.admin? || current_user.expert? %><%= link_to 'Post an answer', new_question_answer_path(@question) %><% end %></p>
+  <p><%= t('.no_answers') %> <% if current_user.admin? || current_user.expert? %><%= link_to t(':add_answer'), new_question_answer_path(@question) %><% end %></p>
 <% else %>
 <% @question.answers.each do |answer| %>
 <div class="section">

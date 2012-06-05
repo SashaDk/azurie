@@ -1,13 +1,13 @@
 <div id="sidebar">
   <% if !user_signed_in? %>
     <div class="find">
-      <strong>FIND NEW INSIGHTS <br />&amp; INSPIRATION</strong>
-      <p>Azurie feeds on insights from entrepreneurial and creative thought leaders globally <%= link_to '(read more)', :controller => :pages, :action => :about %></p>
-      <a href="<%= new_registration_path(:user) %>" class="btn-find"><span>JOIN US NOW</span></a>
+      <strong><%= t 'sidebar.find_new_insights' %> <br />&amp; <%= t 'sidebar.inspiration' %></strong>
+      <p><%= t 'sidebar.about_text' %> <%= link_to "(#{t 'sidebar.read_more'})", :controller => :pages, :action => :about %></p>
+      <a href="<%= new_registration_path(:user) %>" class="btn-find"><span><%= t 'sidebar.join_us' %></span></a>
     </div>
   <% end %>
 
-<strong class="decor" id="nav-bar-decor"><span>CATEGORIES</span></strong>
+  <strong class="decor" id="nav-bar-decor"><span><%= t 'sidebar.categories' %></span></strong>
 	<ul class="nav-bar">
 	  <% categories.each do |category_name, category| %>
 	    <li>
@@ -54,13 +54,13 @@
 			</div>
 		</li>
 	</ul-->
-	<strong class="decor"><span>WHAT’S  POPULAR  NOW</span></strong>
+  <strong class="decor"><span><%= t 'sidebar.whats_popular' %></span></strong>
 	<div class="links">
 		<% Question.popular.each do |question| %>
       <%= render :partial => 'questions/question_small', :object => question %>
     <% end %>
 	</div>
-	<strong class="decor"><span> MOST  RECENT</span></strong>
+  <strong class="decor"><span><%= t 'sidebar.most_recent' %></span></strong>
 	<div class="links">
 		<% Question.recent.each do |question| %>
       <%= render :partial => 'questions/question_small', :object => question %>
