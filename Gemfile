@@ -23,7 +23,6 @@ gem 'thinking-sphinx'
 gem 'flying-sphinx'
 gem 'acts_as_commentable_with_threading'
 gem 'newrelic_rpm'
-gem 'localeapp'
 
 # Use unicorn as the web server
 #gem 'unicorn'
