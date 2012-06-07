@@ -8,10 +8,10 @@
   </span></strong>
 	<div class="textbox">
     <% if params[:faq] %>
-      <p><%= t('questions.sidebar.faq1') %></p>
-      <p><%= t('questions.sidebar.faq2') %></p>
+      <p><%= t('questions.sidebar.faq1').html_safe %></p>
+      <p><%= t('questions.sidebar.faq2').html_safe %></p>
     <% else %>
-      <p><%= t('questions.sidebar.guideline1') %></p>
+      <p><%= t('questions.sidebar.guideline1').html_safe %></p>
     <% end %>
 	</div>
   <strong class="decor"><span><%= t('questions.sidebar.guideline2') %></span></strong>
