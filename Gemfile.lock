@@ -249,6 +249,7 @@ DEPENDENCIES
   paper_trail
   paperclip
   rails (= 3.0.7)
+  rest-client
   rspec
   rspec-rails
   sqlite3

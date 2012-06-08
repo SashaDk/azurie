@@ -1,0 +1,39 @@
+<%= flash_helper %>
+<h1>RSS Links</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Rank</th>
+    <th>URL</th>
+    <th></th>
+  </tr>
+  </thead>
+<tbody>
+<% @rss_links.each do |link| %>
+  <tr>
+    <td><%= link.rank || 0 %></td>
+    <td><%= link.link %></td>
+    <td><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+
+<br />
+<%= form_for(@new_link) do |f| %>
+  <% if @new_link.errors.any? %>
+    <div class="error">
+      <% @new_link.errors.full_messages.each do |msg| %>
+        <%= msg %><br/>
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.label "Add Link" %>
+  <%= f.text_field :link %>
+  <%= f.submit "Add" %>
+<% end %>
+<br />
+
+<%= link_to 'Resulting RSS Feed', rss_rss_links_path %>

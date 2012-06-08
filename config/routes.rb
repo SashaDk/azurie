@@ -1,5 +1,5 @@
 Azurie::Application.routes.draw do
-  scope "(:locale)", :locale => /en|ru/ do
+  #scope "(:locale)", :locale => /en|ru/ do
     resources :briefings do
       member do
         get :social_handler
@@ -11,6 +11,12 @@ Azurie::Application.routes.draw do
     #get "pages/index", :as => :root
     #get "pages/about", :as => :abot
     #get "pages/thanks", :as => :thanks
+    
+    resources :rss_links do
+      collection do
+        get :rss
+      end
+    end
 
     resources :questions do
       resources :answers do
@@ -48,7 +54,7 @@ Azurie::Application.routes.draw do
         #post :fakereg
       #end
     end
-  end
+  #end
   match '/:locale' => 'pages#index'
   root :to => "pages#index"
 end
