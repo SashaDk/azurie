@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120607205206) do
+ActiveRecord::Schema.define(:version => 20120609151022) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -106,6 +106,8 @@ ActiveRecord::Schema.define(:version => 20120607205206) do
     t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "items_data"
+    t.text     "shares_data"
   end
 
   create_table "taggings", :force => true do |t|

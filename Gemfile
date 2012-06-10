@@ -25,6 +25,8 @@ gem 'acts_as_commentable_with_threading'
 gem 'newrelic_rpm'
 gem 'localeapp'
 gem 'rest-client'
+#gem 'simple-rss'
+gem 'feedzirra'
 
 # Use unicorn as the web server
 #gem 'unicorn'
