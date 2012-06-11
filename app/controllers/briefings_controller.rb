@@ -5,12 +5,13 @@ class BriefingsController < ApplicationController
   # GET /briefings
   # GET /briefings.xml
   def index
-    @briefings = Briefing.order(:created_at.desc)
+    @briefings = Briefing.order(:created_at.desc).paginate(:page => params[:page])
+    @briefings_count = Briefing.count
     @comments_count = Briefing.select('sum(comments_count) as comments_sum').first.comments_sum || 0
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @briefings }
+      format.js # index.js.erb
     end
   end
 

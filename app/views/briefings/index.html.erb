@@ -26,10 +26,15 @@
 	<li><a href="#">DATE</a></li-->
 </ul>
 <!-- sections -->
-<div class="sections">
+<div class="sections briefings-list">
   <% @briefings.each do |briefing| %>
 	  <%= render briefing %>
 	<% end %>
+</div>
+<div class="sections">
+  <% if @briefings_count > WillPaginate.per_page %>
+    <%= link_to t('.load_more').html_safe, params.merge(:page => 2), :remote => true, :class => 'load-briefings load-more-briefings' %>
+  <% end %>
 </div>
 <div class="section-area">
   <h4><%= t '.are_you_expert' %>  <a href="mailto:hello@azurie.com"><%= t '.contact_us' %> ></a></h4>

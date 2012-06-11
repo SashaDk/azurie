@@ -861,7 +861,17 @@ em.describtion {
 	text-indent:-9999px;
 	overflow:hidden;
 }
+.load-briefings{
+	display:block;
+	margin:0 0 25px;
+	background:url(../images/bg-load3.jpg) no-repeat;
+	height:29px;
+	width:593px;
+	text-indent:-9999px;
+	overflow:hidden;
+}
 .load:hover{background:url(../images/bg-load.jpg) no-repeat 0 -29px;}
+.load-briefings:hover{background:url(../images/bg-load3.jpg) no-repeat 0 -29px;}
 .section-area h4{
 	margin:0 0 22px;
 	padding:4px 0 0 8px;
