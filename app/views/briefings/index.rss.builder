@@ -7,7 +7,7 @@ xml.rss :version => "2.0" do
     @briefings.each do |b|
       xml.item do
         xml.title b.title
-        xml.description b.description
+        xml.description "#{truncate(strip_tags(b.description), :length => 800, :separator => "\n")} #{link_to "(#{t 'briefings.briefing.learn_more'})", b}"
         xml.pubDate b.created_at.to_s(:rfc822)
         xml.link briefing_url(b)
         xml.guid briefing_url(b)
