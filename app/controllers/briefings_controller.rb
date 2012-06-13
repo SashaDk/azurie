@@ -12,6 +12,7 @@ class BriefingsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.js # index.js.erb
+      format.rss # index.rss.builder
     end
   end
 
