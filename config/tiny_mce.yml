@@ -1,0 +1,7 @@
+# Here you can specify default options for TinyMCE across all controllers
+#
+theme: advanced
+skin: o2k7
+# plugins:
+#  - table
+#  - fullscreen
