@@ -5,7 +5,6 @@ gem 'rails', '3.0.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'pg'
-gem 'sqlite3'
 gem 'devise'
 gem 'devise_invitable'
 gem 'jquery-rails'
@@ -28,6 +27,7 @@ gem 'rest-client'
 gem 'feedzirra'
 gem 'tiny_mce'
 gem 'friendly_id'
+gem 'thin'
 
 # Use unicorn as the web server
 #gem 'unicorn'
@@ -43,6 +43,7 @@ end
 
 group :development do
   gem 'wirble'
+  gem 'sqlite3'
 #  gem 'ruby-debug'
 #  gem 'ruby-debug19', :require => 'ruby-debug'  
 end
