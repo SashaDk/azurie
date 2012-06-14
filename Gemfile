@@ -27,6 +27,7 @@ gem 'localeapp'
 gem 'rest-client'
 gem 'feedzirra'
 gem 'tiny_mce'
+gem 'friendly_id'
 
 # Use unicorn as the web server
 #gem 'unicorn'

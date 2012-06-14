@@ -80,6 +80,7 @@ GEM
       net-ssh (>= 2.0.23)
       rash (~> 0.3.0)
       thinking-sphinx
+    friendly_id (4.0.7)
     gli (1.6.0)
     hashie (1.1.0)
     heroku (2.8.4)
@@ -253,6 +254,7 @@ DEPENDENCIES
   devise_invitable
   feedzirra
   flying-sphinx
+  friendly_id
   heroku
   jquery-rails
   localeapp

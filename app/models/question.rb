@@ -39,6 +39,9 @@ class Question < ActiveRecord::Base
   scope :unanswered, :conditions => { :answers_count => 0, :state => :verified }, :order => :created_at.desc
   scope :all, :order => :created_at.desc
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   def has_answers?
     self.answers.exists?
   end

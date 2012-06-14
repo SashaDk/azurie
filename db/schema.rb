@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614120223) do
+ActiveRecord::Schema.define(:version => 20120614184703) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -58,9 +58,11 @@ ActiveRecord::Schema.define(:version => 20120614120223) do
     t.text     "video"
     t.integer  "likes_count",          :default => 0, :null => false
     t.integer  "comments_count",       :default => 0, :null => false
+    t.string   "slug"
   end
 
   add_index "briefings", ["created_at"], :name => "index_briefings_on_created_at"
+  add_index "briefings", ["slug"], :name => "index_briefings_on_slug", :unique => true
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -90,12 +92,14 @@ ActiveRecord::Schema.define(:version => 20120614120223) do
     t.string   "state"
     t.integer  "answers_count", :default => 0, :null => false
     t.boolean  "is_top"
+    t.string   "slug"
   end
 
   add_index "questions", ["answers_count", "state"], :name => "index_questions_on_answers_count_and_state"
   add_index "questions", ["category"], :name => "index_questions_on_category"
   add_index "questions", ["created_at"], :name => "index_questions_on_created_at"
   add_index "questions", ["is_top"], :name => "index_questions_on_is_top"
+  add_index "questions", ["slug"], :name => "index_questions_on_slug", :unique => true
   add_index "questions", ["state"], :name => "index_questions_on_state"
   add_index "questions", ["title"], :name => "index_questions_on_title"
   add_index "questions", ["updated_at"], :name => "index_questions_on_updated_at"
