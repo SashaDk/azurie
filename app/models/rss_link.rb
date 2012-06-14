@@ -26,7 +26,7 @@ private
   def get_items
     feed = Feedzirra::Feed.fetch_and_parse(self.link)
     begin
-      items = @feed.entries.first(10).map do |i| 
+      items = feed.entries.first(10).map do |i| 
         i.author = "<a href='#{feed.url}'>#{feed.title}</a>"
         i.title = "#{i.title} via #{feed.title}"
         i.url = RestClient.head(i.url){|r,rr,rrr| r.headers[:location] || i.url} rescue i.url
