@@ -1,6 +1,6 @@
 Azurie::Application.routes.draw do
   #scope "(:locale)", :locale => /en|ru/ do
-    resources :briefings do
+    resources :briefings, :path => 'media' do
       member do
         get :social_handler
       end
