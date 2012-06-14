@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120609151022) do
+ActiveRecord::Schema.define(:version => 20120614120223) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -106,8 +106,8 @@ ActiveRecord::Schema.define(:version => 20120609151022) do
     t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "items_data"
-    t.text     "shares_data"
+    t.text     "items_data",  :limit => 10485760
+    t.text     "shares_data", :limit => 10485760
   end
 
   create_table "taggings", :force => true do |t|

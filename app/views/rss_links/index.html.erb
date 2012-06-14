@@ -13,7 +13,7 @@
 <% @rss_links.each do |link| %>
   <tr>
     <td><%= link.rank || 0 %></td>
-    <td><%= link.link %></td>
+    <td><%= link_to link.link, link.link, :target => :blank %></td>
     <td><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
