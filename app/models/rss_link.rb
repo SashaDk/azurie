@@ -19,6 +19,7 @@ class RssLink < ActiveRecord::Base
     self.items_data = get_items
     self.shares_data = get_shares
     self.rank = shares_data.map{|k,s| s['shares'].to_i || s['likes'].to_i || 0 }.inject(0, :+)
+    touch
     save!
   end
 
