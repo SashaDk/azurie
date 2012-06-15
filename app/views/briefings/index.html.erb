@@ -1,11 +1,11 @@
 <div id="content">
 <% content_for :sidebar do %>
   <div id="sidebar">
-		<%= render 'shared/nav_sidebar' %>
+		<%= render 'shared/nav_sidebar_briefings' %>
 	</div>
 <% end %>
 
-<h2><%= t '.featured_media' %></h2>
+<h2><%= t '.featured_media' %><% if !params[:category].blank? %> <%= t('.in_category') %> <%= briefing_category_name(params[:category]).upcase %> <% end %></h2>
 <form class="search" action="#">
 	<fieldset>
 		<div class="row">

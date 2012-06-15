@@ -1,10 +1,4 @@
 class Briefing < ActiveRecord::Base
-  CATEGORIES = {
-    :business => "Business & Cycles",
-    :design => "Design & Creativity",
-    :trends => "Trends & Progress"
-  }
-
   has_attached_file :picture, :styles => { :medium => "480>", :small => "196>", :x_medium => "600" },
     :storage => :s3, :bucket => 'azurie-briefings',
     :s3_credentials => {
@@ -22,7 +16,12 @@ class Briefing < ActiveRecord::Base
   validates :description, :presence => true
 
   scope :top, :limit => 5, :order => :created_at.desc
+  scope :all, :order => :created_at.desc
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  def self.category(category)
+    Briefing.all.where(:category => category)
+  end
 end

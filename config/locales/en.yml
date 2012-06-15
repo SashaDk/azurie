@@ -1,4 +1,12 @@
 en:
+  briefing_categories:
+    popular: Popular
+    business: Business
+    design: Design&Co
+    people: People
+    blogs: Blogs
+    video: Video
+    weekend: Weekend
   categories:
     traction: Gaining Traction
     business_model: Business Models
@@ -108,6 +116,7 @@ en:
       learn_more: learn more
     index:
       featured_media: FEATURED MEDIA
+      in_category: IN CATEGORY
       comments: COMMENTS
       search_here: SEARCH HERE
       are_you_expert: ARE YOU A PASSIONATE VENTURE REPORTER?

@@ -1,7 +1,7 @@
 <div class="section">
 	<div class="heading">
 		<ul>
-			<li><a href="#"><%= briefing.category.capitalize %></a></li>
+      <li><a href="<%= briefings_path(:category => briefing.category) %>"><%= briefing_category_name briefing.category %></a></li>
 		</ul>
 	</div>
 	<h3><%= link_to briefing.title.upcase, briefing %></h3>
