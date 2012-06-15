@@ -27,6 +27,7 @@ class RssLinksController < ApplicationController
     @items = []
     RssLink.all.map(&:items).map{|i| @items += i }
     @items.sort!{|x,y| y.instance_variable_get("@shares") <=> x.instance_variable_get("@shares") }
+    @items = @tems.delete_if {|i| i.instance_variable_get("@shares") == 0}
     render :layout => false # rss.rss.builder
   end
 end
