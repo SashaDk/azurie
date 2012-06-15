@@ -677,7 +677,7 @@ em.describtion {
 .line ul li span, 
 .section-holder .line ul li span{font-style:normal;}
 .line ul li img{margin:0 0 0 4px;}
-.section p{margin:0;}
+.section p{margin:1;}
 .section p strong{
 	font-family:'AlternateGothic2BTRegular';
 	font-size:12px;
