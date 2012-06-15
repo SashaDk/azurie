@@ -250,6 +250,10 @@ em.describtion {
 	content:"";
 	clear:both;
 }
+#content-briefing-form{
+	float:right;
+  width:850px;
+}
 #content{
 	float:right;
   width:590px;
@@ -2142,6 +2146,10 @@ a.notifications .notifications-counter {
 
 .form-section .size1, .form-section .size2 {
     width:350px;
+}
+
+.form-section .size3 {
+    width:875px;
 }
 
 .form-section label {
