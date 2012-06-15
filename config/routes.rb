@@ -1,4 +1,7 @@
 Azurie::Application.routes.draw do
+  match "/briefings/:id" => "briefings#show"
+  match "/media/11" => redirect("/briefings/11")
+
   resources :briefings, :path => 'media' do
     member do
       get :social_handler
