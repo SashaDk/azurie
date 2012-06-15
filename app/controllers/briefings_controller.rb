@@ -21,7 +21,6 @@ class BriefingsController < ApplicationController
   # GET /briefings/1
   # GET /briefings/1.xml
   def show
-    return redirect_to "http://www.azurie.com/briefings/11?locale=en" if params[:id] == 11
     @briefing = Briefing.find(params[:id])
 
     respond_to do |format|
