@@ -1,6 +1,6 @@
 Azurie::Application.routes.draw do
-  match "/briefings/:id" => "briefings#show"
-  match "/media/durov-s-manifesto-dreams-without-boarders" => redirect("http://www.azurie.com/briefings/11?locale=en")
+  get "/briefings/:id" => "briefings#show"
+  get "/media/durov-s-manifesto-dreams-without-boarders" => redirect("http://www.azurie.com/briefings/11?locale=en")
 
   resources :briefings, :path => 'media' do
     member do
