@@ -5,11 +5,13 @@
 		</ul>
 	</div>
 	<h3><%= link_to briefing.title.upcase, briefing %></h3>
-	<div class="line">
-		<!--ul>
-			<li><%= link_to "#{briefing.comments_count} Comments and #{briefing.likes_count} Reactions", briefing_path(briefing) %></li>
-			<li>posted <%= distance_of_time_in_words_to_now(briefing.created_at) %> ago</li>
-		</ul-->
+  <div class="line">
+    <% if briefing.comments_count > 0 || briefing.likes_count > 0 %>
+      <ul>
+        <li><%= link_to "#{briefing.comments_count} comments and #{briefing.likes_count} reactions", briefing_path(briefing) %></li>
+        <li>posted <%= distance_of_time_in_words_to_now(briefing.created_at) %> ago</li>
+      </ul>
+    <% end %>
 		<div class="section-row">
       <div class="briefing-small-image">
         <%= image_tag(briefing.picture.url(:small)) %>

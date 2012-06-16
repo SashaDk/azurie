@@ -1,11 +1,8 @@
 <div id="content">
 <div class="sections">
 	<div class="section">
-    
     <p id="notice"><%= notice %></p>
-
 		<h3><%= @briefing.title %></h3>
-
 		<div class="section-row">
       <div class="picture-video">
           <% if !@briefing.video.blank? %>
@@ -19,16 +16,14 @@
 		</div>
 	</div>
 </div>
-
 <%= render :partial => 'shared/social', :locals => { :url => briefing_url(@briefing) } %>
 <% content_for :social_init do %>
   <%= render 'shared/social_init' %>
 <% end %>
 <% content_for :sidebar do %>
-<!-- sidebar -->
 	<div id="sidebar">
   <%= render 'shared/nav_sidebar_briefings' %>
-  </div><!-- /sidebar -->
+  </div>
 <% end %>
 </div>
 <% title @briefing.title %>

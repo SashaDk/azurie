@@ -2,9 +2,7 @@
 <!-- sections -->
 <div class="sections">
 	<div class="section">
-    
     <% if !notice.blank? %><div class="notice"><%= notice %></div><% end %>
-		
     <div class="heading2">
 			<ul>
 				<li><a href="<%= questions_path(:category => @answer.question.category) %>"><%= category_name @answer.question.category %></a></li>
@@ -19,9 +17,11 @@
 		<div class="line">
       <%= link_to @answer.user.display_name.upcase, user_path(@answer.user), :class => 'open' %>
       <ul>
-        <li><span><%= @answer.user.occupation %><% if @answer.user.company %> at <%= @answer.user.company %><% end %></span></li>
-        <!--li><%= "#{@answer.comments_count} #{t '.comments'}" %></li>
-        <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li-->
+        <li><span><%= @answer.user.occupation %><% unless @answer.user.company.blank? %> at <%= @answer.user.company %><% end %></span></li>
+        <% if @answer.comments_count > 0 || @answer.likes_count > 0 %>
+          <li><%= link_to "#{@answer.comments_count} comments and #{@answer.likes_count} reactions", [@answer.question,@answer] %></li>
+          <li>posted <%= distance_of_time_in_words_to_now(@answer.created_at) %> ago</li>
+        <% end %>
       </ul>
     </div>
 		<div class="section-row">

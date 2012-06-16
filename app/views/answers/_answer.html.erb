@@ -1,7 +1,11 @@
 <div class="line">
   <%= link_to answer.user.display_name.upcase, user_path(answer.user), :class => 'open' %>
 	<ul>
-    <li><span><%= answer.user.occupation %> <% if !answer.user.company.blank? %> at <%= answer.user.company %><% end %></span></li>
+    <li><span><%= answer.user.occupation %> <% unless answer.user.company.blank? %> at <%= answer.user.company %><% end %></span></li>
+    <% if answer.comments_count > 0 || answer.likes_count > 0 %>
+      <li><%= link_to "#{answer.comments_count} comments and #{answer.likes_count} reactions", [answer.question,answer] %></li>
+      <li>posted <%= distance_of_time_in_words_to_now(answer.created_at) %> ago</li>
+    <% end %>
 	</ul>
 </div>
 <p><%= auto_link simple_format answer.text %> <%= link_to "(#{t 'answers.answer.learn_more'})", [answer.question,answer] %></a></p>
