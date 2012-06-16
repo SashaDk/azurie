@@ -29,7 +29,7 @@ private
     begin
       items = feed.entries.first(10).map do |i| 
         i.author = "<a href='#{feed.url}'>#{feed.title}</a>"
-        i.title = "#{i.title} via #{feed.title}"
+        i.title = "#{i.title} [via #{feed.title}]"
         i.url = RestClient.head(i.url){|r,rr,rrr| r.headers[:location] || i.url} rescue i.url
         [i.url, i] 
       end
@@ -41,7 +41,8 @@ private
   end
 
   def get_shares
-    RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| URI.escape(i.gsub(/(\?.*)|(#.*)/,''))}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
+    puts "http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| URI.escape(i.gsub(/(#.*)/,''))}.join(',')}"
+    RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| URI.escape(i.gsub(/(#.*)/,''))}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
   end
 
   def gunzip(string)
