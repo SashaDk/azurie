@@ -6,7 +6,7 @@ class Briefing < ActiveRecord::Base
       :secret_access_key => ENV['S3_SECRET']
     },
     :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-    :url => "/system/:attachment/:id/:style/:filename"
+    :url => "/app/public/system/:attachment/:id/:style/:filename"
 
   has_paper_trail
 
