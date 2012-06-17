@@ -3,7 +3,7 @@ class RssLink < ActiveRecord::Base
   serialize :shares_data
   validates :link, :presence => true, :uniqueness => true, :format => { :with => /^(http|feed):\/\/(.*)/, :allow_blank => true }
   scope :top, :order => :rank.desc
-  #after_create :reload_items!
+  after_create :reload_items!
 
   def items
     items_data.each do |k,v|
@@ -41,8 +41,8 @@ private
   end
 
   def get_shares
-    puts "\nhttp://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}\n"
-    RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
+    puts "http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| URI.escape(i.gsub(/(#.*)/,''))}.join(',')}"
+    RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| URI.escape(i.gsub(/(#.*)/,''))}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
   end
 
   def gunzip(string)

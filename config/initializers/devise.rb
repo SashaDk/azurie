@@ -1,4 +1,3 @@
-require 'openid/store/filesystem'
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
@@ -204,8 +203,7 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
 
-  #config.omniauth :google_apps, nil, :domain => 'gmail.com'
-  config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('./tmp'), :identifier => 'https://www.google.com/accounts/o8/id', :name => 'google_apps'
+  config.omniauth :google_apps, nil, :domain => 'gmail.com'
   config.omniauth :facebook, "152692304811046", "5633aacac10cad303f95fdd159e55886",
       {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
 end
