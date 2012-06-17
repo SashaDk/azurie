@@ -163,10 +163,9 @@ GEM
     paper_trail (2.6.3)
       activerecord (~> 3.0)
       railties (~> 3.0)
-    paperclip (3.1.1)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
+    paperclip (2.4.1)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
     pg (0.13.2)
@@ -261,7 +260,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-openid
   paper_trail
-  paperclip
+  paperclip (= 2.4.1)
   pg
   rails (= 3.0.7)
   rest-client
