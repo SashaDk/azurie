@@ -22,7 +22,7 @@ class RssLink < ActiveRecord::Base
   def reload_items! 
     self.items_data = get_items
     self.shares_data = get_shares
-    self.rank = shares_data.map{|k,s| s['shares'].to_i || s['likes'].to_i || 0 }.inject(0, :+)
+    self.rank = shares_data.map{|k,s| s['shares'].to_i + s['likes'].to_i + 0 }.inject(0, :+)
     touch
     save!
   end
@@ -49,8 +49,15 @@ private
   end
 
   def get_shares
-    puts "\nhttp://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}\n"
-    RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
+    #puts "\nhttp://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}\n"
+    shares1 = RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
+
+    puts "\nhttp://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i.gsub(/(\?.*|#.*)/,''))}.join(',')}\n"
+    shares2 = RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i.gsub(/(\?.*|#.*)/,''))}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
+
+    rank1 = shares1.map{|k,s| s['shares'].to_i + s['likes'].to_i + 0 }.inject(0, :+) 
+    rank2 = shares2.map{|k,s| s['shares'].to_i + s['likes'].to_i + 0 }.inject(0, :+) 
+    rank1 > rank2 ? shares1 : shares2
   end
 
   def gunzip(string)
