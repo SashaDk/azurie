@@ -52,11 +52,11 @@ private
     #puts "\nhttp://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}\n"
     shares1 = RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i)}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
 
-    puts "\nhttp://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i.gsub(/(\?.*|#.*)/,''))}.join(',')}\n"
     shares2 = RestClient.get("http://graph.facebook.com?ids=#{items_data.keys.compact.map{|i| CGI::escape(i.gsub(/(\?.*|#.*)/,''))}.join(',')}"){|r,rr,rrr| JSON.parse gunzip(rrr.body)}
 
     rank1 = shares1.map{|k,s| s['shares'].to_i + s['likes'].to_i + 0 }.inject(0, :+) 
     rank2 = shares2.map{|k,s| s['shares'].to_i + s['likes'].to_i + 0 }.inject(0, :+) 
+    puts "rank1 = #{rank1}; rank2 = #{rank2}"
     rank1 > rank2 ? shares1 : shares2
   end
 
