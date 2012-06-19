@@ -8,7 +8,6 @@
     <th>URL</th>
     <th>Category</th>
     <th></th>
-    <th></th>
   </tr>
   </thead>
 <tbody>
@@ -16,12 +15,12 @@
   <tr>
     <td><%= link.rank || 0 %></td>
     <td><%= link_to link.link, link.link, :target => :blank %></td>
-    <td><%= briefing_category_name link.category %></td>
     <td id='link-edit-<%= link.id %>'> 
       <span style='display:none;'>
         <%= render :partial => 'form', :locals => {:rsslink => link} %>
       </span> 
       <span>
+        <%= briefing_category_name link.category %>&nbsp;
         <a href='#' onclick="$('#link-edit-<%= link.id %>').children().toggle();return false;" >Edit</a>
       </span>
     </td>

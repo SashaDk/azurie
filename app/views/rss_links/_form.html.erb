@@ -8,8 +8,8 @@
   <% end %>
   <% unless rsslink.persisted? %>
     <%= f.label "Add Link" %>
+    <%= f.text_field :link %>
   <% end %>
-  <%= f.text_field :link %>
   <%= f.select :category, briefing_category_values %>
   <% if rsslink.persisted? %>
     <%= f.submit "Save" %>
