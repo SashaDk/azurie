@@ -1,7 +1,7 @@
 xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "Azurie Top News"
+    xml.title params[:category] ? "Azurie Top News | #{briefing_category_name params[:category]}" : "Azurie Top News"
     xml.description "Best news, popularity sorted"
     xml.link rss_rss_links_path
     @items.each do |item|

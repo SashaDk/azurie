@@ -1,0 +1,19 @@
+<%= form_for(rsslink) do |f| %>
+  <% if rsslink.errors.any? %>
+    <div class="error">
+      <% rsslink.errors.full_messages.each do |msg| %>
+        <%= msg %><br/>
+      <% end %>
+    </div>
+  <% end %>
+  <% unless rsslink.persisted? %>
+    <%= f.label "Add Link" %>
+  <% end %>
+  <%= f.text_field :link %>
+  <%= f.select :category, briefing_category_values %>
+  <% if rsslink.persisted? %>
+    <%= f.submit "Save" %>
+  <% else %>
+    <%= f.submit "Add" %>
+  <% end %>
+<% end %>

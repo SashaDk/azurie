@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614184703) do
+ActiveRecord::Schema.define(:version => 20120619122911) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20120614184703) do
     t.datetime "updated_at"
     t.text     "items_data",  :limit => 10485760
     t.text     "shares_data", :limit => 10485760
+    t.string   "category",                        :default => "popular", :null => false
   end
 
   create_table "taggings", :force => true do |t|

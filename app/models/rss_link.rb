@@ -6,13 +6,17 @@ class RssLink < ActiveRecord::Base
   #after_create :reload_items!
 
   def items
-    items_data.each do |k,v|
-      item = shares_data.select {|kk,vv| k[0,kk.length] == kk }.first.last rescue nil
-      shares = item['shares'].to_i  || item['likes'].to_i || 0 rescue 0
-      v.title = "(#{shares} likes) #{v.title}"
-      v.instance_variable_set("@shares", shares)
+    begin
+      items_data.each do |k,v|
+        item = shares_data.select {|kk,vv| k[0,kk.length] == kk }.first.last rescue nil
+        shares = item['shares'].to_i  || item['likes'].to_i || 0 rescue 0
+        v.title = "(#{shares} likes) #{v.title}"
+        v.instance_variable_set("@shares", shares)
+      end
+      items_data.values
+    rescue
+      []
     end
-    items_data.values
   end
 
   def reload_items! 
@@ -21,6 +25,10 @@ class RssLink < ActiveRecord::Base
     self.rank = shares_data.map{|k,s| s['shares'].to_i || s['likes'].to_i || 0 }.inject(0, :+)
     touch
     save!
+  end
+
+  def self.category(category)
+    RssLink.where(:category => category)
   end
 
 private 
