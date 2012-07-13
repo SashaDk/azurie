@@ -6,7 +6,7 @@ class RssLink < ActiveRecord::Base
   #after_create :reload_items!
 
   def items
-    #begin
+    begin
       items_data.each do |k,v|
         item = shares_data.select {|kk,vv| k[0,kk.length] == kk }.first.last rescue nil
         shares = item['shares'].to_i  || item['likes'].to_i || 0 rescue 0
@@ -15,9 +15,9 @@ class RssLink < ActiveRecord::Base
         v.published ||= Time.now
       end
       items_data.values.keep_if {|item| item.published > 1.week.ago }
-    #rescue
-      #[]
-    #end
+    rescue
+      []
+    end
   end
 
   def reload_items! 
