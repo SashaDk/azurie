@@ -12,8 +12,9 @@ class RssLink < ActiveRecord::Base
         shares = item['shares'].to_i  || item['likes'].to_i || 0 rescue 0
         v.title = "(#{shares} likes) #{v.title}"
         v.instance_variable_set("@shares", shares)
+        v.published ||= Time.now
       end
-      items_data.values
+      items_data.values.keep_if {|item| DateTime.parse(item.published) > 1.week.ago }
     rescue
       []
     end
