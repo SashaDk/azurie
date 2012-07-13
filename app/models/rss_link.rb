@@ -6,18 +6,17 @@ class RssLink < ActiveRecord::Base
   #after_create :reload_items!
 
   def items
-    begin
+    #begin
       items_data.each do |k,v|
         item = shares_data.select {|kk,vv| k[0,kk.length] == kk }.first.last rescue nil
         shares = item['shares'].to_i  || item['likes'].to_i || 0 rescue 0
         v.title = "(#{shares} likes) #{v.title}"
         v.instance_variable_set("@shares", shares)
-        v.published ||= Time.now
       end
       items_data.values.keep_if {|item| item.published > 1.week.ago }
-    rescue
-      []
-    end
+    #rescue
+      #[]
+    #end
   end
 
   def reload_items! 
@@ -40,6 +39,7 @@ private
         i.author = "<a href='#{feed.url}'>#{feed.title}</a>"
         i.title = "#{i.title} [via #{feed.title}]"
         i.url = RestClient.head(i.url){|r,rr,rrr| r.headers[:location] || i.url} rescue i.url
+        i.published ||= Time.now
         [i.url, i] 
       end
       Hash[items]
