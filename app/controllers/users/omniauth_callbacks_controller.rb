@@ -6,6 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google Apps"
       sign_in_and_redirect @user, :event => :authentication
     else
+      cookies[:mobile_auth] = nil
       render :json => {:auth_token => @user.authentication_token}
     end
   end
@@ -17,6 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
       sign_in_and_redirect @user, :event => :authentication
     else
+      cookies[:mobile_auth] = nil
       render :json => {:auth_token => @user.authentication_token}
     end
   end
