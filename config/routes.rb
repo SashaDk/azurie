@@ -53,6 +53,15 @@ Azurie::Application.routes.draw do
       get :make_guest
     end
   end
+ 
+  namespace :api do
+    resources :users do
+      collection do
+        get :hello_world
+      end
+    end
+  end
+
   match '/:locale' => 'pages#index'
   root :to => "pages#index"
 end

@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :reprocess_avatar, :if => :cropping?
+  after_create :reset_authentication_token!
 
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
@@ -105,6 +106,9 @@ class User < ActiveRecord::Base
       user.confirm!
     end
     return user
+  end
+
+  def after_token_authentication
   end
   
   def self.experts
