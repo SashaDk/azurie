@@ -28,6 +28,7 @@ gem 'rest-client'
 gem 'feedzirra'
 gem 'friendly_id'
 gem 'thin'
+gem 'rails_autolink'
 
 # Use unicorn as the web server
 #gem 'unicorn'
