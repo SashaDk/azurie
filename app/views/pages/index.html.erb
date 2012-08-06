@@ -16,7 +16,7 @@
           <div class="slide_textbox">
             <span><%= link_to t('.promo.media'), briefings_path %></span>
             <strong><%= link_to briefing.title.upcase, briefing_path(briefing) %></strong>
-            <p><%= truncate strip_tags(briefing.description), :length => 800, :separator => "\n" %> <%= link_to "(#{t('.promo.learn_more')})", briefing_path(briefing) %></a></p>
+            <p><%= truncate(strip_tags(briefing.description), :length => 800, :separator => "\n").html.safe %> <%= link_to "(#{t('.promo.learn_more')})", briefing_path(briefing) %></a></p>
           </div>
         </div>
       </div></div>
