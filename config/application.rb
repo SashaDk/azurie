@@ -13,6 +13,7 @@ end
 
 module Azurie
   class Application < Rails::Application
+    require 'rails_autolink'
     require 'www_ditcher'
     config.middleware.use "WwwDitcher"
     # Settings in config/environments/* take precedence over those specified here.
