@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
   has_many :assignments, :dependent => :destroy
   has_many :assigned_questions, :through => :assignments
   has_many :briefings, :dependent => :destroy
-  has_many :oauth_clients, :class_name => 'Devise::Oauth2Providable::Client'
   
   validates :facebook, :format => { :with => /^http(s)?:\/\/(www\.)?facebook\.com\/(.*)/, 
     :message => "should starts with 'http://facebook.com/'" }, :allow_blank => true
