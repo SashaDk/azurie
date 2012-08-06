@@ -29,7 +29,6 @@ gem 'feedzirra'
 gem 'tiny_mce'
 gem 'friendly_id'
 gem 'thin'
-gem 'use_tinymce'
 
 # Use unicorn as the web server
 #gem 'unicorn'
