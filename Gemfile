@@ -26,7 +26,6 @@ gem 'newrelic_rpm'
 gem 'localeapp'
 gem 'rest-client'
 gem 'feedzirra'
-gem 'tiny_mce'
 gem 'friendly_id'
 gem 'thin'
 
