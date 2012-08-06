@@ -461,3 +461,5 @@ en:
     email: ''
     password: ''
     unauthenticated: You need to sign in or sign up before continuing.
+    signed_out: Signed out successfully.
+    invalid: Invalid email or password.
