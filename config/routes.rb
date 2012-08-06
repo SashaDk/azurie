@@ -45,6 +45,7 @@ Azurie::Application.routes.draw do
   devise_for :users, :controllers => { :invitations => 'users/invitations', :omniauth_callbacks => "users/omniauth_callbacks" } do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
+  mount Devise::Oauth2Providable::Engine => '/oauth2'
 
   resources :users do
     member do

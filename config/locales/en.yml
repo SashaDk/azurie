@@ -34,15 +34,10 @@ en:
       people: PEOPLE
       about: ABOUT
     news: NEWS
-    news1: The beta version of Azurie has been launched and we will be testing the
-      platform with a select group of people. Please be patient, invitations will
-      go out to the wider community soon! To get on the mailing list please send your
-      name through the feedback link.
+    news1: The beta version of Azurie has been launched and we will be testing the platform with a select group of people. Please be patient, invitations will go out to the wider community soon! To get on the mailing list please send your name through the feedback link.
     vision: VISION AND MISSION
-    vision1: Our vision is to become the leading edge knowledge resource and community
-      for frontier entrepreneurship globally
-    vision2: Our mission is to put the spotlight on leading experts and those driving
-      innovation in their industries &mdash; how to succeed and where to invest.
+    vision1: Our vision is to become the leading edge knowledge resource and community for frontier entrepreneurship globally
+    vision2: Our mission is to put the spotlight on leading experts and those driving innovation in their industries &mdash; how to succeed and where to invest.
     connect:
       title: CONNECT WITH US
       facebook: Like us on Facebook
@@ -58,8 +53,7 @@ en:
   sidebar:
     find_new_insights: FIND NEW INSIGHTS
     inspiration: INSPIRATION
-    about_text: Azurie feeds on insights from entrepreneurial and creative thought
-      leaders globally
+    about_text: Azurie feeds on insights from entrepreneurial and creative thought leaders globally
     read_more: read more
     join_us: JOIN US NOW
     categories: CATEGORIES
@@ -86,31 +80,16 @@ en:
       manifesto7: INSPIRING CHANGE. STATUS QUO QUESTIONED, FORGED, EXPLORED, REFORGED.
       manifesto8: ENTREPRENEUR AS GAMECHANGER
       manifesto9: EMPOWERED AND RESOLVED
-      manifesto10: A FRONTIER SPIRIT, A TRANSNATIONAL DIALOGUE, CREATIVE-BUSINESS
-        HYBRIDS. THE NEW DESIGN OF GLOBALISM
+      manifesto10: A FRONTIER SPIRIT, A TRANSNATIONAL DIALOGUE, CREATIVE-BUSINESS HYBRIDS. THE NEW DESIGN OF GLOBALISM
       about: ABOUT
-      about1: Putting the spotlight on leading experts and those driving innovation
-        in their industries &mdash; how to succeed and where to invest.
-      about2: Azurie is '<b>knowledge media</b>' for the worldwide entrepreneurial
-        community. We slash through the Web's jungle of information on entrepreneurship
-        to reveal the top experts, the brightest ideas, and the edgiest products from
-        around the world.
-      about3: Through one-on-one interviews with leading entrepreneurs and curated
-        Q&A sessions from expert panels, Azurie acts as a hub for new and seasoned
-        entrepreneurs to learn, gain inspiration, connect, and interact with top thinkers
-        — all while promoting the underground sensations whose prowess has yet to
-        be recognized.
+      about1: Putting the spotlight on leading experts and those driving innovation in their industries &mdash; how to succeed and where to invest.
+      about2: Azurie is '<b>knowledge media</b>' for the worldwide entrepreneurial community. We slash through the Web's jungle of information on entrepreneurship to reveal the top experts, the brightest ideas, and the edgiest products from around the world.
+      about3: Through one-on-one interviews with leading entrepreneurs and curated Q&A sessions from expert panels, Azurie acts as a hub for new and seasoned entrepreneurs to learn, gain inspiration, connect, and interact with top thinkers — all while promoting the underground sensations whose prowess has yet to be recognized.
       join_us: Join us
       join_us2: and become part of a dynamic community.
       background: BACKGROUND
-      background1: Azurie was launched in Moscow in 2012 by Artem Kiselev, Yuriy Gomozov,
-        and Alexandra Dieterink. Respectively a serial startup entrepreneur, software
-        developer, and venture capital professional. It was prompted by a desire to
-        consolidate important entrepreneurial know-how that is increasingly being
-        shared by thinkers and most innovative participants in business and connect
-        those with an entrepreneurial passion.
-      background2: The platform is being developed with the support of key contributors
-        from different corners of the globe.
+      background1: Azurie was launched in Moscow in 2012 by Artem Kiselev, Yuriy Gomozov, and Alexandra Dieterink. Respectively a serial startup entrepreneur, software developer, and venture capital professional. It was prompted by a desire to consolidate important entrepreneurial know-how that is increasingly being shared by thinkers and most innovative participants in business and connect those with an entrepreneurial passion.
+      background2: The platform is being developed with the support of key contributors from different corners of the globe.
   briefings:
     briefing:
       learn_more: learn more
@@ -129,53 +108,26 @@ en:
       add_tags: Add Tags, Suggest New Topic
     sidebar:
       faq: START SHARING YOUR EXPERTISE!
-      faq1: Don’t see any questions related to your expertise yet? Go ahead and create
-        <b>Frequently Asked Questions</b> here as part of your homepage. The goal
-        for each Q&A page is that it becomes the best source for anyone looking for
-        the answer on a specific topic.
-      faq2: Entrepreneurs have lots of different questions. They probably have questions
-        about the subjects that you know best. That’s an opportunity for you and your
-        organization. The advantage of Azurie is the quality of the experts answering
-        questions and the answers being provided.
+      faq1: Don’t see any questions related to your expertise yet? Go ahead and create <b>Frequently Asked Questions</b> here as part of your homepage. The goal for each Q&A page is that it becomes the best source for anyone looking for the answer on a specific topic.
+      faq2: Entrepreneurs have lots of different questions. They probably have questions about the subjects that you know best. That’s an opportunity for you and your organization. The advantage of Azurie is the quality of the experts answering questions and the answers being provided.
       guideline: WHAT MAKES A GOOD QUESTION?
-      guideline1: Don't see any answers to the question you have? Go ahead and pose
-        your query. The goal for each question page is that it becomes the best source
-        for anyone looking for the answer to that question.
+      guideline1: Don't see any answers to the question you have? Go ahead and pose your query. The goal for each question page is that it becomes the best source for anyone looking for the answer to that question.
       guideline2: Q&A GUIDELINE
       guideline3: What makes a good question?
-      guideline4: Good questions always ask "why?" and request narrative answer. A
-        good question on Azurie seeks to understand the underlying rationale for answers,
-        not just the answer itself.
-      guideline5: Good questions are sufficiently open-ended. For example, "Are there
-        any iPhone calendar apps?" should be phrased "What are the calendar apps for
-        the iPhone?"
-      guideline6: ! 'Avoid using the second person (questions generally should not
-        include the word "you”). Those words suggest that the question is soliciting
-        the opinion of a single user. Example: "Do you think that company founders
-        should negotiate a controlling stake with investors?" should be written as
-        "Should founders negotiate controlling stakes with investors?" because the
-        latter form usually ends up generating better, more useful, answers.'
-      guideline7: Give your question enough context so that anyone can understand
-        what you’re asking, regardless of when or where they answer your question.
-      guideline8: Polling (yes-or-no) or survey types of questions that seek a one
-        word are not allowed on Azurie.
+      guideline4: Good questions always ask "why?" and request narrative answer. A good question on Azurie seeks to understand the underlying rationale for answers, not just the answer itself.
+      guideline5: Good questions are sufficiently open-ended. For example, "Are there any iPhone calendar apps?" should be phrased "What are the calendar apps for the iPhone?"
+      guideline6: ! 'Avoid using the second person (questions generally should not include the word "you”). Those words suggest that the question is soliciting the opinion of a single user. Example: "Do you think that company founders should negotiate a controlling stake with investors?" should be written as "Should founders negotiate controlling stakes with investors?" because the latter form usually ends up generating better, more useful, answers.'
+      guideline7: Give your question enough context so that anyone can understand what you’re asking, regardless of when or where they answer your question.
+      guideline8: Polling (yes-or-no) or survey types of questions that seek a one word are not allowed on Azurie.
       guideline9: Use proper spelling, capitalization, and grammar.
       guideline10: What makes a good answer?
-      guideline11: Be clear and succinct. Azurie is about breaking up large quantity
-        of information into more digestible content. Answers are to the point, ideally
-        80 words max, with an option to elaborate on the subject matter if necessary.
-      guideline12: A good answer on Azurie explains the underlying rationale for answers,
-        not just the answer itself.
-      guideline13: Be a resource, not a sales clerk. Lets keep the conversations add
-        free.
-      guideline14: Be a connector. Sometimes you don’t have the answer, but you know
-        just the person who does. Rather than making something up, make the referral.
-        Provide a quote and a link to another source.
-      guideline15: The bottom line is that being helpful is a great way to gain trust.
-        And when people trust you, they’re more comfortable doing business with you.
+      guideline11: Be clear and succinct. Azurie is about breaking up large quantity of information into more digestible content. Answers are to the point, ideally 80 words max, with an option to elaborate on the subject matter if necessary.
+      guideline12: A good answer on Azurie explains the underlying rationale for answers, not just the answer itself.
+      guideline13: Be a resource, not a sales clerk. Lets keep the conversations add free.
+      guideline14: Be a connector. Sometimes you don’t have the answer, but you know just the person who does. Rather than making something up, make the referral. Provide a quote and a link to another source.
+      guideline15: The bottom line is that being helpful is a great way to gain trust. And when people trust you, they’re more comfortable doing business with you.
       guideline16: Make book, blog or article referrals (optional)
-      guideline17: You may refer to a book, blog or any other source by adding the
-        name, author, and link in the designated fields below the answer.
+      guideline17: You may refer to a book, blog or any other source by adding the name, author, and link in the designated fields below the answer.
     question:
       more_answers: MORE ANSWERS
       add_answer: ADD YOUR ANSWER
@@ -212,26 +164,15 @@ en:
       booklink_label: Link to Book, Blog or Alternative Resource
     sidebar:
       guideline: Q&A GUIDELINE
-      guideline1: Entrepreneurs have lots of different questions. They probably have
-        questions about the subjects that you know best. That’s an opportunity for
-        you and your organization. The advantage of Azurie is the quality of the experts
-        answering questions and the answers being provided.
+      guideline1: Entrepreneurs have lots of different questions. They probably have questions about the subjects that you know best. That’s an opportunity for you and your organization. The advantage of Azurie is the quality of the experts answering questions and the answers being provided.
       guideline2: What makes a good answer?
-      guideline3: Be clear and succinct. Azurie is about breaking up large quantity
-        of information into more digestible content. Answers are to the point, ideally
-        80 words max, with an option to elaborate on the subject matter if necessary.
-      guideline4: A good answer on Azurie explains the underlying rationale for answers,
-        not just the answer itself.
-      guideline5: Be a resource, not a sales clerk. Lets keep the conversations add
-        free.
-      guideline6: Be a connector. Sometimes you don’t have the answer, but you know
-        just the person who does. Rather than making something up, make the referral.
-        Provide a quote and a link to another source.
-      guideline7: The bottom line is that being helpful is a great way to gain trust.
-        And when people trust you, they’re more comfortable doing business with you.
+      guideline3: Be clear and succinct. Azurie is about breaking up large quantity of information into more digestible content. Answers are to the point, ideally 80 words max, with an option to elaborate on the subject matter if necessary.
+      guideline4: A good answer on Azurie explains the underlying rationale for answers, not just the answer itself.
+      guideline5: Be a resource, not a sales clerk. Lets keep the conversations add free.
+      guideline6: Be a connector. Sometimes you don’t have the answer, but you know just the person who does. Rather than making something up, make the referral. Provide a quote and a link to another source.
+      guideline7: The bottom line is that being helpful is a great way to gain trust. And when people trust you, they’re more comfortable doing business with you.
       guideline8: Make book, blog or article referrals (optional)
-      guideline9: You may refer to a book, blog or any other source by adding the
-        name, author, and link in the designated fields below the answer.
+      guideline9: You may refer to a book, blog or any other source by adding the name, author, and link in the designated fields below the answer.
     answer:
       learn_more: learn more | comment | like
       delete: Delete
@@ -261,11 +202,9 @@ en:
     show:
       discussions: Discussions
       no_answers: This expert hasn't answered any questions yet.
-      no_answers_self1: Currently you don't have any questions and answers to show
-        in your profile. You can start adding your own
+      no_answers_self1: Currently you don't have any questions and answers to show in your profile. You can start adding your own
       no_answers_self2: frequently asked questions
-      no_answers_self3: answer curated questions that have been asked, or answer other
-        questions on the Q&A platform.
+      no_answers_self3: answer curated questions that have been asked, or answer other questions on the Q&A platform.
   date:
     abbr_day_names:
     - Sun
@@ -365,8 +304,7 @@ en:
   devise:
     confirmations:
       confirmed: Your account was successfully confirmed. You are now signed in.
-      send_instructions: You will receive an email with instructions about how to
-        confirm your account in a few minutes.
+      send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
     failure:
       inactive: Your account was not activated yet.
       invalid: Invalid email or password.
@@ -394,22 +332,18 @@ en:
       failure: Could not authorize you from %{kind} because "%{reason}".
       success: Successfully authorized from %{kind} account.
     passwords:
-      send_instructions: You will receive an email with instructions about how to
-        reset your password in a few minutes.
+      send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
       updated: Your password was changed successfully. You are now signed in.
     registrations:
-      destroyed: Bye! Your account was successfully cancelled. We hope to see you
-        again soon.
-      inactive_signed_up: You have signed up successfully. However, we could not sign
-        you in because your account is %{reason}.
+      destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
+      inactive_signed_up: You have signed up successfully. However, we could not sign you in because your account is %{reason}.
       signed_up: Welcome! You have signed up successfully.
       updated: You updated your account successfully.
     sessions:
       signed_in: Signed in successfully.
       signed_out: Signed out successfully.
     unlocks:
-      send_instructions: You will receive an email with instructions about how to
-        unlock your account in a few minutes.
+      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
       unlocked: Your account was successfully unlocked. You are now signed in.
   errors:
     format: ! '%{attribute} %{message}'
@@ -518,3 +452,12 @@ en:
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: pm
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: Password
+  user:
+    email: ''
+    password: ''
+    unauthenticated: You need to sign in or sign up before continuing.

@@ -31,13 +31,13 @@ class Question < ActiveRecord::Base
   validates :title, :presence => true
   validates :user_id, :presence => true
   
-  scope :top, :conditions => { :is_top => true }, :order => :updated_at.desc, :limit => 5
-  scope :verified, :conditions => { :answers_count.gt => 0, :state => :verified }
-  scope :recent, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :created_at.desc
-  scope :popular, :conditions => { :answers_count.gt => 0, :state => :verified }, :limit => 5, :order => :answers_count.desc
-  scope :pending, :conditions => { :state => :new }, :order => :created_at.desc
-  scope :unanswered, :conditions => { :answers_count => 0, :state => :verified }, :order => :created_at.desc
-  scope :all, :order => :created_at.desc
+  scope :top, :conditions => { :is_top => true }, :order => 'updated_at desc', :limit => 5
+  scope :verified, :conditions => { :answers_count.gt => 0, :state => 'verified' }
+  scope :recent, :conditions => { :answers_count.gt => 0, :state => 'verified' }, :limit => 5, :order => 'created_at desc'
+  scope :popular, :conditions => { :answers_count.gt => 0, :state => 'verified' }, :limit => 5, :order => 'answers_count desc'
+  scope :pending, :conditions => { :state => :new }, :order => 'created_at desc'
+  scope :unanswered, :conditions => { :answers_count => 0, :state => 'verified' }, :order => 'created_at desc'
+  scope :all, :order => 'created_at desc'
 
   extend FriendlyId
   friendly_id :title, use: :slugged

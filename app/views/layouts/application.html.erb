@@ -5,8 +5,9 @@
   <link rel="shortcut icon" href="/favicon.png" type="image/png" />
   <link rel=”alternate” type=”application/rss+xml” title=”Azurie RSS” href=”<%= briefings_path :format => :rss %>” />
   <title>Azurie <%= yield :title %></title>
-  <%= stylesheet_link_merged(:base).html_safe %>
-  <%= javascript_include_merged(:base).html_safe %>
+  
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tag %>
   <%= include_tiny_mce_if_needed %>
   <%= yield :head %>
@@ -27,8 +28,8 @@
       <% else %>
         <ul class="tools">
           <li><%= link_to t('layout.tools.signin'), new_session_path(:user) %></li>
-          <li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="<%= t('layout.tools.facebook') %>"><img src="/images/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
-          <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="<%= t('layout.tools.googleplus') %>"><img src="/images/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li>
+          <li><a href="<%= omniauth_authorize_path(:user, :facebook) %>" title="<%= t('layout.tools.facebook') %>"><img src="/assets/ico-facebook.jpg" height="17" width="17" alt="ico" /></a></li>
+          <li><a href="<%= omniauth_authorize_path(:user, :google_apps) %>" title="<%= t('layout.tools.googleplus') %>"><img src="/assets/ico-googleplus.jpg" height="17" width="17" alt="ico" /></a></li>
         </ul>
       <% end %>
       
@@ -96,27 +97,27 @@
         <strong><%= t('layout.connect.title') %></strong>
         <ul>
           <li>
-            <img src="/images/ico-2.jpg" height="17" width="17" alt="ico" />
+            <img src="/assets/ico-2.jpg" height="17" width="17" alt="ico" />
             <a href="https://plus.google.com/u/0/115224815136943317404"><%= t('layout.connect.googleplus') %></a>
           </li>
           <li>
-            <img src="/images/ico-3.jpg" height="17" width="17" alt="ico" />
+            <img src="/assets/ico-3.jpg" height="17" width="17" alt="ico" />
             <a href="https://www.facebook.com/azuriemedia"><%= t('layout.connect.facebook') %></a>
           </li>
           <!--li>
-            <img src="/images/ico-4.jpg" height="17" width="17" alt="ico" />
+            <img src="/assets/ico-4.jpg" height="17" width="17" alt="ico" />
             <a href="#">Read our blog on Tumblr</a>
           </li-->
           <li>
-            <img src="/images/ico-5.jpg" height="17" width="17" alt="ico" />
+            <img src="/assets/ico-5.jpg" height="17" width="17" alt="ico" />
             <a href="http://twitter.com/#!/VentureRoadmap"><%= t('layout.connect.twitter') %></a>
           </li>
           <!--li>
-            <img src="/images/ico-6.jpg" height="17" width="17" alt="ico" />
+            <img src="/assets/ico-6.jpg" height="17" width="17" alt="ico" />
             <a href="#">Connect to us on Linkedin</a>
           </li-->
           <li>
-            <img src="/images/ico-7.jpg" height="17" width="17" alt="ico" />
+            <img src="/assets/ico-7.jpg" height="17" width="17" alt="ico" />
             <a href="<%= briefings_path :format => :rss %>"><%= t('layout.connect.rss') %></a>
           </li>
         </ul>

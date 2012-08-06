@@ -4,7 +4,12 @@ require 'rails/all'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require *Rails.groups(:assets => %w(development test))
+  # If you want your assets lazily compiled in production, use this line
+  #Bundler.require(:default, :assets, Rails.env)
+end
 
 module Azurie
   class Application < Rails::Application
@@ -45,5 +50,18 @@ module Azurie
       #g.template_engine :haml
       g.test_framework :rspec, :fixture => true, :views => false
     end
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
+
+    config.assets.initialize_on_precompile = false
+
+    config.devise_oauth2_providable.access_token_expires_in         = 5.years # 15.minute default
+    config.devise_oauth2_providable.refresh_token_expires_in        = 5.years # 1.month default
+    config.devise_oauth2_providable.authorization_token_expires_in  = 5.years # 1.minute default
+
   end
 end

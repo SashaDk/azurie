@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
 
   devise :invitable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
-    :omniauthable, :confirmable, :token_authenticatable, :invitable
+    :omniauthable, :confirmable, :token_authenticatable, :invitable,
+    :oauth2_providable, :oauth2_password_grantable, :oauth2_refresh_token_grantable, :oauth2_authorization_code_grantable
   attr_accessible :email, :first_name, :last_name, 
     :occupation, :location, :company, :contact_email,
     :facebook, :twitter, :google_plus, :linkedin,

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619122911) do
+ActiveRecord::Schema.define(:version => 20120806123633) do
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -80,6 +81,61 @@ ActiveRecord::Schema.define(:version => 20120619122911) do
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "oauth2_access_tokens", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.integer  "refresh_token_id"
+    t.string   "token"
+    t.datetime "expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "oauth2_access_tokens", ["client_id"], :name => "index_oauth2_access_tokens_on_client_id"
+  add_index "oauth2_access_tokens", ["expires_at"], :name => "index_oauth2_access_tokens_on_expires_at"
+  add_index "oauth2_access_tokens", ["token"], :name => "index_oauth2_access_tokens_on_token", :unique => true
+  add_index "oauth2_access_tokens", ["user_id"], :name => "index_oauth2_access_tokens_on_user_id"
+
+  create_table "oauth2_authorization_codes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.string   "token"
+    t.datetime "expires_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "oauth2_authorization_codes", ["client_id"], :name => "index_oauth2_authorization_codes_on_client_id"
+  add_index "oauth2_authorization_codes", ["expires_at"], :name => "index_oauth2_authorization_codes_on_expires_at"
+  add_index "oauth2_authorization_codes", ["token"], :name => "index_oauth2_authorization_codes_on_token", :unique => true
+  add_index "oauth2_authorization_codes", ["user_id"], :name => "index_oauth2_authorization_codes_on_user_id"
+
+  create_table "oauth2_clients", :force => true do |t|
+    t.string   "name"
+    t.string   "redirect_uri"
+    t.string   "website"
+    t.string   "identifier"
+    t.string   "secret"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "oauth2_clients", ["identifier"], :name => "index_oauth2_clients_on_identifier", :unique => true
+
+  create_table "oauth2_refresh_tokens", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.string   "token"
+    t.datetime "expires_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "oauth2_refresh_tokens", ["client_id"], :name => "index_oauth2_refresh_tokens_on_client_id"
+  add_index "oauth2_refresh_tokens", ["expires_at"], :name => "index_oauth2_refresh_tokens_on_expires_at"
+  add_index "oauth2_refresh_tokens", ["token"], :name => "index_oauth2_refresh_tokens_on_token", :unique => true
+  add_index "oauth2_refresh_tokens", ["user_id"], :name => "index_oauth2_refresh_tokens_on_user_id"
 
   create_table "questions", :force => true do |t|
     t.text     "title"
