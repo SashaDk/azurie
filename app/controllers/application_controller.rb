@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_locale
-  before_filter :mobile_auth
+  before_filter :store_location
   layout :layout_by_resource
 
   def layout_by_resource
@@ -16,8 +16,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = cookies[:locale] || I18n.default_locale
   end  
 
-  def mobile_auth
-    cookies[:mobile_auth] = true if params[:mobile_auth].present?
+  def store_location
+    unless [omniauth_authorize_path(:user, :facebook), omniauth_authorize_path(:user, :facebook), omniauth_authorize_path(:user, :google_apps)].include? request.path
+      cookies[:location] = request.url
+    end
   end
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -32,6 +34,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     logger.info "\n=========================#{request.env['omniauth.origin']}===========================\n\n"
     logger.info "\n=========================#{stored_location_for(resource)}===========================\n\n"
-    return request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+    return cookies[:location] || stored_location_for(resource) || root_path
   end
 end
