@@ -17,7 +17,12 @@ class ApplicationController < ActionController::Base
   end  
 
   def store_location
-    unless [omniauth_authorize_path(:user, :facebook), omniauth_authorize_path(:user, :facebook), new_session_path(:user)].include? request.path
+    unless [
+    omniauth_authorize_path(:user, :facebook), 
+    omniauth_authorize_path(:user, :facebook), 
+    new_session_path(:user),
+    '/users/auth/google_apps/callback',
+    '/users/auth/facebook/callback'].include? request.path
       cookies[:location] = request.url
     end
   end
