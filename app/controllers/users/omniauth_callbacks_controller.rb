@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, :event => :authentication
     else
       cookies[:mobile_auth] = nil
-      redirect_to "http://localhost?auth_token=#{@user.authentication_token}"
+      render :json => {:auth_token => @user.authentication_token}
     end
   end
 
@@ -19,7 +19,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, :event => :authentication
     else
       cookies[:mobile_auth] = nil
-      redirect_to "http://localhost?auth_token=#{@user.authentication_token}"
+      render :json => {:auth_token => @user.authentication_token}
     end
   end
 
