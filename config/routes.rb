@@ -1,5 +1,6 @@
 Azurie::Application.routes.draw do
   get "/briefings/:id" => "briefings#show"
+  mount Devise::Oauth2Providable::Engine => '/oauth2'
   get "/media/durov-s-manifesto-dreams-without-boarders" => redirect("http://www.azurie.com/briefings/11?locale=en")
 
   resources :briefings, :path => 'media' do
@@ -45,7 +46,6 @@ Azurie::Application.routes.draw do
   devise_for :users, :controllers => { :invitations => 'users/invitations', :omniauth_callbacks => "users/omniauth_callbacks" } do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
-  mount Devise::Oauth2Providable::Engine => '/oauth2'
 
   resources :users do
     member do

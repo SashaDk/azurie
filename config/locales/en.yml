@@ -463,3 +463,5 @@ en:
     unauthenticated: You need to sign in or sign up before continuing.
     signed_out: Signed out successfully.
     invalid: Invalid email or password.
+  unauthorized:
+    default: You are not authorized to access this page.

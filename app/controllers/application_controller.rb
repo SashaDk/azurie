@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
 
   def store_location
     unless [
-    omniauth_authorize_path(:user, :facebook), 
-    omniauth_authorize_path(:user, :facebook), 
+    '/users/auth/google_apps',
+    '/users/auth/facebook',
     new_session_path(:user),
     '/users/auth/google_apps/callback',
     '/users/auth/facebook/callback'].include? request.path
