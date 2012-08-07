@@ -29,6 +29,7 @@ gem 'feedzirra'
 gem 'friendly_id'
 gem 'thin'
 gem 'rails_autolink'
+gem 'tinymce-rails'
 
 # Use unicorn as the web server
 #gem 'unicorn'
