@@ -8,6 +8,7 @@ set :scm, :git
 set :user, "web"
 set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :system
+set :use_sudo, false
 
 role :web, "50.56.201.43"                          # Your HTTP server, Apache/etc
 role :app, "50.56.201.43"                          # This may be the same as your `Web` server
