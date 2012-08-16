@@ -30,12 +30,11 @@ gem 'friendly_id'
 gem 'thin'
 gem 'rails_autolink'
 gem 'tinymce-rails'
+gem 'foreman-capistrano'
 
 # Use unicorn as the web server
 #gem 'unicorn'
 
-# Deploy with Capistrano
-gem 'capistrano'
 gem 'heroku'
 
 group :test do
@@ -46,6 +45,9 @@ end
 group :development do
   gem 'wirble'
   gem 'sqlite3'
+  gem 'capistrano-ext'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 #  gem 'ruby-debug'
 #  gem 'ruby-debug19', :require => 'ruby-debug'  
 end
