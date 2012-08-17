@@ -22,6 +22,13 @@ set :foreman_concurrency, "\"worker=1\""
 require 'foreman/capistrano'
 
 namespace :deploy do
+  desc "Create links to database.yml, tmp and system"
+  task :finalize_update do
+    run "ln -nfs #{shared_path}/log #{release_path}/log"
+    run "ln -nfs #{shared_path}/system #{release_path}/public/system"
+    run "ln -nfs #{shared_path}/tmp #{release_path}/tmp"
+  end
+
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
   end
