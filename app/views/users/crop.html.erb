@@ -33,6 +33,7 @@
 <% end %>
 <p>Please resize your avatar image:</p>
 <%= image_tag @user.avatar.url(:large), :id => "cropbox" %>
+<br/>
 <% form_for @user do |form| %>
   <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
     <%= form.hidden_field attribute, :id => attribute %>
