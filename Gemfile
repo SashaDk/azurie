@@ -21,7 +21,6 @@ gem 'squeel'
 gem 'aws-sdk'
 gem 'will_paginate'
 gem 'thinking-sphinx'
-gem 'flying-sphinx'
 gem 'newrelic_rpm'
 gem 'localeapp'
 gem 'rest-client'
@@ -34,8 +33,6 @@ gem 'foreman-capistrano'
 
 # Use unicorn as the web server
 #gem 'unicorn'
-
-gem 'heroku'
 
 group :test do
   gem 'rspec'
