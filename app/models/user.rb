@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
     },
-    :default_url => '/images/default_avatar.png',
+    :default_url => '/assets/default_avatar.png',
     :path => "app/public/system/:attachment/:id/:style/:filename"
 
   devise :invitable, :database_authenticatable, :registerable,
