@@ -13,6 +13,16 @@ Azurie::Application.configure do
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
   config.action_mailer.default_url_options = { :host => 'azurie.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'azurie.com',
+    :user_name => 'no-reply@azurie.com',
+    :password => 'ZyEBqjmo',
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+  }
 
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
