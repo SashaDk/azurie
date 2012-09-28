@@ -55,14 +55,6 @@ Azurie::Application.routes.draw do
     end
   end
  
-  namespace :api do
-    resources :users do
-      collection do
-        get :hello_world
-      end
-    end
-  end
-
   match '/:locale' => 'pages#index'
   root :to => "pages#index"
 end
