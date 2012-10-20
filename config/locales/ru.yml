@@ -251,6 +251,8 @@ ru:
       create: Создать %{model}
       submit: Сохранить %{model}
       update: Сохранить %{model}
+      user:
+        update: 
   layout:
     connect:
       facebook: Наша страница в Facebook
@@ -431,3 +433,41 @@ ru:
       discussions: Обсуждения
       no_answers: Этот эксперт еще не ответил ни на один вопрос
       no_answers_self2: часто задаваемые вопросы
+  activerecord:
+    attributes:
+      user:
+        avatar: 
+        category: 
+        company: 
+        contact_email: 
+        facebook: 
+        first_name: 
+        google_plus: 
+        last_name: 
+        linkedin: 
+        location: 
+        occupation: 
+        phone: 
+        price: 
+        twitter: 
+    errors:
+      models:
+        user:
+          attributes:
+            price:
+              greater_than_or_equal_to: 
+  user:
+    avatar: 
+    category: 
+    company: 
+    contact_email: 
+    facebook: 
+    first_name: 
+    google_plus: 
+    last_name: 
+    linkedin: 
+    location: 
+    occupation: 
+    phone: 
+    price: 
+    twitter: 

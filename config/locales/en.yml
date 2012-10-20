@@ -393,6 +393,8 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+      user:
+        update: Update User
   number:
     currency:
       format:
@@ -457,11 +459,45 @@ en:
       user:
         email: Email
         password: Password
+        avatar: Avatar
+        category: Category
+        company: Company
+        contact_email: Contact email
+        facebook: Facebook
+        first_name: First name
+        google_plus: Google plus
+        last_name: Last name
+        linkedin: Linkedin
+        location: Location
+        occupation: Occupation
+        phone: Phone
+        price: Price
+        twitter: Twitter
+    errors:
+      models:
+        user:
+          attributes:
+            price:
+              greater_than_or_equal_to: must be greater than or equal to 1
   user:
-    email: ''
-    password: ''
+    email: 
+    password: 
     unauthenticated: You need to sign in or sign up before continuing.
     signed_out: Signed out successfully.
     invalid: Invalid email or password.
+    avatar: 
+    category: 
+    company: 
+    contact_email: 
+    facebook: 
+    first_name: 
+    google_plus: 
+    last_name: 
+    linkedin: 
+    location: 
+    occupation: 
+    phone: 
+    price: 
+    twitter: 
   unauthorized:
     default: You are not authorized to access this page.
