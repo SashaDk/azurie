@@ -974,6 +974,23 @@ em.describtion {
   margin-right:16px;
   margin-left:33px;
 }
+.decor2{
+	display:block;
+	margin:0 0 15px 0;
+	height:15px;
+	font-weight:normal;
+  clear:both;
+}
+.decor2 span{
+	float:left;
+	padding:0 8px 0 0;
+	font-size:15px;
+	line-height:16px;
+	font-family:'AlternateGothic2BTRegular';
+	color:#2d2d2d;
+	letter-spacing:1px;
+	word-spacing:1px;
+}
 
 .decor a{
         float:left;
