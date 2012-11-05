@@ -10,6 +10,7 @@ Azurie::Application.routes.draw do
   end
   
   match "/about" => "pages#about"
+  match "/partners" => "pages#partners"
   match "/thanks" => "pages#thanks"
   #get "pages/index", :as => :root
   #get "pages/about", :as => :abot

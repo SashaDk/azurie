@@ -44,6 +44,9 @@
       <!--li <% if params[:controller] =~ /(^devise\/*)|(^users$)/ %> class="active" <% end %> >
         <%= link_to t('layout.menu.people'), users_path %>
       </li-->
+      <li <% if current_page?(partners_path) %> class="active" <% end %> >
+        <%= link_to t('layout.menu.partners'), partners_path %>
+      </li>
       <li <% if current_page?(about_path) %> class="active" <% end %> >
         <%= link_to t('layout.menu.about'), about_path %>
       </li>

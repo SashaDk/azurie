@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def about
   end
   
+  def partners
+  end
+
   def thanks
   end
 
