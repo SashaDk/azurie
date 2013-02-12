@@ -69,7 +69,7 @@ en:
       top_qa: DAILY TOP Q&amp;As
       more_qa: MORE Q&amp;As
       cant_find_answer: CAN'T FIND AN ANSWER?
-      post_your_question: THEN POST YOUR QUESTION HERE
+      post_your_question: THEN SEND US YOUR QUESTION
     about:
       manifesto: MANIFESTO
       manifesto1: VENTURE DECODED
@@ -144,7 +144,7 @@ en:
       date: DATE
       load_more: LOAD MORE Q&amp;As
       cant_find_answer: CAN'T FIND AN ANSWER?
-      post_your_question: THEN POST YOUR QUESTION HERE
+      post_your_question: THEN SEND US YOUR QUESTION
     show:
       no_answers: No one answered this question yet.
       add_answer: Post an answer

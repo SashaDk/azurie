@@ -16,7 +16,7 @@ class Briefing < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
 
-  scope :top, :limit => 1, :order => :created_at.desc
+  scope :top, :limit => 5, :order => :created_at.desc
   scope :all, :order => :created_at.desc
 
   extend FriendlyId

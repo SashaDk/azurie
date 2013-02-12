@@ -652,7 +652,7 @@ em.describtion {
 .section-holder .line ul li{
   display:inline;
 	margin:0 5px 0 0;
-	padding:0 0 0 6px;
+	padding:0 0 0 10px;
 	background:url(../assets/separator-3.jpg) no-repeat 0 3px;
 	font:italic 11px/12px Arial, Helvetica, sans-serif;
 	color:#787879;
