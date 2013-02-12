@@ -1,17 +1,15 @@
 module ApplicationHelper
   def categories
     {
-      I18n.t('categories.traction') => :traction,
-      I18n.t('categories.business_model') => :business_model,
-      I18n.t('categories.people_management') => :people_management,
-      I18n.t('categories.marketing') => :marketing,
-      I18n.t('categories.capital_rising') => :capital_rising,
-      I18n.t('categories.presentation') => :presentation,
-      I18n.t('categories.communication') => :communication,
-      I18n.t('categories.innovation') => :innovation,
+      I18n.t('categories.accounting') => :accounting,
       I18n.t('categories.design') => :design,
-      I18n.t('categories.well_being') => :well_being,
-      I18n.t('categories.failure') => :failure
+      I18n.t('categories.energy') => :energy,
+      I18n.t('categories.financial') => :financial,
+      I18n.t('categories.healthcare') => :healthcare,
+      I18n.t('categories.legal') => :legal,
+      I18n.t('categories.real_estate') => :real_estate,
+      I18n.t('categories.technology') => :technology,
+      I18n.t('categories.travel') => :travel,
     }
   end
   

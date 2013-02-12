@@ -8,17 +8,15 @@ en:
     video: Video
     weekend: Weekend
   categories:
-    traction: Gaining Traction
-    business_model: Business Models
-    people_management: People Management
-    marketing: Marketing and Sales
-    capital_rising: Raising Capital
-    presentation: Mastering Presentation
-    communication: Mastering Media
-    innovation: New Frontiers
-    design: Product Design
-    well_being: Work-Life Balance
-    failure: Failure
+    accounting: Accounting & Financial
+    design: Design & Architecture
+    energy: Energy, Agriculture & Industrials
+    financial: Financial & Business
+    healthcare: Healthcare
+    legal: Legal, Economic & Regulatory
+    real_estate: Real Estate
+    technology: Technology, Media & Telecom
+    travel: Travel & Entertainment
   layout:
     logo: Azurie VENTURE ROADMAP
     tools:
