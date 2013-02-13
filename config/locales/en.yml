@@ -55,7 +55,7 @@ en:
     about_text: Azurie features insights from business leaders globally and helps you get connected to solve your business challenges
     read_more: read more
     join_us: JOIN US NOW
-    categories: CATEGORIES
+    categories: SECTORS
     whats_popular: WHAT’S  POPULAR  NOW
     most_recent: MOST  RECENT
   pages:
@@ -94,7 +94,7 @@ en:
       learn_more: learn more
     index:
       featured_media: FEATURED MEDIA
-      in_category: IN CATEGORY
+      in_category: IN SECTOR
       comments: COMMENTS
       search_here: SEARCH HERE
       are_you_expert: ARE YOU A PASSIONATE VENTURE REPORTER?
@@ -135,7 +135,7 @@ en:
       confirm: Are you sure?
     index:
       all_questions: ALL QUESTIONS
-      in_category: IN CATEGORY
+      in_category: IN SECTOR
       questions: QUESTIONS
       answers: ANSWERS
       popularity: POPULARITY
@@ -459,7 +459,7 @@ en:
         email: Email
         password: Password
         avatar: Avatar
-        category: Category
+        category: Sector
         company: Company
         contact_email: Contact email
         facebook: Facebook
