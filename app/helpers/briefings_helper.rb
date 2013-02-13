@@ -1,13 +1,14 @@
 module BriefingsHelper
   def briefing_categories
     {
-      I18n.t('briefing_categories.popular') => :popular,
-      I18n.t('briefing_categories.business') => :business,
-      I18n.t('briefing_categories.design') => :design,
-      I18n.t('briefing_categories.people') => :people,
-      I18n.t('briefing_categories.blogs') => :blogs,
-      I18n.t('briefing_categories.video') => :video,
-      I18n.t('briefing_categories.weekend') => :weekend,
+      I18n.t('categories.design') => :design,
+      I18n.t('categories.energy') => :energy,
+      I18n.t('categories.financial') => :financial,
+      I18n.t('categories.healthcare') => :healthcare,
+      I18n.t('categories.legal') => :legal,
+      I18n.t('categories.real_estate') => :real_estate,
+      I18n.t('categories.technology') => :technology,
+      I18n.t('categories.travel') => :travel,
     }
   end
 

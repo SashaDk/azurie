@@ -33,10 +33,10 @@ en:
       people: PEOPLE
       about: ABOUT
     news: NEWS
-    news1: The beta version of Azurie has been launched and we will be testing the platform with a select group of people. Please be patient, invitations will go out to the wider community soon! To get on the mailing list please send your name through the feedback link.
+    news1: You will now be able to connect to our featured professionals directly by accessing the person’s Ambroi.net expert profile from where you can request scheduled calls and discuss your business queries on the phone. Learn more about the service at <a href='http://ambroi.net/'>www.ambroi.net</a>.
     vision: VISION AND MISSION
-    vision1: Our vision is to become the leading edge knowledge resource and community for frontier entrepreneurship globally
-    vision2: Our mission is to put the spotlight on leading experts and those driving innovation in their industries &mdash; how to succeed and where to invest.
+    vision1: Our vision is to become the leading edge business knowledge resource that informs and helps get connected with the right experts directly on the phone. 
+    vision2: Our mission is to put the spotlight on leading experts globally and radically lower the barriers to connect with such experts for direct advice.
     connect:
       title: CONNECT WITH US
       facebook: Like us on Facebook
@@ -50,9 +50,9 @@ en:
   search_form:
     search_here: SEARCH HERE
   sidebar:
-    find_new_insights: FIND NEW INSIGHTS
-    inspiration: INSPIRATION
-    about_text: Azurie feeds on insights from entrepreneurial and creative thought leaders globally
+    find_new_insights: EXPERIENCED INSIGHT;
+    inspiration: A LEADER’S BEST RESOURCE
+    about_text: Azurie features insights from business leaders globally and helps you get connected to solve your business challenges
     read_more: read more
     join_us: JOIN US NOW
     categories: CATEGORIES
@@ -81,13 +81,13 @@ en:
       manifesto9: EMPOWERED AND RESOLVED
       manifesto10: A FRONTIER SPIRIT, A TRANSNATIONAL DIALOGUE, CREATIVE-BUSINESS HYBRIDS. THE NEW DESIGN OF GLOBALISM
       about: ABOUT
-      about1: Putting the spotlight on leading experts and those driving innovation in their industries &mdash; how to succeed and where to invest.
-      about2: Azurie is '<b>knowledge media</b>' for the worldwide entrepreneurial community. We slash through the Web's jungle of information on entrepreneurship to reveal the top experts, the brightest ideas, and the edgiest products from around the world.
+      about1: Putting the spotlight on leading experts and those driving their niches and industries — discussing business challenges and important trends
+      about2: Azurie is '<b>knowledge media</b>' for the global business community. Through interviews we reveal the top experts and valuable insights from around the world. Azurie does more than providing you with information, we give access to leading professionals for direct expert advice through Ambroi.net, a technology enabled telecommunication service that respects the experts' time and privacy. Each featured expert has an Ambroi profile enabling other professionals to request scheduled calls and get the expert’s business perspective about specific topics directly on the phone. You may learn more about the service at <a href='http://ambroi.net'>www.ambroi.net</a>.
       about3: Through one-on-one interviews with leading entrepreneurs and curated Q&A sessions from expert panels, Azurie acts as a hub for new and seasoned entrepreneurs to learn, gain inspiration, connect, and interact with top thinkers — all while promoting the underground sensations whose prowess has yet to be recognized.
       join_us: Join us
       join_us2: and become part of a dynamic community.
       background: BACKGROUND
-      background1: Azurie was launched in Moscow in 2012 by Artem Kiselev, Yuriy Gomozov, and Alexandra Dieterink. Respectively a serial startup entrepreneur, software developer, and venture capital professional. It was prompted by a desire to consolidate important entrepreneurial know-how that is increasingly being shared by thinkers and most innovative participants in business and connect those with an entrepreneurial passion.
+      background1: Azurie was launched in 2012 by Artem Kiselev, Yuriy Gomozov, and Alexandra Dieterink. Respectively a serial startup entrepreneur, software developer, and venture capital professional from the Netherlands and Russia. It was prompted by a desire to consolidate important business know-how that is increasingly being shared online by business leaders through alternative media channels, including personal blogs and quality Q&A platforms, and connect ‘knowlege seekers’ with experienced professionals directly to help solve their business challenges. The platform is being developed with the support of key contributors from different corners of the globe.
       background2: The platform is being developed with the support of key contributors from different corners of the globe.
   briefings:
     briefing:

@@ -1,7 +1,6 @@
 module ApplicationHelper
   def categories
     {
-      I18n.t('categories.accounting') => :accounting,
       I18n.t('categories.design') => :design,
       I18n.t('categories.energy') => :energy,
       I18n.t('categories.financial') => :financial,
