@@ -18,7 +18,6 @@ role :db,  "50.56.201.43"
 set :default_environment, {'PATH' => "/sbin:$PATH"}
 default_run_options[:pty] = true
 set :sudo, 'rvmsudo'
-set :foreman_concurrency, "\"worker=1\""
 require 'foreman/capistrano'
 
 namespace :deploy do
