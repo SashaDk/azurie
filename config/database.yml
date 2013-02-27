@@ -22,3 +22,4 @@ production:
   username: postgres
   password: postgres
   host: 127.0.0.1
+  pool: 10
